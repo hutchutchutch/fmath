@@ -1,0 +1,115 @@
+
+===== Grade Update - 2025-05-12T14:13:15.158Z =====
+Found 17 users to process
+
+
+--- User 1/17 ---
+Email: jay.lever@sportsacademy.school
+Previous Grade: Unknown
+New Grade: 1
+Status: UPDATED (userId: 77bb4419-8f67-40a0-bcd7-9611a108a413)
+
+--- User 2/17 ---
+Email: beau.stern@alpha.school
+Previous Grade: Unknown
+New Grade: 1
+Status: UPDATED (userId: c05ab002-301f-4a29-afd9-30b37c73e8e5)
+
+--- User 3/17 ---
+Email: patrick.henry@2hourlearning.com
+Previous Grade: Unknown
+New Grade: 2
+Status: UPDATED (userId: 511130d8-1832-4d48-bef4-255c979deb38)
+
+--- User 4/17 ---
+Email: willa.rubenstein@alpha.school
+Previous Grade: Unknown
+New Grade: 2
+Status: UPDATED (userId: 65043b4a-4fd4-4da9-a4ae-feeb64a3e130)
+
+--- User 5/17 ---
+Email: oslo.singer@alpha.school
+Previous Grade: Unknown
+New Grade: 2
+Status: UPDATED (userId: 0d92f705-1fc5-4dbc-b302-fefb62f51ab0)
+
+--- User 6/17 ---
+Email: milam.morgan@alpha.school
+Previous Grade: Unknown
+New Grade: 3
+Status: UPDATED (userId: ad3a039f-f957-4d79-bd88-d395d4ad0eeb)
+
+--- User 7/17 ---
+Email: corinne.mcgowan@sportsacademy.school
+Previous Grade: Unknown
+New Grade: 3
+Status: UPDATED (userId: 90bb0b8c-0a2b-44ca-87f5-da8920e59153)
+
+--- User 8/17 ---
+Email: levi.reeves@sportsacademy.school
+Previous Grade: Unknown
+New Grade: 3
+Status: UPDATED (userId: 24efe3e8-3746-43b4-8982-a54a174b9bf2)
+
+--- User 9/17 ---
+Email: kai.lever@sportsacademy.school
+Previous Grade: Unknown
+New Grade: 3
+Status: UPDATED (userId: 0fe66212-ecc4-45a8-b87f-ef73cbfae2e5)
+
+--- User 10/17 ---
+Email: tyiir.woods@novatio.school
+Previous Grade: Unknown
+New Grade: 3
+Status: UPDATED (userId: b355ca1b-fa01-4e66-b7ae-57df0721e6d8)
+
+--- User 11/17 ---
+Email: ozzie.lowe@alpha.school
+Previous Grade: Unknown
+New Grade: 4
+Status: UPDATED (userId: 1f470aea-eb55-486b-ad88-52f392f2b5ec)
+
+--- User 12/17 ---
+Email: ava.rosellini@2hourlearning.com
+Previous Grade: Unknown
+New Grade: 4
+Status: UPDATED (userId: 851c32ac-24f6-4272-93c3-47a065074a02)
+
+--- User 13/17 ---
+Email: kaiden.szpitalak@alpha.school
+Previous Grade: Unknown
+New Grade: 5
+Status: UPDATED (userId: 9a76a137-ca32-4c44-9760-19df5b81ef16)
+
+--- User 14/17 ---
+Email: johnny.darcy@alpha.school
+Previous Grade: Unknown
+New Grade: 5
+Status: UPDATED (userId: b9b64581-a268-4f34-87bb-232407888980)
+
+--- User 15/17 ---
+Email: william.rosellini@2hourlearning.com
+Previous Grade: Unknown
+New Grade: 5
+Status: UPDATED (userId: e8662be7-6672-4195-a037-9f1941b6045c)
+
+--- User 16/17 ---
+Email: penelope.marty@alpha.school
+Previous Grade: Unknown
+New Grade: 6
+Status: UPDATED (userId: 004c229d-e10e-4783-b706-cfc658371f9e)
+
+--- User 17/17 ---
+Email: maxime.auvray@alpha.school
+Previous Grade: Unknown
+New Grade: 9
+Status: UPDATED (userId: b87733bf-2f88-40d9-9cdd-90a329418b03)
+
+===== Summary =====
+- Users processed: 17
+- Users found: 17
+- Users not found: 0
+- Successful updates: 17
+- Failed updates: 0
+==================
+  

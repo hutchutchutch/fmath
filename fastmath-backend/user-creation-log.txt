@@ -1,0 +1,206 @@
+
+===== User Creation - 2025-05-28T04:31:30.824Z =====
+Found 23 unique users to process
+
+
+--- User 1/23 ---
+Email: isaiah.murray@2hourlearning.com
+User ID: 888673d9-477a-497d-8eb8-fa3d338c8180
+Track: TRACK6
+Grade: 8
+Status: CREATED (userId: 888673d9-477a-497d-8eb8-fa3d338c8180)
+
+--- User 2/23 ---
+Email: hunter.dastrup@2hourlearning.com
+User ID: 575e1d51-9705-4d3c-ae5c-31809f19a320
+Track: TRACK6
+Grade: 4
+Status: CREATED (userId: 575e1d51-9705-4d3c-ae5c-31809f19a320)
+
+--- User 3/23 ---
+Email: gabriella.gonzalez@2hourlearning.com
+User ID: 82b19386-bbbe-48bd-8e03-8d56e9f3f9da
+Track: TRACK6
+Grade: 6
+Status: CREATED (userId: 82b19386-bbbe-48bd-8e03-8d56e9f3f9da)
+
+--- User 4/23 ---
+Email: dalton.robinson@2hourlearning.com
+User ID: e4127dd5-500a-4f82-a82e-19596f818e37
+Track: TRACK6
+Grade: 7
+
+===== User Creation - 2025-05-28T04:43:16.681Z =====
+Found 23 unique users to process
+
+
+--- User 1/23 ---
+Email: isaiah.murray@2hourlearning.com
+User ID: e78f3884-534e-4f77-afef-b2ac1a7e8ae3
+Track: TRACK6
+Grade: 8
+Status: CREATED (userId: e78f3884-534e-4f77-afef-b2ac1a7e8ae3)
+
+--- User 2/23 ---
+Email: hunter.dastrup@2hourlearning.com
+User ID: e663090c-d6b9-4a52-a2d1-17552795e447
+Track: TRACK6
+Grade: 4
+Status: CREATED (userId: e663090c-d6b9-4a52-a2d1-17552795e447)
+
+--- User 3/23 ---
+Email: gabriella.gonzalez@2hourlearning.com
+User ID: c1513b35-91d9-423d-81d3-1965f787c64e
+Track: TRACK6
+Grade: 6
+Status: CREATED (userId: c1513b35-91d9-423d-81d3-1965f787c64e)
+
+--- User 4/23 ---
+Email: dalton.robinson@2hourlearning.com
+User ID: 5e2dee50-178d-41b1-aad2-4cba5f4105b0
+Track: TRACK6
+Grade: 7
+Status: CREATED (userId: 5e2dee50-178d-41b1-aad2-4cba5f4105b0)
+
+--- User 5/23 ---
+Email: william.case@2hourlearning.com
+User ID: eebfb3e9-d606-4d55-aded-2b54658dec76
+Track: TRACK6
+Grade: 7
+Status: CREATED (userId: eebfb3e9-d606-4d55-aded-2b54658dec76)
+
+--- User 6/23 ---
+Email: samuel.case@2hourlearning.com
+User ID: ee27611c-685a-4f02-b851-ac29ff2539db
+Track: TRACK6
+Grade: 8
+Status: CREATED (userId: ee27611c-685a-4f02-b851-ac29ff2539db)
+
+--- User 7/23 ---
+Email: will.robinson@2hourlearning.com
+User ID: d106e338-b3ce-41b8-9f70-6e22b79b09cb
+Track: TRACK12
+Grade: 1
+Status: CREATED (userId: d106e338-b3ce-41b8-9f70-6e22b79b09cb)
+
+--- User 8/23 ---
+Email: lynnix.russel@2hourlearning.com
+User ID: f795b3cd-5bde-41d9-ac3f-a1353eb4b21f
+Track: TRACK6
+Grade: 4
+Status: CREATED (userId: f795b3cd-5bde-41d9-ac3f-a1353eb4b21f)
+
+--- User 9/23 ---
+Email: reagan.galbreth@2hourlearning.com
+User ID: b486d993-41d4-485e-9fd9-b6da2365fed1
+Track: TRACK6
+Grade: 3
+Status: CREATED (userId: b486d993-41d4-485e-9fd9-b6da2365fed1)
+
+--- User 10/23 ---
+Email: monica.langford-sanchez@2hourlearning.com
+User ID: dc833ca8-a975-471a-b197-6d063bce4a83
+Track: TRACK6
+Grade: 4
+Status: CREATED (userId: dc833ca8-a975-471a-b197-6d063bce4a83)
+
+--- User 11/23 ---
+Email: ivan.langford-sanchez@2hourlearning.com
+User ID: f685b376-b2bc-416a-82fd-fe5eeaf0f70f
+Track: TRACK6
+Grade: 6
+Status: CREATED (userId: f685b376-b2bc-416a-82fd-fe5eeaf0f70f)
+
+--- User 12/23 ---
+Email: joshua.kennard@2hourlearning.com
+User ID: 989fe126-009a-45d5-b4f7-4ded3d9b6c63
+Track: TRACK6
+Grade: 9
+Status: CREATED (userId: 989fe126-009a-45d5-b4f7-4ded3d9b6c63)
+
+--- User 13/23 ---
+Email: joseph.kennard@2hourlearning.com
+User ID: f432c775-ba59-4f16-8252-3693f9c8eeff
+Track: TRACK6
+Grade: 7
+Status: CREATED (userId: f432c775-ba59-4f16-8252-3693f9c8eeff)
+
+--- User 14/23 ---
+Email: timothy.pena@2hourlearning.com
+User ID: 6bf031c7-f80d-4d21-a660-3ed3fb548c96
+Track: TRACK6
+Grade: 7
+Status: CREATED (userId: 6bf031c7-f80d-4d21-a660-3ed3fb548c96)
+
+--- User 15/23 ---
+Email: evelyn.kennard@2hourlearning.com
+User ID: 62a49c2f-420d-4163-9c91-4570975866e1
+Track: TRACK9
+Grade: 2
+Status: CREATED (userId: 62a49c2f-420d-4163-9c91-4570975866e1)
+
+--- User 16/23 ---
+Email: james.thompson@2hourlearning.com
+User ID: 74a58eb6-dd60-4791-be36-27484399a5ac
+Track: TRACK6
+Grade: 5
+Status: CREATED (userId: 74a58eb6-dd60-4791-be36-27484399a5ac)
+
+--- User 17/23 ---
+Email: kaylie.thompson@2hourlearning.com
+User ID: 1ba6cec7-2828-4d49-8699-61841dac6a1c
+Track: TRACK6
+Grade: 6
+Status: CREATED (userId: 1ba6cec7-2828-4d49-8699-61841dac6a1c)
+
+--- User 18/23 ---
+Email: rowan.thompson@2hourlearning.com
+User ID: d42cb007-7c01-42d4-baf6-55437a34db0c
+Track: TRACK12
+Grade: 1
+Status: CREATED (userId: d42cb007-7c01-42d4-baf6-55437a34db0c)
+
+--- User 19/23 ---
+Email: david.thompson@2hourlearning.com
+User ID: 5c75ba29-0b66-4d91-9665-79294ae17575
+Track: TRACK6
+Grade: 4
+Status: CREATED (userId: 5c75ba29-0b66-4d91-9665-79294ae17575)
+
+--- User 20/23 ---
+Email: anora.thompson@2hourlearning.com
+User ID: 1a66c140-05e7-43cc-9d71-a42597fd908a
+Track: TRACK6
+Grade: 8
+Status: CREATED (userId: 1a66c140-05e7-43cc-9d71-a42597fd908a)
+
+--- User 21/23 ---
+Email: payson.robinson@2hourlearning.com
+User ID: 86179d60-7e4b-4804-bcc2-7a53b9c46c7f
+Track: TRACK6
+Grade: 5
+Status: CREATED (userId: 86179d60-7e4b-4804-bcc2-7a53b9c46c7f)
+
+--- User 22/23 ---
+Email: faezon.philips@2hourlearning.com
+User ID: 56a28c38-1e72-46f4-bd4e-23e8963edb0f
+Track: TRACK6
+Grade: 3
+Status: CREATED (userId: 56a28c38-1e72-46f4-bd4e-23e8963edb0f)
+
+--- User 23/23 ---
+Email: samuel.langford-sanchez@2hourlearning.com
+User ID: d3075d5d-c4f1-43bf-b41d-3f918a27f418
+Track: TRACK6
+Grade: 8
+Status: CREATED (userId: d3075d5d-c4f1-43bf-b41d-3f918a27f418)
+
+===== Summary =====
+- Users processed: 23
+- Already existing: 0
+- Successfully created in DynamoDB: 23
+- Failed to create in DynamoDB: 0
+- OneRoster integration: ~23 successful / ~0 failed
+  (Note: See logs for detailed OneRoster status)
+==================
+  

@@ -1,0 +1,463 @@
+
+===== Focus Track Update - 2025-04-28T10:24:51.602Z =====
+Found 62 users to process
+
+
+--- User 1/62 ---
+Email: mekhayll.joudrey@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 4e95097f-6612-4e37-ad8c-750016d6e48a)
+
+--- User 2/62 ---
+Email: sarah.schipper@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: fc12391c-0a5d-403c-bdb7-7b55ad913d6b)
+
+--- User 3/62 ---
+Email: patrick.henry@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 511130d8-1832-4d48-bef4-255c979deb38)
+
+--- User 4/62 ---
+Email: mallory.hobart@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: fd92626b-ba45-471e-a1f7-6a34baa478ba)
+
+--- User 5/62 ---
+Email: willa.rubenstein@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 65043b4a-4fd4-4da9-a4ae-feeb64a3e130)
+
+--- User 6/62 ---
+Email: nico.blanco@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: f3f87e1d-dd08-4f4d-8f58-57c7f9373eb9)
+
+--- User 7/62 ---
+Email: lucy.peden@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 6a8e9e99-e8ef-4055-817f-5517e8416504)
+
+--- User 8/62 ---
+Email: edward.qu@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: df7fcd1f-8dd8-4497-a48a-87a193021d8a)
+
+--- User 9/62 ---
+Email: victoria.leal@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: d5db73cc-42c2-4141-84ca-bfb006fa2a29)
+
+--- User 10/62 ---
+Email: geraldine.gurrola@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: a3920068-5cc2-4d8c-960b-42bccefcbd25)
+
+--- User 11/62 ---
+Email: emma.schipper@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: ba7b07d7-5430-4324-9d4b-86bbfbf50348)
+
+--- User 12/62 ---
+Email: leo.montagna@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: e2b3964b-b280-47e6-b330-f0e216a09d87)
+
+--- User 13/62 ---
+Email: sai.shah@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 8add24a6-fb89-4ab1-83fb-bd1e21507fe1)
+
+--- User 14/62 ---
+Email: victor.elias-galeana@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 08e10b5b-5bdd-4dab-8804-246ba69f6733)
+
+--- User 15/62 ---
+Email: sirkanden.freeman@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: b1593c1a-a7e7-45cd-869d-225928a0d698)
+
+--- User 16/62 ---
+Email: mya.hadnot@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 615e61fe-ab9b-4f46-af51-69072b341aef)
+
+--- User 17/62 ---
+Email: aleiah.jenkins@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: fdeef9b4-39b1-4c85-9143-cefccf7dd61a)
+
+--- User 18/62 ---
+Email: mason.mckinney@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: ae2ac3c0-ca8b-46eb-99d7-2ab4029f5333)
+
+--- User 19/62 ---
+Email: jazaiah.wilburn@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 2b97046d-dec3-43b9-9939-914c2afd35eb)
+
+--- User 20/62 ---
+Email: faustina.ngambo-kialengele@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 0c9e3a3e-abd9-4a8e-9fc2-52b228304962)
+
+--- User 21/62 ---
+Email: kamila.gonzalez-romero@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: b17248c4-dc3f-4494-8886-9fd3abe8729c)
+
+--- User 22/62 ---
+Email: jahde.hernandez-ramos@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 54cc07fa-2af3-493b-a2e0-fb35cc398469)
+
+--- User 23/62 ---
+Email: victoria.marrin.barrios@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 4aa41d59-d887-48fe-b539-97a6720cc8f9)
+
+--- User 24/62 ---
+Email: jasmine.merced@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 75ba1712-a0aa-421c-ade7-6c115fd63cc9)
+
+--- User 25/62 ---
+Email: alyieah.sneed@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 43e61ea6-5288-467b-9ce7-b1ce4471ea55)
+
+--- User 26/62 ---
+Email: dillinmar.lugo.marquez@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 075866d6-2cd0-49c4-a441-9dd61b62eaba)
+
+--- User 27/62 ---
+Email: sofia.cruz-peralta@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 5c060a4d-aedd-4c3f-8045-c01b4dd83079)
+
+--- User 28/62 ---
+Email: eleanor.martinez@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 0f8667fd-11fd-4f9f-95ab-6ac51a23dad6)
+
+--- User 29/62 ---
+Email: love.daceus.celius@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 7c62d41e-e949-482b-90ac-54305fd6c29d)
+
+--- User 30/62 ---
+Email: megan.chukwura@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 7cbd3f80-ea14-471e-b33c-6dad1a14912e)
+
+--- User 31/62 ---
+Email: raymond.allen@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: dfd0f32f-45c0-4cc7-851f-036a05c299a9)
+
+--- User 32/62 ---
+Email: lovely.simon@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 7a6138f3-53a5-4f81-93a8-ed9ca2409e50)
+
+--- User 33/62 ---
+Email: king.resendez@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 5b5ae37b-6dab-4884-a34f-6ce878365749)
+
+--- User 34/62 ---
+Email: cahlani.lewis@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 5becea4c-1e65-40cf-bf83-0782ae7ebdeb)
+
+--- User 35/62 ---
+Email: aurelia.lonsdale@havruta.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: e634def4-1fd5-4946-b599-cc0e11da487a)
+
+--- User 36/62 ---
+Email: thiaggo.rodriguez@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 34234a7a-38bc-45a9-97e6-8a7ccc7ba6ba)
+
+--- User 37/62 ---
+Email: austin.wong@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 83325b55-072f-4e4b-a9be-c44386b0d4c2)
+
+--- User 38/62 ---
+Email: abraham.ayad@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: d72af576-2c42-46af-aeae-5e5cd24e1f55)
+
+--- User 39/62 ---
+Email: olivia.monsalvebonotto@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: d2641b6d-daad-4487-860b-4514b10276c3)
+
+--- User 40/62 ---
+Email: pablo.cortazar@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 06817b4c-d843-403e-9ed6-ff552859e74d)
+
+--- User 41/62 ---
+Email: scott.baehr@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: ef76e3ff-70d8-4771-8e2e-5b7dc16717c6)
+
+--- User 42/62 ---
+Email: neel.balija@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 105a2262-fc20-40da-af5f-275532fc2558)
+
+--- User 43/62 ---
+Email: grace.tran@sportsacademy.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 0f0699bd-d060-4c34-a2de-0538744de53e)
+
+--- User 44/62 ---
+Email: cairo.cox@nextgenacademy.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 7c33c769-2c4c-4fd8-99ef-35d76eadc1de)
+
+--- User 45/62 ---
+Email: adriana.danieri@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: de157262-43ce-4168-a137-55748adee0d2)
+
+--- User 46/62 ---
+Email: anthonella.ochoa@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 63717150-4f96-493a-943e-3e6188afb123)
+
+--- User 47/62 ---
+Email: catherine.caballero@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 9447c79c-bd51-4dd9-bc8b-9ab8c4eae646)
+
+--- User 48/62 ---
+Email: hayes.burman@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 4808fdda-2c4d-4431-ad90-b89003d735fe)
+
+--- User 49/62 ---
+Email: scarlett.kroger@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 5fb4f721-295d-4d59-afe8-4ab4fcee3057)
+
+--- User 50/62 ---
+Email: campbell.ferguson@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 5c0e80aa-047a-46b9-a33f-74cda32dfc04)
+
+--- User 51/62 ---
+Email: oslo.singer@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 0d92f705-1fc5-4dbc-b302-fefb62f51ab0)
+
+--- User 52/62 ---
+Email: pia.cedeno@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 599f850d-cc4c-43f0-b05a-bd06c3c92e93)
+
+--- User 53/62 ---
+Email: nicole.diaz@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 5f60690f-d1b5-4192-ad99-e03c90dce71d)
+
+--- User 54/62 ---
+Email: charlotte.gutierrez@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 442b5b57-a45b-4fb3-be61-577f0661c977)
+
+--- User 55/62 ---
+Email: jay.hernandez@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 5d96c8ef-2bca-4c45-82e0-7e70c6e29a72)
+
+--- User 56/62 ---
+Email: everett.mroczkowski@valenta.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: 428daac9-83be-4438-a36c-e907fe1ecbcb)
+
+--- User 57/62 ---
+Email: elijah.knecht@alpha.school
+Previous Track: Unknown
+New Track: TRACK9
+Status: UPDATED (userId: 15bd82f2-7a3b-4481-9e0e-a1ad511ad380)
+
+--- User 58/62 ---
+Email: eva.lenington@alpha.school
+Previous Track: Unknown
+New Track: TRACK9
+Status: UPDATED (userId: 811c447d-5c27-4a25-ae01-1f915e09f36d)
+
+--- User 59/62 ---
+Email: callum.carsonalford@alpha.school
+Previous Track: Unknown
+New Track: TRACK9
+Status: UPDATED (userId: 9741628c-7133-4e2e-94bb-f95efc770fae)
+
+--- User 60/62 ---
+Email: kane.shaw@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK9
+Status: UPDATED (userId: 392ee830-f11c-432a-a847-50b682d312b6)
+
+--- User 61/62 ---
+Email: sophia.nurse@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK6
+Status: UPDATED (userId: 146a8313-eded-4c9f-a321-c3e69b99be61)
+
+--- User 62/62 ---
+Email: camila.aguilar@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK6
+Status: UPDATED (userId: 690de85d-b4e2-410f-a60d-54102e714fcc)
+
+===== Summary =====
+- Users processed: 62
+- Users found: 62
+- Users not found: 0
+- Successful updates: 62
+- Failed updates: 0
+==================
+  
+===== Focus Track Update - 2025-05-12T14:15:10.060Z =====
+Found 11 users to process
+
+
+--- User 1/11 ---
+Email: beau.stern@alpha.school
+Previous Track: Unknown
+New Track: TRACK12
+Status: UPDATED (userId: c05ab002-301f-4a29-afd9-30b37c73e8e5)
+
+--- User 2/11 ---
+Email: patrick.henry@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK9
+Status: UPDATED (userId: 511130d8-1832-4d48-bef4-255c979deb38)
+
+--- User 3/11 ---
+Email: willa.rubenstein@alpha.school
+Previous Track: Unknown
+New Track: TRACK9
+Status: UPDATED (userId: 65043b4a-4fd4-4da9-a4ae-feeb64a3e130)
+
+--- User 4/11 ---
+Email: oslo.singer@alpha.school
+Previous Track: Unknown
+New Track: TRACK9
+Status: UPDATED (userId: 0d92f705-1fc5-4dbc-b302-fefb62f51ab0)
+
+--- User 5/11 ---
+Email: theodore.salgado-singer@alpha.school
+Previous Track: Unknown
+New Track: TRACK9
+Status: UPDATED (userId: bde5685b-9abb-4607-89e2-c30f0b6b0419)
+
+--- User 6/11 ---
+Email: milam.morgan@alpha.school
+Previous Track: Unknown
+New Track: TRACK6
+Status: UPDATED (userId: ad3a039f-f957-4d79-bd88-d395d4ad0eeb)
+
+--- User 7/11 ---
+Email: corinne.mcgowan@sportsacademy.school
+Previous Track: Unknown
+New Track: TRACK6
+Status: UPDATED (userId: 90bb0b8c-0a2b-44ca-87f5-da8920e59153)
+
+--- User 8/11 ---
+Email: levi.reeves@sportsacademy.school
+Previous Track: Unknown
+New Track: TRACK6
+Status: UPDATED (userId: 24efe3e8-3746-43b4-8982-a54a174b9bf2)
+
+--- User 9/11 ---
+Email: tyiir.woods@novatio.school
+Previous Track: Unknown
+New Track: TRACK6
+Status: UPDATED (userId: b355ca1b-fa01-4e66-b7ae-57df0721e6d8)
+
+--- User 10/11 ---
+Email: ava.rosellini@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK6
+Status: UPDATED (userId: 851c32ac-24f6-4272-93c3-47a065074a02)
+
+--- User 11/11 ---
+Email: william.rosellini@2hourlearning.com
+Previous Track: Unknown
+New Track: TRACK8
+Status: UPDATED (userId: e8662be7-6672-4195-a037-9f1941b6045c)
+
+===== Summary =====
+- Users processed: 11
+- Users found: 11
+- Users not found: 0
+- Successful updates: 11
+- Failed updates: 0
+==================
+  

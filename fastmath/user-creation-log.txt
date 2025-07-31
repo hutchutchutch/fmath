@@ -1,0 +1,316 @@
+
+===== User Creation - 2025-04-28T10:18:09.377Z =====
+Found 20 unique users to process
+
+
+--- User 1/20 ---
+Email: hafsah.shirzoi.hamidi@2hourlearning.com
+User ID: 4bfc8ba7-b213-4f67-889b-3ea951d25546
+Track: TRACK12
+Grade: 1
+Status: CREATED (userId: 4bfc8ba7-b213-4f67-889b-3ea951d25546)
+
+--- User 2/20 ---
+Email: aryia.lott@2hourlearning.com
+User ID: c2be9917-b105-465d-b472-4f1cc3d23caf
+Track: TRACK12
+Grade: 1
+Status: CREATED (userId: c2be9917-b105-465d-b472-4f1cc3d23caf)
+
+--- User 3/20 ---
+Email: monica.maldonado-rafaela@2hourlearning.com
+User ID: 3988a901-bc31-49d0-baee-dbd02cdb71ad
+Track: TRACK12
+Grade: 1
+Status: CREATED (userId: 3988a901-bc31-49d0-baee-dbd02cdb71ad)
+
+--- User 4/20 ---
+Email: avra.tujios@alpha.school
+User ID: cae71989-7d89-4d2e-b5a6-e25b93852cda
+Track: TRACK12
+Grade: 1
+Status: CREATED (userId: cae71989-7d89-4d2e-b5a6-e25b93852cda)
+
+--- User 5/20 ---
+Email: emilia.lobo@alpha.school
+User ID: 1bc13c07-090a-48a0-a341-3ef6c5935209
+Track: TRACK12
+Grade: 1
+Status: CREATED (userId: 1bc13c07-090a-48a0-a341-3ef6c5935209)
+
+--- User 6/20 ---
+Email: arianna.alhades@alpha.school
+User ID: fe200536-2feb-4582-a38b-dc2ef07c8178
+Track: TRACK9
+Grade: 2
+Status: CREATED (userId: fe200536-2feb-4582-a38b-dc2ef07c8178)
+
+--- User 7/20 ---
+Email: hannah.scharf@alpha.school
+User ID: 05645772-bf54-4037-bc90-825539fb5f8b
+Track: TRACK6
+Grade: 3
+Status: CREATED (userId: 05645772-bf54-4037-bc90-825539fb5f8b)
+
+--- User 8/20 ---
+Email: harel.manor@alpha.school
+User ID: 31f68038-aa8f-49d8-a2b7-c473dabd347a
+Track: TRACK6
+Grade: 3
+Status: CREATED (userId: 31f68038-aa8f-49d8-a2b7-c473dabd347a)
+
+--- User 9/20 ---
+Email: jad.qunibi@alpha.school
+User ID: 30aee692-24e0-4b25-8494-a34ba3d26584
+Track: TRACK6
+Grade: 3
+Status: CREATED (userId: 30aee692-24e0-4b25-8494-a34ba3d26584)
+
+--- User 10/20 ---
+Email: marilyn.pastor@alpha.school
+User ID: ce8d2387-8211-4159-aa1f-e74967fd429d
+Track: TRACK6
+Grade: 3
+Status: CREATED (userId: ce8d2387-8211-4159-aa1f-e74967fd429d)
+
+--- User 11/20 ---
+Email: emma.murphy@alpha.school
+User ID: 626bffaa-2383-4203-84c5-e3f0d4c37e65
+Track: TRACK6
+Grade: 5
+Status: CREATED (userId: 626bffaa-2383-4203-84c5-e3f0d4c37e65)
+
+--- User 12/20 ---
+Email: helena.pastor@alpha.school
+User ID: eeb2de7d-ac9d-42e3-a1e0-6a9110cc699c
+Track: TRACK6
+Grade: 5
+Status: CREATED (userId: eeb2de7d-ac9d-42e3-a1e0-6a9110cc699c)
+
+--- User 13/20 ---
+Email: nathaniel.scharf@alpha.school
+User ID: 7efcd312-7682-47e2-a03b-076fcbc4561f
+Track: TRACK6
+Grade: 5
+Status: CREATED (userId: 7efcd312-7682-47e2-a03b-076fcbc4561f)
+
+--- User 14/20 ---
+Email: greyson.boyle@alpha.school
+User ID: 4dc92a18-72a4-41fb-a6ac-7da6df29bff1
+Track: TRACK6
+Grade: 6
+Status: CREATED (userId: 4dc92a18-72a4-41fb-a6ac-7da6df29bff1)
+
+--- User 15/20 ---
+Email: sam.crumley@alpha.school
+User ID: 803a1099-24de-4817-ac58-b862618f07c4
+Track: TRACK6
+Grade: 6
+Status: CREATED (userId: 803a1099-24de-4817-ac58-b862618f07c4)
+
+--- User 16/20 ---
+Email: adler.wersebe@alpha.school
+User ID: 5082e583-feb5-4322-8633-535aac82cc94
+Track: TRACK6
+Grade: 6
+Status: CREATED (userId: 5082e583-feb5-4322-8633-535aac82cc94)
+
+--- User 17/20 ---
+Email: vera.li@alpha.school
+User ID: a04b3703-ae7a-4e08-8d86-b2abbda3f5b1
+Track: TRACK6
+Grade: 8
+Status: CREATED (userId: a04b3703-ae7a-4e08-8d86-b2abbda3f5b1)
+
+--- User 18/20 ---
+Email: dillon.overton@alpha.school
+User ID: d768d604-bd4b-42b0-8f7e-1cdb63bac261
+Track: TRACK6
+Grade: 10
+Status: CREATED (userId: d768d604-bd4b-42b0-8f7e-1cdb63bac261)
+
+--- User 19/20 ---
+Email: jeremy.wang@alpha.school
+User ID: 7c55db81-f841-4ed4-a62a-38254dccc540
+Track: TRACK6
+Grade: 10
+Status: CREATED (userId: 7c55db81-f841-4ed4-a62a-38254dccc540)
+
+--- User 20/20 ---
+Email: ridhima.chelani@2hourlearning.com
+User ID: 10c6245a-b370-4a29-ac6d-115b9fd729ce
+Track: TRACK6
+Grade: 10
+Status: CREATED (userId: 10c6245a-b370-4a29-ac6d-115b9fd729ce)
+
+===== Summary =====
+- Users processed: 20
+- Already existing: 0
+- Successfully created in DynamoDB: 20
+- Failed to create in DynamoDB: 0
+- OneRoster integration: ~20 successful / ~0 failed
+  (Note: See logs for detailed OneRoster status)
+==================
+  
+===== User Creation - 2025-04-29T07:08:26.710Z =====
+Found 1 unique users to process
+
+
+--- User 1/1 ---
+Email: theodore.salgado-singer@alpha.school
+User ID: bde5685b-9abb-4607-89e2-c30f0b6b0419
+Track: TRACK9
+Grade: 2
+Status: CREATED (userId: bde5685b-9abb-4607-89e2-c30f0b6b0419)
+
+===== Summary =====
+- Users processed: 1
+- Already existing: 0
+- Successfully created in DynamoDB: 1
+- Failed to create in DynamoDB: 0
+- OneRoster integration: ~1 successful / ~0 failed
+  (Note: See logs for detailed OneRoster status)
+==================
+  
+===== User Creation - 2025-04-29T13:13:18.376Z =====
+Found 1 unique users to process
+
+
+--- User 1/1 ---
+Email: justin.wooley@2hourlearning.com
+User ID: 4e38e1f4-14e4-46e4-92d5-6c67332ecf1e
+Track: TRACK12
+Grade: 1
+Status: CREATED (userId: 4e38e1f4-14e4-46e4-92d5-6c67332ecf1e)
+
+===== Summary =====
+- Users processed: 1
+- Already existing: 0
+- Successfully created in DynamoDB: 1
+- Failed to create in DynamoDB: 0
+- OneRoster integration: ~1 successful / ~0 failed
+  (Note: See logs for detailed OneRoster status)
+==================
+  
+===== User Creation - 2025-04-30T16:21:57.336Z =====
+Found 1 unique users to process
+
+
+--- User 1/1 ---
+Email: londynn.brown@2hourlearning.com
+User ID: 76830e1e-fd9c-44a3-89bd-ef418e5d52c6
+Track: TRACK12
+Grade: 1
+Status: CREATED (userId: 76830e1e-fd9c-44a3-89bd-ef418e5d52c6)
+
+===== Summary =====
+- Users processed: 1
+- Already existing: 0
+- Successfully created in DynamoDB: 1
+- Failed to create in DynamoDB: 0
+- OneRoster integration: ~1 successful / ~0 failed
+  (Note: See logs for detailed OneRoster status)
+==================
+  
+===== User Creation - 2025-05-02T17:51:50.735Z =====
+Found 1 unique users to process
+
+
+--- User 1/1 ---
+Email: mabel.bash@alpha.school
+User ID: 2ca4e9bf-2709-416f-a9f2-e5638d7dcab5
+Track: TRACK9
+Grade: 2
+Status: CREATED (userId: 2ca4e9bf-2709-416f-a9f2-e5638d7dcab5)
+
+===== Summary =====
+- Users processed: 1
+- Already existing: 0
+- Successfully created in DynamoDB: 1
+- Failed to create in DynamoDB: 0
+- OneRoster integration: ~1 successful / ~0 failed
+  (Note: See logs for detailed OneRoster status)
+==================
+  
+===== User Creation - 2025-05-07T06:42:01.594Z =====
+Found 6 unique users to process
+
+
+--- User 1/6 ---
+Email: raul.polo.iii@alpha.school
+User ID: e617cab3-6975-4738-b74b-f6ae8312a130
+Track: TRACK6
+Grade: 6
+Status: CREATED (userId: e617cab3-6975-4738-b74b-f6ae8312a130)
+
+--- User 2/6 ---
+Email: julian.morenochar@alpha.school
+User ID: c1573a05-5629-4b09-81d4-75d44bed8288
+Track: TRACK6
+Grade: 4
+Status: CREATED (userId: c1573a05-5629-4b09-81d4-75d44bed8288)
+
+--- User 3/6 ---
+Email: valerie.morenochar@alpha.school
+User ID: a3fd8f5a-8e53-4b6d-8f5b-6c727ca78ee7
+Track: TRACK12
+Grade: 1
+Status: CREATED (userId: a3fd8f5a-8e53-4b6d-8f5b-6c727ca78ee7)
+
+--- User 4/6 ---
+Email: leila.catalina.polo@alpha.school
+User ID: 03349eca-6fc4-45a0-b953-47bbe8b612a2
+Track: TRACK6
+Grade: 5
+Status: CREATED (userId: 03349eca-6fc4-45a0-b953-47bbe8b612a2)
+
+--- User 5/6 ---
+Email: brendan.lopez@alpha.school
+User ID: 86378605-3932-43f7-9a8b-77e8c05e95ef
+Track: TRACK6
+Grade: 5
+Status: CREATED (userId: 86378605-3932-43f7-9a8b-77e8c05e95ef)
+
+--- User 6/6 ---
+Email: mason.pacetti@alpha.school
+User ID: 6b43de44-902a-4036-88ea-7274eff3c359
+Track: TRACK6
+Grade: 6
+Status: CREATED (userId: 6b43de44-902a-4036-88ea-7274eff3c359)
+
+===== Summary =====
+- Users processed: 6
+- Already existing: 0
+- Successfully created in DynamoDB: 6
+- Failed to create in DynamoDB: 0
+- OneRoster integration: ~6 successful / ~0 failed
+  (Note: See logs for detailed OneRoster status)
+==================
+  
+===== User Creation - 2025-05-07T06:47:36.833Z =====
+Found 2 unique users to process
+
+
+--- User 1/2 ---
+Email: lainey.huey@alpha.school
+User ID: 7128e9d8-6897-401c-bbc6-4a6b7357c02e
+Track: TRACK6
+Grade: 7
+Status: CREATED (userId: 7128e9d8-6897-401c-bbc6-4a6b7357c02e)
+
+--- User 2/2 ---
+Email: anabella.mena@alpha.school 
+User ID: d9b74cce-92bb-41d4-96f5-61fb2b45ce10
+Track: TRACK6
+Grade: 7
+Status: CREATED (userId: d9b74cce-92bb-41d4-96f5-61fb2b45ce10)
+
+===== Summary =====
+- Users processed: 2
+- Already existing: 0
+- Successfully created in DynamoDB: 2
+- Failed to create in DynamoDB: 0
+- OneRoster integration: ~2 successful / ~0 failed
+  (Note: See logs for detailed OneRoster status)
+==================
+  

@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+
+# Your rule content
+
+Apply focused, strategic console logs to debug the given issue. Make sure to not overcomplicate things by adding too many logs.

@@ -1,0 +1,3421 @@
+
+===== Campus Update - 2025-06-04T09:20:13.873Z =====
+Found 2 users to process
+
+
+--- User 1/2 ---
+User ID: acb4f086-bcd1-45ac-9bc6-970571f62b63
+Campus: Alpha Miami
+Email: jason.montagna@alpha.school
+Status: UPDATED
+
+--- User 2/2 ---
+User ID: cce6f8d6-216f-45fb-9211-96153e9b9d66
+Campus: Valenta Academy
+Email: atticus.gieskes@valenta.school
+Status: UPDATED
+
+===== Summary =====
+- Users processed: 2
+- Users found: 2
+- Users not found: 0
+- Successful updates: 2
+- Failed updates: 0
+==================
+  
+===== Campus Update - 2025-06-04T09:29:57.328Z =====
+Found 97 users to process
+
+
+--- User 1/97 ---
+User ID: e687028a-d5eb-4cf3-b73d-0f491399841b
+Campus: Austin K-8
+Email: jacob.kuchinsky@alpha.school
+Status: UPDATED
+
+--- User 2/97 ---
+User ID: ac6b13bc-36d1-45b3-9134-2b28f2273cb3
+Campus: Single-user 2hr learning
+Email: ariel.martel@2hourlearning.com
+Status: UPDATED
+
+--- User 3/97 ---
+User ID: aa491d31-a3e2-494e-8b0c-9ab6fbca3fdd
+Campus: Austin K-8
+Email: adrienne.laswell@alpha.school
+Status: UPDATED
+
+--- User 4/97 ---
+User ID: 663a5401-ec40-4b32-ab98-b4f32df70829
+Campus: Austin K-8
+Email: alyan.slizza@alpha.school
+Status: UPDATED
+
+--- User 5/97 ---
+User ID: 618d051f-4fd5-4015-977e-dc7c06a0e5aa
+Campus: Single-user 2hr learning
+Email: gray.duffy@2hourlearning.com
+Status: UPDATED
+
+--- User 6/97 ---
+User ID: d1d019e3-ce25-4887-a1ba-650a3fdaec34
+Campus: Austin K-8
+Email: madeline.kozun@alpha.school
+Status: UPDATED
+
+--- User 7/97 ---
+User ID: 5f60690f-d1b5-4192-ad99-e03c90dce71d
+Campus: Vita High School
+Email: nicole.diaz@2hourlearning.com
+Status: UPDATED
+
+--- User 8/97 ---
+User ID: 8c58aff7-d4ca-49c7-bdb6-56301448883b
+Campus: Austin K-8
+Email: gus.castillo@alpha.school
+Status: UPDATED
+
+--- User 9/97 ---
+User ID: 48a7b263-edc3-4582-89fb-5cd6cfd337e2
+Campus: Austin K-8
+Email: blake.flores@alpha.school
+Status: UPDATED
+
+--- User 10/97 ---
+User ID: 5c75ba29-0b66-4d91-9665-79294ae17575
+Campus: Colearn Academy
+Email: david.thompson@2hourlearning.com
+Status: UPDATED
+
+--- User 11/97 ---
+User ID: 708205de-1e34-4b7d-b57a-4eb08581b93b
+Campus: Alpha Miami
+Email: giulia.scandella@alpha.school
+Status: UPDATED
+
+--- User 12/97 ---
+User ID: 57fe8ecf-a6f0-4359-8ab2-b1c9fc66d01b
+Campus: Brownsville K-8
+Email: savannah.marrero@alpha.school
+Status: UPDATED
+
+--- User 13/97 ---
+User ID: 7c33c769-2c4c-4fd8-99ef-35d76eadc1de
+Campus: Esports Academy: Austin
+Email: cairo.cox@nextgenacademy.school
+Status: UPDATED
+
+--- User 14/97 ---
+User ID: 044d94ad-641d-43ac-9e0d-ce36b3fe4710
+Campus: Austin K-8
+Email: raphael.shinar@alpha.school
+Status: UPDATED
+
+--- User 15/97 ---
+User ID: 18d0770a-696a-4e14-b159-a925285047e7
+Campus: Alpha Orlando
+Email: matthew.hatti-correia@alpha.school
+Status: UPDATED
+
+--- User 16/97 ---
+User ID: 31f68038-aa8f-49d8-a2b7-c473dabd347a
+Campus: Austin K-8
+Email: harel.manor@alpha.school
+Status: UPDATED
+
+--- User 17/97 ---
+User ID: 5f7a1113-25e3-4a4f-8fc2-f96e7f7b1339
+Campus: Vita High School
+Email: cody.hutson@2hourlearning.com
+Status: UPDATED
+
+--- User 18/97 ---
+User ID: a6c59a9c-5391-4617-b667-2b1850848f90
+Campus: Single-user 2hr learning
+Email: scarlett.hamaoui@2hourlearning.com
+Status: UPDATED
+
+--- User 19/97 ---
+User ID: a324eba3-a343-4e41-88e6-0d92ec9ad88d
+Campus: Austin K-8
+Email: connor.cason@alpha.school
+Status: UPDATED
+
+--- User 20/97 ---
+User ID: 442b5b57-a45b-4fb3-be61-577f0661c977
+Campus: Vita High School
+Email: charlotte.gutierrez@2hourlearning.com
+Status: UPDATED
+
+--- User 21/97 ---
+User ID: a6b88e1e-5805-4662-9d01-bdef4af0407f
+Campus: ISEE Prep
+Email: stella.anaipakos@2hourlearning.com
+Status: UPDATED
+
+--- User 22/97 ---
+User ID: 333c693b-e4ab-4370-8de9-5f83c1955ffa
+Campus: Single-user 2hr learning
+Email: airielle.elliott@2hourlearning.com
+Status: UPDATED
+
+--- User 23/97 ---
+User ID: 8dc5dacd-acb1-4681-8394-6920a7cd1f61
+Campus: Sports Academy: Lakeway
+Email: eastwood.washburn@sportsacademy.school
+Status: UPDATED
+
+--- User 24/97 ---
+User ID: ca89644c-087c-4f4c-ab26-49dcc273fed2
+Campus: Austin K-8
+Email: lauren.vento@alpha.school
+Status: UPDATED
+
+--- User 25/97 ---
+User ID: 1f3c8d36-c272-485f-999a-bab28ca6cec4
+Campus: Alpha High School
+Email: paty.margainjunco@alpha.school
+Status: UPDATED
+
+--- User 26/97 ---
+User ID: a56583d3-192b-4152-abcb-a0afecd0c7d5
+Campus: Austin K-8
+Email: zara.lapointe@alpha.school
+Status: UPDATED
+
+--- User 27/97 ---
+User ID: eeb2de7d-ac9d-42e3-a1e0-6a9110cc699c
+Campus: Austin K-8
+Email: helena.pastor@alpha.school
+Status: UPDATED
+
+--- User 28/97 ---
+User ID: 02d66def-08c2-425e-92b5-24dd8836db67
+Campus: Austin K-8
+Email: zion.clark@alpha.school
+Status: UPDATED
+
+--- User 29/97 ---
+User ID: 8110ea43-2bef-4d24-ad2d-409b25f40b84
+Campus: Austin K-8
+Email: oliver.overton@alpha.school
+Status: UPDATED
+
+--- User 30/97 ---
+User ID: 244c4451-c4db-469a-b412-0012d151112d
+Campus: Texas Preparatory School
+Email: nehemiah.wilburn@2hourlearning.com
+Status: UPDATED
+
+--- User 31/97 ---
+User ID: 9b1543f5-cd6d-466c-a928-a0a5eed97012
+Campus: Brownsville K-8
+Email: lavender.marrero@alpha.school
+Status: UPDATED
+
+--- User 32/97 ---
+User ID: 26b22cf5-0062-4d58-84b7-b18af1cf084e
+Campus: Sports Academy: Lakeway
+Email: north.griswold@sportsacademy.school
+Status: UPDATED
+
+--- User 33/97 ---
+User ID: f6de1143-100e-49fb-9931-deacdc5d95c0
+Campus: Austin K-8
+Email: major.whitaker@alpha.school
+Status: UPDATED
+
+--- User 34/97 ---
+User ID: 927cbc29-e44e-444b-8629-641e0e9fdbf4
+Campus: Single-user 2hr learning
+Email: juliana.strangio@2hourlearning.com
+Status: UPDATED
+
+--- User 35/97 ---
+User ID: cdd0cf93-8971-4fa2-9066-88c7f8d98558
+Campus: Single-user 2hr learning
+Email: dashiell.dowell@2hourlearning.com
+Status: UPDATED
+
+--- User 36/97 ---
+User ID: 7ef733ef-a47e-43d4-bbf2-e8efe5dce377
+Campus: Sports Academy: Lakeway
+Email: allison.kim@sportsacademy.school
+Status: UPDATED
+
+--- User 37/97 ---
+User ID: ad2dd9f8-17e9-478d-81ca-c9580b8e8879
+Campus: High School SAT Prep
+Email: jaiden.koya@2hourlearning.com
+Status: UPDATED
+
+--- User 38/97 ---
+User ID: d38abe9e-3fca-4ae7-aefc-e8e8a98a7232
+Campus: High School SAT Prep
+Email: lawson.fass@2hourlearning.com
+Status: UPDATED
+
+--- User 39/97 ---
+User ID: e8662be7-6672-4195-a037-9f1941b6045c
+Campus: Single-user 2hr learning
+Email: william.rosellini@2hourlearning.com
+Status: UPDATED
+
+--- User 40/97 ---
+User ID: 8ce75c39-39ac-451b-8717-3499c162de5c
+Campus: Alpha High School
+Email: greyson.walker@alpha.school
+Status: UPDATED
+
+--- User 41/97 ---
+User ID: debc68b6-431b-4167-b054-5e1dc75cb713
+Campus: Texas Preparatory School
+Email: alfat.shirzoi.hamidi@2hourlearning.com
+Status: UPDATED
+
+--- User 42/97 ---
+User ID: a3920068-5cc2-4d8c-960b-42bccefcbd25
+Campus: Brownsville K-8
+Email: geraldine.gurrola@alpha.school
+Status: UPDATED
+
+--- User 43/97 ---
+User ID: 17db3a88-14db-4aaa-a8ff-80befcb80b45
+Campus: Texas Preparatory School
+Email: santiago.mosquera-rodriguez@2hourlearning.com
+Status: UPDATED
+
+--- User 44/97 ---
+User ID: 5e964be1-270e-4ea7-9085-faece0c2cf2d
+Campus: Sports Academy: Lakeway
+Email: alex.lekicbrajovic@sportsacademy.school
+Status: UPDATED
+
+--- User 45/97 ---
+User ID: 43e61ea6-5288-467b-9ce7-b1ce4471ea55
+Campus: Texas Preparatory School
+Email: alyieah.sneed@2hourlearning.com
+Status: UPDATED
+
+--- User 46/97 ---
+User ID: e082753c-0c87-466b-9ad2-59cf4eacd010
+Campus: Alpha High School
+Email: reuben.runacres@alpha.school
+Status: UPDATED
+
+--- User 47/97 ---
+User ID: 5443ce45-cf20-44a8-9845-dd45383dd721
+Campus: Austin K-8
+Email: marco.iorgulescu@alpha.school
+Status: UPDATED
+
+--- User 48/97 ---
+User ID: 7be0d77a-bada-468f-b64e-571af7c2dac8
+Campus: Austin K-8
+Email: lauren.harden@alpha.school
+Status: UPDATED
+
+--- User 49/97 ---
+User ID: e344d67c-3c35-484d-ba68-11b14eeacfdc
+Campus: Austin K-8
+Email: benjamin.valles@alpha.school
+Status: UPDATED
+
+--- User 50/97 ---
+User ID: 9d76f60b-4245-47b5-8838-0de60fefd431
+Campus: Austin K-8
+Email: test.account5@alpha.school
+Status: UPDATED
+
+--- User 51/97 ---
+User ID: 1ca67ea5-e019-4a4b-b1b3-a401a1870a96
+Campus: Austin K-8
+Email: janson.zhang@alpha.school
+Status: UPDATED
+
+--- User 52/97 ---
+User ID: 24efe3e8-3746-43b4-8982-a54a174b9bf2
+Campus: Sports Academy: Lakeway
+Email: levi.reeves@sportsacademy.school
+Status: UPDATED
+
+--- User 53/97 ---
+User ID: 3e7e4af3-ffb3-4bbb-9dfc-85eff56ab496
+Campus: Austin K-8
+Email: armin.rouwet@alpha.school
+Status: UPDATED
+
+--- User 54/97 ---
+User ID: dff82715-be2f-47f5-a74c-df3722ecc5bf
+Campus: GT School: Georgetown TX
+Email: mara.nevraumont@2hourlearning.com
+Status: UPDATED
+
+--- User 55/97 ---
+User ID: 392ee830-f11c-432a-a847-50b682d312b6
+Campus: Single-user 2hr learning
+Email: kane.shaw@2hourlearning.com
+Status: UPDATED
+
+--- User 56/97 ---
+User ID: eb3311e6-65e5-47c8-a019-3432f3e20284
+Campus: Alpha Miami
+Email: juliana.orloff@alpha.school
+Status: UPDATED
+
+--- User 57/97 ---
+User ID: 6b78c94f-4ce5-47db-87e0-c2dfd60ea52d
+Campus: Austin K-8
+Email: byron.attridge@alpha.school
+Status: UPDATED
+
+--- User 58/97 ---
+User ID: 22fb2e6c-5c2d-4673-a372-1d326907cf43
+Campus: Sports Academy: Lakeway
+Email: oliver.mcfadden@sportsacademy.school
+Status: UPDATED
+
+--- User 59/97 ---
+User ID: 80dfc849-69fa-4e25-a469-a1fbfb29db27
+Campus: Austin K-8
+Email: branson.pfiester@alpha.school
+Status: UPDATED
+
+--- User 60/97 ---
+User ID: 1e32e4cc-d0fa-4e59-be49-649a87364ab9
+Campus: Austin K-8
+Email: zane.thornton@alpha.school
+Status: UPDATED
+
+--- User 61/97 ---
+User ID: 5d96c8ef-2bca-4c45-82e0-7e70c6e29a72
+Campus: Vita High School
+Email: jay.hernandez@2hourlearning.com
+Status: UPDATED
+
+--- User 62/97 ---
+User ID: 60d56cbd-d268-4bff-89d6-78bc37b3bb1e
+Campus: Austin K-8
+Email: ayrton.attia@alpha.school
+Status: UPDATED
+
+--- User 63/97 ---
+User ID: 1c599616-b162-4861-ad16-28dc6f48aaac
+Campus: Texas Preparatory School
+Email: cristhofer.martinez-perez@2hourlearning.com
+Status: UPDATED
+
+--- User 64/97 ---
+User ID: 172bd638-b3fb-4213-bb21-159e68b35620
+Campus: GT School: Georgetown TX
+Email: lucas.sanner@2hourlearning.com
+Status: UPDATED
+
+--- User 65/97 ---
+User ID: 511130d8-1832-4d48-bef4-255c979deb38
+Campus: Single-user 2hr learning
+Email: patrick.henry@2hourlearning.com
+Status: UPDATED
+
+--- User 66/97 ---
+User ID: 088fb407-f8b1-4641-89d4-6d396b1132b4
+Campus: Austin K-8
+Email: asha.nagar@alpha.school
+Status: UPDATED
+
+--- User 67/97 ---
+User ID: 1871800c-9b2b-44a0-afce-ee4d09b24354
+Campus: Novatio
+Email: anabeth.blodgett@novatio.school
+Status: UPDATED
+
+--- User 68/97 ---
+User ID: d2989034-b337-485a-81dc-50e24241ccd8
+Campus: Austin K-8
+Email: diego.bash@alpha.school
+Status: UPDATED
+
+--- User 69/97 ---
+User ID: 8add24a6-fb89-4ab1-83fb-bd1e21507fe1
+Campus: Alpha Miami
+Email: sai.shah@alpha.school
+Status: UPDATED
+
+--- User 70/97 ---
+User ID: 321bcb15-6e80-48a5-b460-2e17c61c7d29
+Campus: Single-user 2hr learning
+Email: joshua.albar@2hourlearning.com
+Status: UPDATED
+
+--- User 71/97 ---
+User ID: b32d96ca-9c61-45a2-9eaf-0f0da5d29a1e
+Campus: Alpha High School
+Email: michael.cai@alpha.school
+Status: UPDATED
+
+--- User 72/97 ---
+User ID: 0930bd4d-5292-4a4a-a783-1b64dc51895e
+Campus: Alpha Miami
+Email: isabella.delariva@alpha.school
+Status: UPDATED
+
+--- User 73/97 ---
+User ID: 6f72323c-d4ef-4c10-a697-b820191dffd0
+Campus: Austin K-8
+Email: kai.sticker@alpha.school
+Status: UPDATED
+
+--- User 74/97 ---
+User ID: 95c245d8-94b0-40e9-820d-3b6839180e2d
+Campus: Austin K-8
+Email: love.lalla-pagan@alpha.school
+Status: UPDATED
+
+--- User 75/97 ---
+User ID: a8f10d94-3af0-4e74-a3d6-d3137d7c82b2
+Campus: Austin K-8
+Email: jacob.signor@alpha.school
+Status: UPDATED
+
+--- User 76/97 ---
+User ID: 90bb0b8c-0a2b-44ca-87f5-da8920e59153
+Campus: Sports Academy: Lakeway
+Email: corinne.mcgowan@sportsacademy.school
+Status: UPDATED
+
+--- User 77/97 ---
+User ID: 16b42a90-d9d6-4b65-9b83-d93e2abbbca3
+Campus: Alpha Miami
+Email: kirsten.hug@alpha.school
+Status: UPDATED
+
+--- User 78/97 ---
+User ID: fcda99de-a4d0-4ac8-82e5-a4634f4474c5
+Campus: Sports Academy: Lakeway
+Email: jax.luebke@sportsacademy.school
+Status: UPDATED
+
+--- User 79/97 ---
+User ID: 4ddd6033-3f9b-47c8-b415-248e76672360
+Campus: Austin K-8
+Email: nadine.romman@alpha.school
+Status: UPDATED
+
+--- User 80/97 ---
+User ID: af5ec32a-56e7-4195-8a15-cfdf4366f8c5
+Campus: Austin K-8
+Email: eva.mentgen@alpha.school
+Status: UPDATED
+
+--- User 81/97 ---
+User ID: bb416fe1-a451-482f-ac24-bb288c1a5563
+Campus: Brownsville K-8
+Email: landon.thach@alpha.school
+Status: UPDATED
+
+--- User 82/97 ---
+User ID: 20041b13-b93d-4ad9-9a64-8c42505e79ed
+Campus: Austin K-8
+Email: zaid.qunibi@alpha.school
+Status: UPDATED
+
+--- User 83/97 ---
+User ID: 81229b2a-bb88-4c76-80bd-0766de5fecf4
+Campus: Austin K-8
+Email: william.nolan@alpha.school
+Status: UPDATED
+
+--- User 84/97 ---
+User ID: 6cf3cd66-3d3b-4a06-904a-64992a8e7e19
+Campus: Brownsville K-8
+Email: logan.campbell@alpha.school
+Status: UPDATED
+
+--- User 85/97 ---
+User ID: 9acf8170-2190-4037-83bc-39a8473e082e
+Campus: Alpha Miami
+Email: abigail.constain@alpha.school
+Status: UPDATED
+
+--- User 86/97 ---
+User ID: 5082e583-feb5-4322-8633-535aac82cc94
+Campus: Alpha Houston
+Email: adler.wersebe@alpha.school
+Status: UPDATED
+
+--- User 87/97 ---
+User ID: 012dc603-7ddd-4ca4-986d-9fb9a3d03d30
+Campus: Valenta Academy
+Email: brandon.gonzales@valenta.school
+Status: UPDATED
+
+--- User 88/97 ---
+User ID: ca51c3cb-72e9-46c7-914f-d315634c9c73
+Campus: Valenta Academy
+Email: joshua.mullins@valenta.school
+Status: UPDATED
+
+--- User 89/97 ---
+User ID: d417dac3-e445-4309-9c0d-0d178792be0c
+Campus: Austin K-8
+Email: ali.romman@alpha.school
+Status: UPDATED
+
+--- User 90/97 ---
+User ID: c44ca1f4-09bd-4c81-a9e0-49d844f657ff
+Campus: Austin K-8
+Email: lukas.siers@alpha.school
+Status: UPDATED
+
+--- User 91/97 ---
+User ID: d9c373d3-9dab-4ac8-8d5a-a6e78364982d
+Campus: Centner Academy
+Email: aviva.centner@2hourlearning.com
+Status: UPDATED
+
+--- User 92/97 ---
+User ID: fb6f7a7b-ca6b-4fae-b1ae-c1d2f6f4e5d5
+Campus: Alpha Miami
+Email: antonio.gutierrez@alpha.school
+Status: UPDATED
+
+--- User 93/97 ---
+User ID: d79120b9-13e0-431e-9829-7b56ff17ada2
+Campus: Alpha Miami
+Email: bernardo.adams@alpha.school
+Status: UPDATED
+
+--- User 94/97 ---
+User ID: 3b72864e-0319-4b25-b4f0-c8f0f8bbb1bd
+Campus: Texas Preparatory School
+Email: carla.tarra-palacios@2hourlearning.com
+Status: UPDATED
+
+--- User 95/97 ---
+User ID: 9c46b08f-f1e4-422d-bbc4-02ff3421c0ea
+Campus: Alpha Miami
+Email: justin.rodriguez@alpha.school
+Status: UPDATED
+
+--- User 96/97 ---
+User ID: 57ab9bfa-a086-4157-be99-14858d62a92a
+Campus: Texas Preparatory School
+Email: jalayah.washington@2hourlearning.com
+Status: UPDATED
+
+--- User 97/97 ---
+User ID: 9cacce3c-8996-45c1-ab19-0e493471b303
+Campus: Alpha Miami
+Email: frederico.gutierrez@alpha.school
+Status: UPDATED
+
+===== Summary =====
+- Users processed: 97
+- Users found: 97
+- Users not found: 0
+- Successful updates: 97
+- Failed updates: 0
+==================
+  
+===== Campus Update - 2025-06-04T09:35:33.896Z =====
+Found 100 users to process
+
+
+--- User 1/100 ---
+User ID: 5dd6c03a-10d6-4f25-bbc7-039a4717ca09
+Campus: Austin K-8
+Email: knox.turner@alpha.school
+Status: UPDATED
+
+--- User 2/100 ---
+User ID: 7baed1b0-8d56-43b0-9f8d-32fdd83451eb
+Campus: High School SAT Prep
+Email: keyen.gupta@2hourlearning.com
+Status: UPDATED
+
+--- User 3/100 ---
+User ID: b623ef42-7179-40a0-99d0-794987753660
+Campus: Alpha High School
+Email: cruce.saunders@alpha.school
+Status: UPDATED
+
+--- User 4/100 ---
+User ID: e0b01a78-9f47-4a2a-860f-6092dae3338c
+Campus: Single-user 2hr learning
+Email: shepherd.rogersmora@2hourlearning.com
+Status: UPDATED
+
+--- User 5/100 ---
+User ID: 690de85d-b4e2-410f-a60d-54102e714fcc
+Campus: Single-user 2hr learning
+Email: camila.aguilar@2hourlearning.com
+Status: UPDATED
+
+--- User 6/100 ---
+User ID: a94f666d-3b19-4ccd-8640-9be08cc17ca8
+Campus: Austin K-8
+Email: iker.negrete@alpha.school
+Status: UPDATED
+
+--- User 7/100 ---
+User ID: 2c13f68c-3406-4411-9f66-60a18004bf61
+Campus: Austin K-8
+Email: julia.bonyun@alpha.school
+Status: UPDATED
+
+--- User 8/100 ---
+User ID: c1513b35-91d9-423d-81d3-1965f787c64e
+Campus: Colearn Academy
+Email: gabriella.gonzalez@2hourlearning.com
+Status: UPDATED
+
+--- User 9/100 ---
+User ID: 1c4f57e1-8980-416f-86eb-00c769191161
+Campus: Alpha Miami
+Email: tykhon.kotkovskyi@alpha.school
+Status: UPDATED
+
+--- User 10/100 ---
+User ID: 3f8b08af-3e9c-4923-9730-c53e0ec591d5
+Campus: Alpha High School
+Email: aoife.huey@alpha.school
+Status: UPDATED
+
+--- User 11/100 ---
+User ID: 89347b24-dd2d-405b-bbf7-f14272ea16b0
+Campus: Texas Preparatory School
+Email: treyon.toussaint@2hourlearning.com
+Status: UPDATED
+
+--- User 12/100 ---
+User ID: 84d87519-db1a-4b1f-90b1-aa6a20e1e557
+Campus: Alpha Miami
+Email: heaven.calderon@alpha.school
+Status: UPDATED
+
+--- User 13/100 ---
+User ID: 05e32188-877a-4aac-a106-16c6de228ad5
+Campus: Alpha High School
+Email: claire.robb@alpha.school
+Status: UPDATED
+
+--- User 14/100 ---
+User ID: 2f9fb55f-2be6-4c4e-b503-c20b8d8747e6
+Campus: Alpha High School
+Email: maxwell.smart@alpha.school
+Status: UPDATED
+
+--- User 15/100 ---
+User ID: ead86846-e018-4e59-bad4-8faa911496d1
+Campus: Austin K-8
+Email: noah.cowher@alpha.school
+Status: UPDATED
+
+--- User 16/100 ---
+User ID: 4eec3945-86e7-4295-8c02-5f7b538955b4
+Campus: Alpha High School
+Email: oliver.auvray@alpha.school
+Status: UPDATED
+
+--- User 17/100 ---
+User ID: 3cb7120a-6d0b-4939-9bc6-ec9e8ab92bf0
+Campus: Austin K-8
+Email: rania.caberwal@alpha.school
+Status: UPDATED
+
+--- User 18/100 ---
+User ID: 1f470aea-eb55-486b-ad88-52f392f2b5ec
+Campus: Alpha Miami
+Email: ozzie.lowe@alpha.school
+Status: UPDATED
+
+--- User 19/100 ---
+User ID: d5db73cc-42c2-4141-84ca-bfb006fa2a29
+Campus: Brownsville K-8
+Email: victoria.leal@alpha.school
+Status: UPDATED
+
+--- User 20/100 ---
+User ID: 58e32107-a698-48a6-9c01-eede9b47d109
+Campus: Single-user 2hr learning
+Email: leyson.bryant@2hourlearning.com
+Status: UPDATED
+
+--- User 21/100 ---
+User ID: aae000bf-1999-48ba-b68c-cd4e9e742427
+Campus: Alpha High School
+Email: emily.smith@alpha.school
+Status: UPDATED
+
+--- User 22/100 ---
+User ID: 9648aff9-3361-4f0c-bc1d-3b1b9283268b
+Campus: Austin K-8
+Email: ethan.wong@alpha.school
+Status: UPDATED
+
+--- User 23/100 ---
+User ID: 56a28c38-1e72-46f4-bd4e-23e8963edb0f
+Campus: Colearn Academy
+Email: faezon.philips@2hourlearning.com
+Status: UPDATED
+
+--- User 24/100 ---
+User ID: cfaea049-c072-46a4-b3f9-59c4314a3967
+Campus: Texas Preparatory School
+Email: amariah.johnson@2hourlearning.com
+Status: UPDATED
+
+--- User 25/100 ---
+User ID: b5bfbdd1-0f3a-4248-8b7a-acdbc724fbf7
+Campus: Single-user 2hr learning
+Email: joanna.victorian@2hourlearning.com
+Status: UPDATED
+
+--- User 26/100 ---
+User ID: 0f0699bd-d060-4c34-a2de-0538744de53e
+Campus: Sports Academy: Lakeway
+Email: grace.tran@sportsacademy.school
+Status: UPDATED
+
+--- User 27/100 ---
+User ID: b420ec40-b34c-4477-b8e7-ca329b0427a1
+Campus: Alpha Miami
+Email: amelia.barakat@alpha.school
+Status: UPDATED
+
+--- User 28/100 ---
+User ID: 8a28c736-5c0f-4d3d-a98f-a6246eaed965
+Campus: Single-user 2hr learning
+Email: beckett.stares@2hourlearning.com
+Status: UPDATED
+
+--- User 29/100 ---
+User ID: 7395e99d-a213-48b7-b1a1-067816083f3b
+Campus: Esports Academy: Austin
+Email: felix.cole@nextgenacademy.school
+Status: UPDATED
+
+--- User 30/100 ---
+User ID: 1599d5c3-17d9-4e7a-9352-4935cf6f78f5
+Campus: Austin K-8
+Email: alessandra.green@alpha.school
+Status: UPDATED
+
+--- User 31/100 ---
+User ID: 0b636a33-4c76-41d8-8061-7f4d213cde71
+Campus: Alpha Miami
+Email: emma.correa@alpha.school
+Status: UPDATED
+
+--- User 32/100 ---
+User ID: 60724b1d-4000-4c58-b2e0-c43dfad2e916
+Campus: Austin K-8
+Email: parker.carlson@alpha.school
+Status: UPDATED
+
+--- User 33/100 ---
+User ID: 7b276c16-c573-480f-962b-d92dc2d8e160
+Campus: Austin K-8
+Email: max.vaughan@alpha.school
+Status: UPDATED
+
+--- User 34/100 ---
+User ID: 0291f3e2-7385-459e-a401-03865b6bcfdc
+Campus: Sports Academy: Lakeway
+Email: adalina.schumann@sportsacademy.school
+Status: UPDATED
+
+--- User 35/100 ---
+User ID: d4935ced-8a3c-4f3f-89b2-db2be5cd8b04
+Campus: Single-user 2hr learning
+Email: sullivan.stares@2hourlearning.com
+Status: UPDATED
+
+--- User 36/100 ---
+User ID: d7d6f57d-5e17-43a5-b25e-03212ab8452a
+Campus: Austin K-8
+Email: eleanor.paul@alpha.school
+Status: UPDATED
+
+--- User 37/100 ---
+User ID: 3706d839-7f55-4b98-a0aa-558e5dcaa570
+Campus: Valenta Academy
+Email: orion.lira@valenta.school
+Status: UPDATED
+
+--- User 38/100 ---
+User ID: 4daf5f5a-43df-4be7-962a-897c8b21189f
+Campus: Austin K-8
+Email: aheli.shah@alpha.school
+Status: UPDATED
+
+--- User 39/100 ---
+User ID: fd92626b-ba45-471e-a1f7-6a34baa478ba
+Campus: Austin K-8
+Email: mallory.hobart@alpha.school
+Status: UPDATED
+
+--- User 40/100 ---
+User ID: 2b43fe6c-abfe-4f5c-8405-ee19140078d3
+Campus: Austin K-8
+Email: tate.price@alpha.school
+Status: UPDATED
+
+--- User 41/100 ---
+User ID: fdeef9b4-39b1-4c85-9143-cefccf7dd61a
+Campus: Texas Preparatory School
+Email: aleiah.jenkins@2hourlearning.com
+Status: UPDATED
+
+--- User 42/100 ---
+User ID: 4e95097f-6612-4e37-ad8c-750016d6e48a
+Campus: Brownsville K-8
+Email: mekhayll.joudrey@alpha.school
+Status: UPDATED
+
+--- User 43/100 ---
+User ID: e28937fa-e86a-4e3e-881d-5b288760050b
+Campus: Austin K-8
+Email: wyatt.signor@alpha.school
+Status: UPDATED
+
+--- User 44/100 ---
+User ID: 44931538-9e89-4b3e-830c-86aedc7c4947
+Campus: Sports Academy: Lakeway
+Email: silaswalker.roughton@alpha.school
+Status: UPDATED
+
+--- User 45/100 ---
+User ID: 45ccfafc-d349-4110-9541-a45aa6888869
+Campus: Single-user 2hr learning
+Email: sawyer.bryant@2hourlearning.com
+Status: UPDATED
+
+--- User 46/100 ---
+User ID: e663090c-d6b9-4a52-a2d1-17552795e447
+Campus: Colearn Academy
+Email: hunter.dastrup@2hourlearning.com
+Status: UPDATED
+
+--- User 47/100 ---
+User ID: 6cfd83da-fc36-4859-8837-1bc59412255e
+Campus: Valenta Academy
+Email: genevieve.zubovsky@valenta.school
+Status: UPDATED
+
+--- User 48/100 ---
+User ID: 0c9e3a3e-abd9-4a8e-9fc2-52b228304962
+Campus: Texas Preparatory School
+Email: faustina.ngambo-kialengele@2hourlearning.com
+Status: UPDATED
+
+--- User 49/100 ---
+User ID: 833ddf01-9639-402d-a46c-6e8f891addfe
+Campus: GT School: Georgetown TX
+Email: krish.bhakta@2hourlearning.com
+Status: UPDATED
+
+--- User 50/100 ---
+User ID: e78f3884-534e-4f77-afef-b2ac1a7e8ae3
+Campus: Colearn Academy
+Email: isaiah.murray@2hourlearning.com
+Status: UPDATED
+
+--- User 51/100 ---
+User ID: fafc0c5f-55d0-4855-842e-aa0ad02df1ba
+Campus: Alpha Miami
+Email: abigail.reyes@alpha.school
+Status: UPDATED
+
+--- User 52/100 ---
+User ID: cae71989-7d89-4d2e-b5a6-e25b93852cda
+Campus: Austin K-8
+Email: avra.tujios@alpha.school
+Status: UPDATED
+
+--- User 53/100 ---
+User ID: 4aa566b9-180b-4838-be34-2e41898f3363
+Campus: Alpha Orlando
+Email: lenora.lovell@alpha.school
+Status: UPDATED
+
+--- User 54/100 ---
+User ID: 428daac9-83be-4438-a36c-e907fe1ecbcb
+Campus: Valenta Academy
+Email: everett.mroczkowski@valenta.school
+Status: UPDATED
+
+--- User 55/100 ---
+User ID: 05b0e3d9-057c-4d63-a877-b677dc4fd28a
+Campus: Austin K-8
+Email: james.gregory@alpha.school
+Status: UPDATED
+
+--- User 56/100 ---
+User ID: 139012b4-5192-4cee-958b-a91490ac547f
+Campus: High School SAT Prep
+Email: dilan.koya@2hourlearning.com
+Status: UPDATED
+
+--- User 57/100 ---
+User ID: 2e58c7ba-b7b1-45aa-aba9-301ef3a90851
+Campus: Single-user 2hr learning
+Email: amelia.lucas@2hourlearning.com
+Status: UPDATED
+
+--- User 58/100 ---
+User ID: 246c151d-2b9d-42eb-8434-67c9d2f55b03
+Campus: Alpha High School
+Email: stella.cole@alpha.school
+Status: UPDATED
+
+--- User 59/100 ---
+User ID: 86179d60-7e4b-4804-bcc2-7a53b9c46c7f
+Campus: Colearn Academy
+Email: payson.robinson@2hourlearning.com
+Status: UPDATED
+
+--- User 60/100 ---
+User ID: a9addd4b-131f-472a-b322-c537a7f4b75e
+Campus: Austin K-8
+Email: ava.ackerson@alpha.school
+Status: UPDATED
+
+--- User 61/100 ---
+User ID: 587df955-dac7-42fb-9fff-82495ac5168b
+Campus: Alpha High School
+Email: aviana.karnell@alpha.school
+Status: UPDATED
+
+--- User 62/100 ---
+User ID: 6e4285bb-f26f-4f60-b4e9-cb3641b94c82
+Campus: Austin K-8
+Email: jaxon.siers@alpha.school
+Status: UPDATED
+
+--- User 63/100 ---
+User ID: 00e1bad8-e53b-422b-aae6-47ceb0fb9053
+Campus: Austin K-8
+Email: donnie.moore@alpha.school
+Status: UPDATED
+
+--- User 64/100 ---
+User ID: 34470b02-07fc-42ca-87e8-3f57de3ee814
+Campus: Alpha High School
+Email: tatum.lemkau@alpha.school
+Status: UPDATED
+
+--- User 65/100 ---
+User ID: 7c62d41e-e949-482b-90ac-54305fd6c29d
+Campus: Texas Preparatory School
+Email: love.daceus.celius@2hourlearning.com
+Status: UPDATED
+
+--- User 66/100 ---
+User ID: aee3cc27-f41d-431a-947b-aa402727f05c
+Campus: Austin K-8
+Email: lillian.donoso@alpha.school
+Status: UPDATED
+
+--- User 67/100 ---
+User ID: 1ba6cec7-2828-4d49-8699-61841dac6a1c
+Campus: Colearn Academy
+Email: kaylie.thompson@2hourlearning.com
+Status: UPDATED
+
+--- User 68/100 ---
+User ID: ef2fb0cf-40eb-47d8-ad74-222bc18646a9
+Campus: Austin K-8
+Email: hazel.salton@alpha.school
+Status: UPDATED
+
+--- User 69/100 ---
+User ID: ae3f7d64-6216-484a-b345-942e3db0ea4f
+Campus: Texas Preparatory School
+Email: mikyi.alexander@2hourlearning.com
+Status: UPDATED
+
+--- User 70/100 ---
+User ID: 9ce7677b-7c5a-4a10-bab7-ece4bcf5fe9d
+Campus: Austin K-8
+Email: ezra.allred@alpha.school
+Status: UPDATED
+
+--- User 71/100 ---
+User ID: 7dd3f460-6fb1-4b84-bf00-a2d52d5b9e09
+Campus: Austin K-8
+Email: ian.mentgen@alpha.school
+Status: UPDATED
+
+--- User 72/100 ---
+User ID: 4d31c5c7-cd44-43e9-8090-d9f73153926d
+Campus: High School SAT Prep
+Email: teststudent2025@alpha.school
+Status: UPDATED
+
+--- User 73/100 ---
+User ID: ad3a039f-f957-4d79-bd88-d395d4ad0eeb
+Campus: Single-user 2hr learning
+Email: milam.morgan@alpha.school
+Status: UPDATED
+
+--- User 74/100 ---
+User ID: dfd0f32f-45c0-4cc7-851f-036a05c299a9
+Campus: Texas Preparatory School
+Email: raymond.allen@2hourlearning.com
+Status: UPDATED
+
+--- User 75/100 ---
+User ID: 68c0e9bb-ab6b-438d-951c-288d73866d10
+Campus: High School SAT Prep
+Email: sloka.vudumu@2hourlearning.com
+Status: UPDATED
+
+--- User 76/100 ---
+User ID: eb4bf921-842b-4419-9bf4-a88da5b237a4
+Campus: Alpha Miami
+Email: jason.dziuba@alpha.school
+Status: UPDATED
+
+--- User 77/100 ---
+User ID: 5f099895-caa1-460f-b099-cc38db115aa4
+Campus: Austin K-8
+Email: anya.ackerson@alpha.school
+Status: UPDATED
+
+--- User 78/100 ---
+User ID: 6a8e9e99-e8ef-4055-817f-5517e8416504
+Campus: Brownsville K-8
+Email: lucy.peden@alpha.school
+Status: UPDATED
+
+--- User 79/100 ---
+User ID: 1045a021-25be-4076-a2c1-795df7c143aa
+Campus: Austin K-8
+Email: ren.sticker@alpha.school
+Status: UPDATED
+
+--- User 80/100 ---
+User ID: dd37da49-bfc1-45be-82d5-0bb63fbccdf6
+Campus: Texas Preparatory School
+Email: terranae.turner@2hourlearning.com
+Status: UPDATED
+
+--- User 81/100 ---
+User ID: 804328af-6ada-4e20-9d18-c1d7a34adb65
+Campus: Valenta Academy
+Email: jackson.dyer@valenta.school
+Status: UPDATED
+
+--- User 82/100 ---
+User ID: d3075d5d-c4f1-43bf-b41d-3f918a27f418
+Campus: Colearn Academy
+Email: samuel.langford-sanchez@2hourlearning.com
+Status: UPDATED
+
+--- User 83/100 ---
+User ID: b590221a-7d99-4641-a799-b7eb2608a580
+Campus: Alpha High School
+Email: austin.way@alpha.school
+Status: UPDATED
+
+--- User 84/100 ---
+User ID: 8bcc71d5-d722-4776-9caa-f00c3906704e
+Campus: Austin K-8
+Email: sophia.reicher@alpha.school
+Status: UPDATED
+
+--- User 85/100 ---
+User ID: 75ba1712-a0aa-421c-ade7-6c115fd63cc9
+Campus: Texas Preparatory School
+Email: jasmine.merced@2hourlearning.com
+Status: UPDATED
+
+--- User 86/100 ---
+User ID: 76830e1e-fd9c-44a3-89bd-ef418e5d52c6
+Campus: Texas Preparatory School
+Email: londynn.brown@2hourlearning.com
+Status: UPDATED
+
+--- User 87/100 ---
+User ID: 057871e9-8274-48f3-9520-fe5e2cb51b49
+Campus: High School SAT Prep
+Email: jash.jagadeesan@2hourlearning.com
+Status: UPDATED
+
+--- User 88/100 ---
+User ID: 42bc2d6d-6546-416b-93cc-146ffaa8c63f
+Campus: Single-user 2hr learning
+Email: zara.williams@2hourlearning.com
+Status: UPDATED
+
+--- User 89/100 ---
+User ID: 32435db9-f977-487b-b380-c4f75424e8df
+Campus: Austin K-8
+Email: rivers.yong@alpha.school
+Status: UPDATED
+
+--- User 90/100 ---
+User ID: 60b4f9cb-d68d-4049-9dca-25633c27d972
+Campus: Novatio
+Email: kigen.gray@novatio.school
+Status: UPDATED
+
+--- User 91/100 ---
+User ID: ac67e72f-87e2-47cc-8448-cc07fc7197f7
+Campus: Austin K-8
+Email: michaeljohn.sewell@alpha.school
+Status: UPDATED
+
+--- User 92/100 ---
+User ID: be6cae96-e9f7-414d-8089-79ceb2545c1d
+Campus: Sports Academy: Lakeway
+Email: liv.hersh@sportsacademy.school
+Status: UPDATED
+
+--- User 93/100 ---
+User ID: 4808fdda-2c4d-4431-ad90-b89003d735fe
+Campus: Austin K-8
+Email: hayes.burman@alpha.school
+Status: UPDATED
+
+--- User 94/100 ---
+User ID: 63545030-ffda-4d6d-8598-bbcb5bcef4c8
+Campus: Valenta Academy
+Email: lisa.olson@valenta.school
+Status: UPDATED
+
+--- User 95/100 ---
+User ID: 1039fd67-7228-4028-9e67-6f539cc205e5
+Campus: Sports Academy: Lakeway
+Email: kane.burtonmoralez@sportsacademy.school
+Status: UPDATED
+
+--- User 96/100 ---
+User ID: 4347de8d-d657-4bce-bbb1-0f833cd6a6f0
+Campus: Alpha High School
+Email: luka.scaletta@alpha.school
+Status: UPDATED
+
+--- User 97/100 ---
+User ID: 00aeb27e-8a41-43f9-9b08-01853bc1dbea
+Campus: GT School: Georgetown TX
+Email: everest.nevraumont@2hourlearning.com
+Status: UPDATED
+
+--- User 98/100 ---
+User ID: 4aa41d59-d887-48fe-b539-97a6720cc8f9
+Campus: Texas Preparatory School
+Email: victoria.marrin.barrios@2hourlearning.com
+Status: UPDATED
+
+--- User 99/100 ---
+User ID: b1ed1cb3-8ce0-4c16-b3fd-865157de0786
+Campus: Valenta Academy
+Email: garrett.mullins@valenta.school
+Status: UPDATED
+
+--- User 100/100 ---
+User ID: 243f962c-999f-444e-9ae8-b395fcfc30bc
+Campus: Alpha Miami
+Email: olivia.orloff@alpha.school
+Status: UPDATED
+
+===== Summary =====
+- Users processed: 100
+- Users found: 100
+- Users not found: 0
+- Successful updates: 100
+- Failed updates: 0
+==================
+  
+===== Campus Update - 2025-06-04T09:38:36.224Z =====
+Found 100 users to process
+
+
+--- User 1/100 ---
+User ID: d768d604-bd4b-42b0-8f7e-1cdb63bac261
+Campus: Alpha High School
+Email: dillon.overton@alpha.school
+Status: UPDATED
+
+--- User 2/100 ---
+User ID: 79e35f93-88b8-454f-9411-f66e60b4292d
+Campus: Austin K-8
+Email: dsean.harden@alpha.school
+Status: UPDATED
+
+--- User 3/100 ---
+User ID: 4daf8b94-56fc-4c74-b58c-e47a9799baa2
+Campus: GT School: Georgetown TX
+Email: nate.evans@2hourlearning.com
+Status: UPDATED
+
+--- User 4/100 ---
+User ID: c581edfd-b5c5-4a18-9a73-366817bc5fb6
+Campus: Brownsville K-8
+Email: raegan.middleton@alpha.school
+Status: UPDATED
+
+--- User 5/100 ---
+User ID: 2063e897-277d-4869-b13c-b3c434ac4324
+Campus: Alpha Miami
+Email: julie.saint@alpha.school
+Status: UPDATED
+
+--- User 6/100 ---
+User ID: 2daf49f8-3988-48d9-b685-2f5869b90c0c
+Campus: Austin K-8
+Email: shepperd.pfiester@alpha.school
+Status: UPDATED
+
+--- User 7/100 ---
+User ID: 004c229d-e10e-4783-b706-cfc658371f9e
+Campus: Alpha Miami
+Email: penelope.marty@alpha.school
+Status: UPDATED
+
+--- User 8/100 ---
+User ID: ae2ac3c0-ca8b-46eb-99d7-2ab4029f5333
+Campus: Texas Preparatory School
+Email: mason.mckinney@2hourlearning.com
+Status: UPDATED
+
+--- User 9/100 ---
+User ID: 3289e5f4-eb87-4d56-a8f2-6698962795b5
+Campus: Brownsville K-8
+Email: emery.cox@alpha.school
+Status: UPDATED
+
+--- User 10/100 ---
+User ID: f99e947e-e4c0-49c9-acd7-08b81590b8bc
+Campus: Austin K-8
+Email: anaya.lenington@alpha.school
+Status: UPDATED
+
+--- User 11/100 ---
+User ID: 0bf206c9-3597-4d19-a11b-ec8d206873e0
+Campus: Single-user 2hr learning
+Email: tatiana.carrion@2hourlearning.com
+Status: UPDATED
+
+--- User 12/100 ---
+User ID: c24a30f5-ddef-4dd8-ba2d-6fb8d522968b
+Campus: Sports Academy: Lakeway
+Email: braeden.conn@sportsacademy.school
+Status: UPDATED
+
+--- User 13/100 ---
+User ID: 6a652147-d331-4249-83da-fd663fe8a9e6
+Campus: Austin K-8
+Email: hannah.brown@alpha.school
+Status: UPDATED
+
+--- User 14/100 ---
+User ID: be1ad295-ed0e-4cf4-8633-71668f69cd89
+Campus: Brownsville K-8
+Email: abigail.hunter@alpha.school
+Status: UPDATED
+
+--- User 15/100 ---
+User ID: f213c494-e5ab-4c2b-b16b-be09dfce7c9c
+Campus: High School SAT Prep
+Email: ananya.peesu@2hourlearning.com
+Status: UPDATED
+
+--- User 16/100 ---
+User ID: 67160133-ee4c-4872-a34d-0750f1388fbc
+Campus: Single-user 2hr learning
+Email: kinzie.campbell@2hourlearning.com
+Status: UPDATED
+
+--- User 17/100 ---
+User ID: e8bc50e9-69c4-4f1e-bcc2-4847221c41c6
+Campus: Austin K-8
+Email: vivian.ajouz@alpha.school
+Status: UPDATED
+
+--- User 18/100 ---
+User ID: 199c2df7-e62a-44d5-b007-caaa5a645fc5
+Campus: Single-user 2hr learning
+Email: bailey-grace.davis@2hourlearning.com
+Status: UPDATED
+
+--- User 19/100 ---
+User ID: ff5126fb-24f5-43bb-80d5-1669331e48be
+Campus: Austin K-8
+Email: levi.eichen@alpha.school
+Status: UPDATED
+
+--- User 20/100 ---
+User ID: 64efb1b8-d100-44a4-8d86-d77578952585
+Campus: Austin K-8
+Email: chloe.sperbmachadoneto@alpha.school
+Status: UPDATED
+
+--- User 21/100 ---
+User ID: c1720674-3273-4f5d-822b-c73b87db3859
+Campus: Vita High School
+Email: andre.gainey@2hourlearning.com
+Status: UPDATED
+
+--- User 22/100 ---
+User ID: eb578c76-f610-4514-a596-e9aa6212bfe1
+Campus: High School SAT Prep
+Email: shrika.vudumu@2hourlearning.com
+Status: UPDATED
+
+--- User 23/100 ---
+User ID: 413dfa72-f085-4ebc-9671-bd00a153575a
+Campus: Austin K-8
+Email: jacob.atamas@alpha.school
+Status: UPDATED
+
+--- User 24/100 ---
+User ID: fa92f91d-1234-450b-8ac7-5695179fd1f3
+Campus: Sports Academy: Lakeway
+Email: kadence.phariss@sportsacademy.school
+Status: UPDATED
+
+--- User 25/100 ---
+User ID: cb1f9502-89da-44e8-8961-ce8bbd50abc7
+Campus: Austin K-8
+Email: aiden.richardson@alpha.school
+Status: UPDATED
+
+--- User 26/100 ---
+User ID: 5becea4c-1e65-40cf-bf83-0782ae7ebdeb
+Campus: Texas Preparatory School
+Email: cahlani.lewis@2hourlearning.com
+Status: UPDATED
+
+--- User 27/100 ---
+User ID: 4ea1b021-3c72-4c9d-93a0-5f5e7d9905bf
+Campus: Alpha Miami
+Email: magnus.liodden@alpha.school
+Status: UPDATED
+
+--- User 28/100 ---
+User ID: 0a92f1d8-9867-4277-874f-3257403feb0f
+Campus: Alpha Miami
+Email: gavyn.martinez@alpha.school
+Status: UPDATED
+
+--- User 29/100 ---
+User ID: c25e170e-0c91-4993-ac46-6de53fb0e448
+Campus: Austin K-8
+Email: sawyer.jayasuriya@alpha.school
+Status: UPDATED
+
+--- User 30/100 ---
+User ID: fc955071-7cc0-46dd-aad9-fc60ec8728ff
+Campus: Sports Academy: Lakeway
+Email: jet.butterworth@sportsacademy.school
+Status: UPDATED
+
+--- User 31/100 ---
+User ID: ffb93b38-50af-4836-9e46-5c76dee51193
+Campus: Austin K-8
+Email: atlas.kloiber@alpha.school
+Status: UPDATED
+
+--- User 32/100 ---
+User ID: dc833ca8-a975-471a-b197-6d063bce4a83
+Campus: Colearn Academy
+Email: monica.langford-sanchez@2hourlearning.com
+Status: UPDATED
+
+--- User 33/100 ---
+User ID: ca6618b3-0c1b-4a83-bd1d-7dc82b21b4e0
+Campus: Austin K-8
+Email: jack.cotner@alpha.school
+Status: UPDATED
+
+--- User 34/100 ---
+User ID: ff678fa2-d0c4-45e9-9499-8f2ac23320f0
+Campus: Alpha Phoenix
+Email: noah.hastings@alpha.school
+Status: UPDATED
+
+--- User 35/100 ---
+User ID: c739cdd6-0e48-466c-a6c7-d282e565d732
+Campus: Austin K-8
+Email: desmond.pardi@alpha.school
+Status: UPDATED
+
+--- User 36/100 ---
+User ID: 3c9e29bf-c1e4-42b9-a504-7eea59451ae4
+Campus: Austin K-8
+Email: archer.traff@alpha.school
+Status: UPDATED
+
+--- User 37/100 ---
+User ID: 0f8667fd-11fd-4f9f-95ab-6ac51a23dad6
+Campus: Texas Preparatory School
+Email: eleanor.martinez@2hourlearning.com
+Status: UPDATED
+
+--- User 38/100 ---
+User ID: 03aa02d4-ba23-458f-a3f9-08ca96d7ee19
+Campus: Texas Preparatory School
+Email: johana.dsantiago-verastegui@2hourlearning.com
+Status: UPDATED
+
+--- User 39/100 ---
+User ID: 7bafb6b3-c985-44b4-8d2d-e938edb46d4f
+Campus: Austin K-8
+Email: phineas.parrott@alpha.school
+Status: UPDATED
+
+--- User 40/100 ---
+User ID: 02807809-1ac8-4eb9-8ba9-c664ba2b0bcb
+Campus: Single-user 2hr learning
+Email: roman-parker.davis@2hourlearning.com
+Status: UPDATED
+
+--- User 41/100 ---
+User ID: 4bf0cc01-c13b-41a0-9101-23d097d26460
+Campus: Alpha Miami
+Email: tomas.dasilva@alpha.school
+Status: UPDATED
+
+--- User 42/100 ---
+User ID: 599f850d-cc4c-43f0-b05a-bd06c3c92e93
+Campus: Alpha Miami
+Email: pia.cedeno@alpha.school
+Status: UPDATED
+
+--- User 43/100 ---
+User ID: d6287f2a-f39f-40ab-85ca-66c8cadaa37c
+Campus: Austin K-8
+Email: elle.griswold@alpha.school
+Status: UPDATED
+
+--- User 44/100 ---
+User ID: f13cb353-9ccd-464d-a864-af462b1a0ed4
+Campus: Single-user 2hr learning
+Email: gameela.campbell@2hourlearning.com
+Status: UPDATED
+
+--- User 45/100 ---
+User ID: 32e2f40a-119a-4182-a51e-03bb59b3134f
+Campus: Austin K-8
+Email: townes.vanzandt@alpha.school
+Status: UPDATED
+
+--- User 46/100 ---
+User ID: 55c38f84-ab43-496a-8752-bdd9884b28e1
+Campus: Alpha Miami
+Email: isabella.barba@alpha.school
+Status: UPDATED
+
+--- User 47/100 ---
+User ID: 5b5ae37b-6dab-4884-a34f-6ce878365749
+Campus: Texas Preparatory School
+Email: king.resendez@2hourlearning.com
+Status: UPDATED
+
+--- User 48/100 ---
+User ID: 9ec36016-f580-4df5-ae11-f1ed08dc8aac
+Campus: Sports Academy: Lakeway
+Email: comerson.allen@sportsacademy.school
+Status: UPDATED
+
+--- User 49/100 ---
+User ID: 1eeeff83-a683-43ac-aa7c-46f0ff622d99
+Campus: Austin K-8
+Email: jimmy.moore@alpha.school
+Status: UPDATED
+
+--- User 50/100 ---
+User ID: 38228cbf-a8bc-4e04-86b5-9449cf578c82
+Campus: Austin K-8
+Email: jean.lagmanson@alpha.school
+Status: UPDATED
+
+--- User 51/100 ---
+User ID: daf6a5da-05d9-4b80-9385-1bcf97b6959b
+Campus: Single-user 2hr learning
+Email: knox.wheeler@2hourlearning.com
+Status: UPDATED
+
+--- User 52/100 ---
+User ID: d9c02dd6-32f9-4f16-9593-88f15d29f2cd
+Campus: Brownsville K-8
+Email: zoey.peden@alpha.school
+Status: UPDATED
+
+--- User 53/100 ---
+User ID: 469ddb05-eaee-4be1-bde0-f0bad40cc541
+Campus: Alpha Miami
+Email: jaxson.hirschhorn@alpha.school
+Status: UPDATED
+
+--- User 54/100 ---
+User ID: 310c643e-bf7d-4e60-91b0-94660e8bf51c
+Campus: Vita High School
+Email: aaliyah.oneal@2hourlearning.com
+Status: UPDATED
+
+--- User 55/100 ---
+User ID: 6d61042b-be06-465a-a80e-4cb213dc153a
+Campus: Brownsville K-8
+Email: virginia.gray@alpha.school
+Status: UPDATED
+
+--- User 56/100 ---
+User ID: 4bfc8ba7-b213-4f67-889b-3ea951d25546
+Campus: Texas Preparatory School
+Email: hafsah.shirzoi.hamidi@2hourlearning.com
+Status: UPDATED
+
+--- User 57/100 ---
+User ID: d75e8209-faef-43e2-8b82-f29a3b627e39
+Campus: Austin K-8
+Email: valentino.macdonald@alpha.school
+Status: UPDATED
+
+--- User 58/100 ---
+User ID: 13a3c306-c17e-4812-addc-dea5a08c71ab
+Campus: Austin K-8
+Email: rhys.bjorendahl@alpha.school
+Status: UPDATED
+
+--- User 59/100 ---
+User ID: 17e7a839-b757-4bf0-9722-d867e824e434
+Campus: Single-user 2hr learning
+Email: emori.mcdaniel@2hourlearning.com
+Status: UPDATED
+
+--- User 60/100 ---
+User ID: 8a90ce9e-cc1f-4d03-86a1-3c0612a91829
+Campus: Alpha Santa Barbara
+Email: theo.jenkins@alpha.school
+Status: UPDATED
+
+--- User 61/100 ---
+User ID: fc12391c-0a5d-403c-bdb7-7b55ad913d6b
+Campus: Brownsville K-8
+Email: sarah.schipper@alpha.school
+Status: UPDATED
+
+--- User 62/100 ---
+User ID: c21ebc5a-d5ef-4c6b-b4c4-905981488cdd
+Campus: Sports Academy: Lakeway
+Email: elizabella.hernandez@sportsacademy.school
+Status: UPDATED
+
+--- User 63/100 ---
+User ID: 6bf031c7-f80d-4d21-a660-3ed3fb548c96
+Campus: Colearn Academy
+Email: timothy.pena@2hourlearning.com
+Status: UPDATED
+
+--- User 64/100 ---
+User ID: 374fff49-8bc6-4fbd-bfed-52c712095e28
+Campus: GT School: Georgetown TX
+Email: athena.goldinjones@2hourlearning.com
+Status: UPDATED
+
+--- User 65/100 ---
+User ID: 84b9bced-759a-45e7-a6ff-1e3b18c95d0e
+Campus: Alpha High School
+Email: joel.runacres@alpha.school
+Status: UPDATED
+
+--- User 66/100 ---
+User ID: 0846ebc0-420d-486e-8f9a-6872f5ef77c1
+Campus: Alpha High School
+Email: maddie.price@alpha.school
+Status: UPDATED
+
+--- User 67/100 ---
+User ID: c2be9917-b105-465d-b472-4f1cc3d23caf
+Campus: Texas Preparatory School
+Email: aryia.lott@2hourlearning.com
+Status: UPDATED
+
+--- User 68/100 ---
+User ID: 37a1ad62-db9a-4276-b00f-f00ccc322f73
+Campus: Alpha Miami
+Email: emma.reyes@alpha.school
+Status: UPDATED
+
+--- User 69/100 ---
+User ID: 9cbd13e9-fdf2-4dd3-9f2b-d60a369bb301
+Campus: Texas Preparatory School
+Email: gavin.johnson@2hourlearning.com
+Status: UPDATED
+
+--- User 70/100 ---
+User ID: df7fcd1f-8dd8-4497-a48a-87a193021d8a
+Campus: Brownsville K-8
+Email: edward.qu@alpha.school
+Status: UPDATED
+
+--- User 71/100 ---
+User ID: 46af75d7-4c68-4db5-b9c2-0bd89b3d96ec
+Campus: GT School: Georgetown TX
+Email: jules.nevraumont@2hourlearning.com
+Status: UPDATED
+
+--- User 72/100 ---
+User ID: 851c32ac-24f6-4272-93c3-47a065074a02
+Campus: Single-user 2hr learning
+Email: ava.rosellini@2hourlearning.com
+Status: UPDATED
+
+--- User 73/100 ---
+User ID: 45dd7767-d61f-46f3-8c62-b55a3a695b4a
+Campus: Sports Academy: Lakeway
+Email: owen.conn@sportsacademy.school
+Status: UPDATED
+
+--- User 74/100 ---
+User ID: 811c447d-5c27-4a25-ae01-1f915e09f36d
+Campus: Austin K-8
+Email: eva.lenington@alpha.school
+Status: UPDATED
+
+--- User 75/100 ---
+User ID: 3bda7314-1828-439a-965d-a41c17f87e32
+Campus: Austin K-8
+Email: george.troxell@alpha.school
+Status: UPDATED
+
+--- User 76/100 ---
+User ID: 7efcd312-7682-47e2-a03b-076fcbc4561f
+Campus: Austin K-8
+Email: nathaniel.scharf@alpha.school
+Status: UPDATED
+
+--- User 77/100 ---
+User ID: b355ca1b-fa01-4e66-b7ae-57df0721e6d8
+Campus: Novatio
+Email: tyiir.woods@novatio.school
+Status: UPDATED
+
+--- User 78/100 ---
+User ID: 7a6138f3-53a5-4f81-93a8-ed9ca2409e50
+Campus: Texas Preparatory School
+Email: lovely.simon@2hourlearning.com
+Status: UPDATED
+
+--- User 79/100 ---
+User ID: d7928d91-7d30-4bb1-8a7d-006438085792
+Campus: Alpha High School
+Email: madeleine.grams@alpha.school
+Status: UPDATED
+
+--- User 80/100 ---
+User ID: 4000cc92-5321-4dfc-a7d1-f2004d6a2f90
+Campus: Austin K-8
+Email: david.paul@alpha.school
+Status: UPDATED
+
+--- User 81/100 ---
+User ID: c84fe59f-5a4d-4fda-9aa4-8642a5fd7c44
+Campus: Austin K-8
+Email: gage.turner@alpha.school
+Status: UPDATED
+
+--- User 82/100 ---
+User ID: 5b51eddb-318f-4900-b7b0-963f4723d955
+Campus: Alpha High School
+Email: alex.mathew@alpha.school
+Status: UPDATED
+
+--- User 83/100 ---
+User ID: 5d937f67-0e3a-46b4-943c-ddada9583d3b
+Campus: Alpha Miami
+Email: isabella.vicente@alpha.school
+Status: UPDATED
+
+--- User 84/100 ---
+User ID: 8980639b-2719-4fc5-8938-700c7fd56d41
+Campus: Sports Academy: Lakeway
+Email: mason.mcdougald@alpha.school
+Status: UPDATED
+
+--- User 85/100 ---
+User ID: 9d189983-2e9c-47a5-ab6f-e165f9edb05d
+Campus: Alpha Miami
+Email: david.sheldon@alpha.school
+Status: UPDATED
+
+--- User 86/100 ---
+User ID: af68d513-9ad0-4c91-8588-7cf599d0b3c0
+Campus: Valenta Academy
+Email: analea.lopez@valenta.school
+Status: UPDATED
+
+--- User 87/100 ---
+User ID: 5e66397d-71c5-4390-9ae9-3672a8478bc5
+Campus: Alpha Santa Barbara
+Email: gabi.gamperl@alpha.school
+Status: UPDATED
+
+--- User 88/100 ---
+User ID: c0a66bc0-1f0a-4077-b700-0b5f0d375881
+Campus: Austin K-8
+Email: katie.chanyau@alpha.school
+Status: UPDATED
+
+--- User 89/100 ---
+User ID: fe200536-2feb-4582-a38b-dc2ef07c8178
+Campus: Austin K-8
+Email: arianna.alhades@alpha.school
+Status: UPDATED
+
+--- User 90/100 ---
+User ID: 42bc57ca-b8ee-44ed-8a27-d1dfd216a58a
+Campus: Alpha New York City
+Email: max.rzepecki@alpha.school
+Status: UPDATED
+
+--- User 91/100 ---
+User ID: f795b3cd-5bde-41d9-ac3f-a1353eb4b21f
+Campus: Colearn Academy
+Email: lynnix.russel@2hourlearning.com
+Status: UPDATED
+
+--- User 92/100 ---
+User ID: f432c775-ba59-4f16-8252-3693f9c8eeff
+Campus: Colearn Academy
+Email: joseph.kennard@2hourlearning.com
+Status: UPDATED
+
+--- User 93/100 ---
+User ID: c0888e3d-34c3-42fd-9760-481e4e84c898
+Campus: Brownsville K-8
+Email: ethan.bale@alpha.school
+Status: UPDATED
+
+--- User 94/100 ---
+User ID: 5db81eab-f06f-421e-a897-6dbf82f1e091
+Campus: Austin K-8
+Email: edgar.shinar@alpha.school
+Status: UPDATED
+
+--- User 95/100 ---
+User ID: be2bec02-7490-4702-9023-d32ed2460cbc
+Campus: Texas Preparatory School
+Email: tanill.bills@2hourlearning.com
+Status: UPDATED
+
+--- User 96/100 ---
+User ID: 105a2262-fc20-40da-af5f-275532fc2558
+Campus: GT School: Georgetown TX
+Email: neel.balija@2hourlearning.com
+Status: UPDATED
+
+--- User 97/100 ---
+User ID: b7f1d41f-9385-4908-bb1e-4ccf59c93aec
+Campus: Austin K-8
+Email: aleina.boyce@alpha.school
+Status: UPDATED
+
+--- User 98/100 ---
+User ID: 0cc40817-0c74-425a-938a-ea6d04c71d60
+Campus: Brownsville K-8
+Email: sander.gabler@alpha.school
+Status: UPDATED
+
+--- User 99/100 ---
+User ID: 586b3957-a911-44b8-bd84-4c87c70065f6
+Campus: Valenta Academy
+Email: rayan.zawatieh@valenta.school
+Status: UPDATED
+
+--- User 100/100 ---
+User ID: c50f5d2b-b846-4eb3-9ee5-1acb33e4fa4e
+Campus: High School SAT Prep
+Email: olivia.attia@2hourlearning.com
+Status: UPDATED
+
+===== Summary =====
+- Users processed: 100
+- Users found: 100
+- Users not found: 0
+- Successful updates: 100
+- Failed updates: 0
+==================
+  
+===== Campus Update - 2025-06-04T09:42:52.521Z =====
+Found 100 users to process
+
+
+--- User 1/100 ---
+User ID: e9291729-7dbe-49e3-a153-eecb5ccf5201
+Campus: GT School: Georgetown TX
+Email: eric.kenez@2hourlearning.com
+Status: UPDATED
+
+--- User 2/100 ---
+User ID: d0f6c67a-63fe-4998-958e-87152bf1d7e8
+Campus: Austin K-8
+Email: jude.hock@alpha.school
+Status: UPDATED
+
+--- User 3/100 ---
+User ID: 097cc4b6-11a1-4864-9823-f6be108f216a
+Campus: Texas Preparatory School
+Email: gabriel.leal.barrios@2hourlearning.com
+Status: UPDATED
+
+--- User 4/100 ---
+User ID: b17248c4-dc3f-4494-8886-9fd3abe8729c
+Campus: Texas Preparatory School
+Email: kamila.gonzalez-romero@2hourlearning.com
+Status: UPDATED
+
+--- User 5/100 ---
+User ID: 4508bf9c-0265-49d3-a745-ae634dcaf65f
+Campus: Alpha High School
+Email: erika.rigby@alpha.school
+Status: UPDATED
+
+--- User 6/100 ---
+User ID: 6fd6dd02-cb5e-4ba2-bd1e-57e62868ff33
+Campus: Austin K-8
+Email: maren.ackerson@alpha.school
+Status: UPDATED
+
+--- User 7/100 ---
+User ID: 5688150f-52fb-4daa-9a70-f09debc6ae7a
+Campus: Alpha High School
+Email: ashley.barnes@alpha.school
+Status: UPDATED
+
+--- User 8/100 ---
+User ID: d2454cf9-3acb-4512-8a76-e7e3595c93b4
+Campus: Alpha High School
+Email: mollieanne.mcdougald@alpha.school
+Status: UPDATED
+
+--- User 9/100 ---
+User ID: 2ca4e9bf-2709-416f-a9f2-e5638d7dcab5
+Campus: Austin K-8
+Email: mabel.bash@alpha.school
+Status: UPDATED
+
+--- User 10/100 ---
+User ID: 1cef52ea-bd84-4fc9-8d6c-ecc0ed4f3271
+Campus: Austin K-8
+Email: hudson.rannala@alpha.school
+Status: UPDATED
+
+--- User 11/100 ---
+User ID: e251e1b2-a92a-4a23-9afd-e284c74e8c3a
+Campus: Austin K-8
+Email: aliya.stromberg@alpha.school
+Status: UPDATED
+
+--- User 12/100 ---
+User ID: d2641b6d-daad-4487-860b-4514b10276c3
+Campus: Alpha Miami
+Email: olivia.monsalvebonotto@alpha.school
+Status: UPDATED
+
+--- User 13/100 ---
+User ID: 9058252f-fa90-4ccb-97d5-531f73b508ad
+Campus: Brownsville K-8
+Email: sarah.hunter@alpha.school
+Status: UPDATED
+
+--- User 14/100 ---
+User ID: 0fad98c5-d692-4b70-84d2-a7934546fabe
+Campus: Brownsville K-8
+Email: zarielle.vela@alpha.school
+Status: UPDATED
+
+--- User 15/100 ---
+User ID: 5b42f642-ab8a-420e-a297-905ec367f2ab
+Campus: Austin K-8
+Email: dario.ramos@alpha.school
+Status: UPDATED
+
+--- User 16/100 ---
+User ID: f51e74e2-6cdf-4ebe-97cd-ccf799cdb9e5
+Campus: Alpha High School
+Email: austin.lin@alpha.school
+Status: UPDATED
+
+--- User 17/100 ---
+User ID: eebfb3e9-d606-4d55-aded-2b54658dec76
+Campus: Colearn Academy
+Email: william.case@2hourlearning.com
+Status: UPDATED
+
+--- User 18/100 ---
+User ID: a57c825e-01ec-4efc-9101-6b31b42c2e7f
+Campus: Alpha Miami
+Email: matias.cortazar@alpha.school
+Status: UPDATED
+
+--- User 19/100 ---
+User ID: 7c55db81-f841-4ed4-a62a-38254dccc540
+Campus: Alpha High School
+Email: jeremy.wang@alpha.school
+Status: UPDATED
+
+--- User 20/100 ---
+User ID: 8d2e483f-ce5c-4182-ab72-0d0ab7d91f8a
+Campus: Austin K-8
+Email: sam.ratcliff@alpha.school
+Status: UPDATED
+
+--- User 21/100 ---
+User ID: 65043b4a-4fd4-4da9-a4ae-feeb64a3e130
+Campus: Austin K-8
+Email: willa.rubenstein@alpha.school
+Status: UPDATED
+
+--- User 22/100 ---
+User ID: e634def4-1fd5-4946-b599-cc0e11da487a
+Campus: Havruta Learning Pod: Austin TX
+Email: aurelia.lonsdale@havruta.school
+Status: UPDATED
+
+--- User 23/100 ---
+User ID: 4d311d5d-82b8-4993-9ac6-da4abab66927
+Campus: Austin K-8
+Email: sua.chang@alpha.school
+Status: UPDATED
+
+--- User 24/100 ---
+User ID: e9eb776a-54a8-4d09-9c86-4cc81b3cd725
+Campus: Sports Academy: Lakeway
+Email: zenon.zaidi@sportsacademy.school
+Status: UPDATED
+
+--- User 25/100 ---
+User ID: 5e2dee50-178d-41b1-aad2-4cba5f4105b0
+Campus: Colearn Academy
+Email: dalton.robinson@2hourlearning.com
+Status: UPDATED
+
+--- User 26/100 ---
+User ID: 075866d6-2cd0-49c4-a441-9dd61b62eaba
+Campus: Texas Preparatory School
+Email: dillinmar.lugo.marquez@2hourlearning.com
+Status: UPDATED
+
+--- User 27/100 ---
+User ID: 10c6245a-b370-4a29-ac6d-115b9fd729ce
+Campus: High School SAT Prep
+Email: ridhima.chelani@2hourlearning.com
+Status: UPDATED
+
+--- User 28/100 ---
+User ID: 6e0e2749-782b-4eec-ba8c-3446be30e064
+Campus: Austin K-8
+Email: luciana.bressan@alpha.school
+Status: UPDATED
+
+--- User 29/100 ---
+User ID: 30aee692-24e0-4b25-8494-a34ba3d26584
+Campus: Austin K-8
+Email: jad.qunibi@alpha.school
+Status: UPDATED
+
+--- User 30/100 ---
+User ID: ed162ba8-8da0-4c55-8e54-348b12851399
+Campus: Single-user 2hr learning
+Email: hendrix.smith@2hourlearning.com
+Status: UPDATED
+
+--- User 31/100 ---
+User ID: 47ab9af8-86dd-4d26-8b29-2136347cbf7c
+Campus: Brownsville K-8
+Email: luisela.almanza@alpha.school
+Status: UPDATED
+
+--- User 32/100 ---
+User ID: 5a68ecfc-d218-477f-a8c5-4ae8e0266af7
+Campus: Alpha Miami
+Email: emilio.correa@alpha.school
+Status: UPDATED
+
+--- User 33/100 ---
+User ID: d238a4d5-7321-4141-860a-f5629de58e89
+Campus: High School SAT Prep
+Email: layla.ford@2hourlearning.com
+Status: UPDATED
+
+--- User 34/100 ---
+User ID: 38efc49a-25dc-4fa7-9344-3c40d5e17b24
+Campus: Sports Academy: Lakeway
+Email: ayaan.kant@sportsacademy.school
+Status: UPDATED
+
+--- User 35/100 ---
+User ID: 4cf8fcad-2285-4b7b-958f-82c04b2eef79
+Campus: Alpha Miami
+Email: sofia.page@alpha.school
+Status: UPDATED
+
+--- User 36/100 ---
+User ID: 24c350e0-a03b-44cb-91a7-517a56a75356
+Campus: Austin K-8
+Email: lucian.klinefelter@alpha.school
+Status: UPDATED
+
+--- User 37/100 ---
+User ID: fe2ed8ab-554a-4f2b-b880-f5b1c583953b
+Campus: Sports Academy: Lakeway
+Email: aksel.jensen@alpha.school
+Status: UPDATED
+
+--- User 38/100 ---
+User ID: 96f5c148-fa67-4291-8dcf-eaab00cd85d9
+Campus: Alpha Miami
+Email: elias.kellemen@alpha.school
+Status: UPDATED
+
+--- User 39/100 ---
+User ID: dd84d285-a260-42ea-8aea-3a6925286bbf
+Campus: Austin K-8
+Email: elaina.robertson@alpha.school
+Status: UPDATED
+
+--- User 40/100 ---
+User ID: 05645772-bf54-4037-bc90-825539fb5f8b
+Campus: Austin K-8
+Email: hannah.scharf@alpha.school
+Status: UPDATED
+
+--- User 41/100 ---
+User ID: 2365a715-7aeb-4bf1-97f2-357882593b22
+Campus: Alpha High School
+Email: emma.cotner@alpha.school
+Status: UPDATED
+
+--- User 42/100 ---
+User ID: 82a2cc75-c871-4718-8620-068340e465e7
+Campus: Alpha High School
+Email: sarabeth.way@alpha.school
+Status: UPDATED
+
+--- User 43/100 ---
+User ID: 7dcd02ab-1ea5-449c-9d9b-70332dc640c7
+Campus: Texas Preparatory School
+Email: rafat.shirzoi.hamidi@2hourlearning.com
+Status: UPDATED
+
+--- User 44/100 ---
+User ID: 265c1a8b-4993-4019-8a99-cb8790fbf8a6
+Campus: Novatio
+Email: sophie.chang@novatio.school
+Status: UPDATED
+
+--- User 45/100 ---
+User ID: 662eb1d7-113f-4171-bc54-ee2eaefe072c
+Campus: Austin K-8
+Email: electra.green@alpha.school
+Status: UPDATED
+
+--- User 46/100 ---
+User ID: 8e63fa12-7b02-40e4-8c93-daed2fd79243
+Campus: Brownsville K-8
+Email: vigo.levin@alpha.school
+Status: UPDATED
+
+--- User 47/100 ---
+User ID: f685b376-b2bc-416a-82fd-fe5eeaf0f70f
+Campus: Colearn Academy
+Email: ivan.langford-sanchez@2hourlearning.com
+Status: UPDATED
+
+--- User 48/100 ---
+User ID: 00d46de9-f30d-4c64-a62f-631c5a787e22
+Campus: Brownsville K-8
+Email: lily.gray@alpha.school
+Status: UPDATED
+
+--- User 49/100 ---
+User ID: 053fec15-f32f-41a4-9fbe-8cd66e3fa6f8
+Campus: Sports Academy: Lakeway
+Email: stone.meyers@sportsacademy.school
+Status: UPDATED
+
+--- User 50/100 ---
+User ID: 50989488-3170-4e93-a511-96d0b39ab689
+Campus: Alpha West Palm Beach
+Email: elijah.braafheid@alpha.school
+Status: UPDATED
+
+--- User 51/100 ---
+User ID: 82622f9f-590d-46e3-a7e8-3cf92cad3f4a
+Campus: Texas Preparatory School
+Email: fernando.reynaruiz@2hourlearning.com
+Status: UPDATED
+
+--- User 52/100 ---
+User ID: 54cc07fa-2af3-493b-a2e0-fb35cc398469
+Campus: Texas Preparatory School
+Email: jahde.hernandez-ramos@2hourlearning.com
+Status: UPDATED
+
+--- User 53/100 ---
+User ID: 2198878e-4442-48ba-b4a7-1eef94cc3fe1
+Campus: Alpha High School
+Email: liam.lenhardt@alpha.school
+Status: UPDATED
+
+--- User 54/100 ---
+User ID: 2b97046d-dec3-43b9-9939-914c2afd35eb
+Campus: Texas Preparatory School
+Email: jazaiah.wilburn@2hourlearning.com
+Status: UPDATED
+
+--- User 55/100 ---
+User ID: 1e148482-3479-4e26-8193-3d3053aaf608
+Campus: Austin K-8
+Email: test.account7@alpha.school
+Status: UPDATED
+
+--- User 56/100 ---
+User ID: 138ef3ce-2f66-4b83-801d-893c119a01ca
+Campus: Austin K-8
+Email: david.nolan@alpha.school
+Status: UPDATED
+
+--- User 57/100 ---
+User ID: 7cbd3f80-ea14-471e-b33c-6dad1a14912e
+Campus: Texas Preparatory School
+Email: megan.chukwura@2hourlearning.com
+Status: UPDATED
+
+--- User 58/100 ---
+User ID: f48ea0ac-1384-4f25-9940-8b58e2e3569f
+Campus: Alpha Santa Barbara
+Email: rhys.robertson@alpha.school
+Status: UPDATED
+
+--- User 59/100 ---
+User ID: 9aef645a-3d62-4a1f-8ee2-a6344ca9e15a
+Campus: Austin K-8
+Email: valentina.melendez@alpha.school
+Status: UPDATED
+
+--- User 60/100 ---
+User ID: ef437d2a-10d5-4819-aa47-9ca5c6ed9bbc
+Campus: Austin K-8
+Email: reed.robertson@alpha.school
+Status: UPDATED
+
+--- User 61/100 ---
+User ID: 260f9a9a-f0c9-4a5b-9416-e3cfc3249a4b
+Campus: Austin K-8
+Email: ross.margraves@alpha.school
+Status: UPDATED
+
+--- User 62/100 ---
+User ID: 42539fff-ec65-4efc-99c1-6f9e26f67d51
+Campus: Alpha High School
+Email: madeleine.meegan@alpha.school
+Status: UPDATED
+
+--- User 63/100 ---
+User ID: b8ec9e2b-ee60-4ae3-b8e8-13a6317e10bf
+Campus: Alpha High School
+Email: evan.klein@alpha.school
+Status: UPDATED
+
+--- User 64/100 ---
+User ID: 70fb9fd8-ea2a-4500-baa4-0d5d13f78196
+Campus: Austin K-8
+Email: ellen.meegan@alpha.school
+Status: UPDATED
+
+--- User 65/100 ---
+User ID: 272e8e0c-e552-4e30-9cea-7dc0458a9d4a
+Campus: Alpha Tampa
+Email: deklan.kroger@alpha.school
+Status: UPDATED
+
+--- User 66/100 ---
+User ID: 4dacb9bc-0cc4-4618-8247-5d1e16ac360d
+Campus: GT School: Georgetown TX
+Email: jaiden.bhakta@2hourlearning.com
+Status: UPDATED
+
+--- User 67/100 ---
+User ID: 89c4e883-6812-45d8-87b9-fe6815022677
+Campus: Austin K-8
+Email: hayden.temcharoen@alpha.school
+Status: UPDATED
+
+--- User 68/100 ---
+User ID: 1a66c140-05e7-43cc-9d71-a42597fd908a
+Campus: Colearn Academy
+Email: anora.thompson@2hourlearning.com
+Status: UPDATED
+
+--- User 69/100 ---
+User ID: e6efc049-dd71-4205-8adb-e3d8d7c21a76
+Campus: Austin K-8
+Email: zayen.szpitalak@alpha.school
+Status: UPDATED
+
+--- User 70/100 ---
+User ID: 13a1017f-cca8-4fa2-8619-fef35319dba2
+Campus: Brownsville K-8
+Email: aster.burns@alpha.school
+Status: UPDATED
+
+--- User 71/100 ---
+User ID: 7128e9d8-6897-401c-bbc6-4a6b7357c02e
+Campus: Austin K-8
+Email: lainey.huey@alpha.school
+Status: UPDATED
+
+--- User 72/100 ---
+User ID: 904f319a-f421-4123-b48e-399e8a29ba40
+Campus: Alpha High School
+Email: annabelle.meegan@alpha.school
+Status: UPDATED
+
+--- User 73/100 ---
+User ID: 6a9ee133-85ca-4a1d-b071-7bfdb1a0522b
+Campus: Austin K-8
+Email: asher.curry@alpha.school
+Status: UPDATED
+
+--- User 74/100 ---
+User ID: 9447c79c-bd51-4dd9-bc8b-9ab8c4eae646
+Campus: Alpha Miami
+Email: catherine.caballero@alpha.school
+Status: UPDATED
+
+--- User 75/100 ---
+User ID: 8465c812-23ed-4deb-a2b7-a94f660665b1
+Campus: Austin K-8
+Email: roarke.radia@alpha.school
+Status: UPDATED
+
+--- User 76/100 ---
+User ID: 0bab2acd-b4ce-40ee-ae69-6ca360528a2a
+Campus: Alpha Miami
+Email: luca.stroman@alpha.school
+Status: UPDATED
+
+--- User 77/100 ---
+User ID: 6e6c8b1c-b9aa-48e7-8591-e2a653da544b
+Campus: Alpha Miami
+Email: luna.montagna@alpha.school
+Status: UPDATED
+
+--- User 78/100 ---
+User ID: 895393e3-c745-48b3-8b7c-207e64c5954d
+Campus: Sports Academy: Lakeway
+Email: london.wagner@sportsacademy.school
+Status: UPDATED
+
+--- User 79/100 ---
+User ID: 15bd82f2-7a3b-4481-9e0e-a1ad511ad380
+Campus: Austin K-8
+Email: elijah.knecht@alpha.school
+Status: UPDATED
+
+--- User 80/100 ---
+User ID: fb747cc3-68e0-4226-ad61-e1e15b013178
+Campus: High School SAT Prep
+Email: hasini.chandrakumar@2hourlearning.com
+Status: UPDATED
+
+--- User 81/100 ---
+User ID: 01efe686-b37f-49d5-be22-2e23e8dadb63
+Campus: Brownsville K-8
+Email: sebastian.salazar@alpha.school
+Status: UPDATED
+
+--- User 82/100 ---
+User ID: fa276860-ab7c-409f-bc89-672a672dea6c
+Campus: Esports Academy: Austin
+Email: ansel.coffey@nextgenacademy.school
+Status: UPDATED
+
+--- User 83/100 ---
+User ID: 1ec84f50-f89b-48b8-aaed-cf8a1d2c6428
+Campus: Austin K-8
+Email: luke.hock@alpha.school
+Status: UPDATED
+
+--- User 84/100 ---
+User ID: 615e61fe-ab9b-4f46-af51-69072b341aef
+Campus: Texas Preparatory School
+Email: mya.hadnot@2hourlearning.com
+Status: UPDATED
+
+--- User 85/100 ---
+User ID: 7d919214-18ad-4e0e-815c-da4e27e34ede
+Campus: Austin K-8
+Email: maddie.baehr@alpha.school
+Status: UPDATED
+
+--- User 86/100 ---
+User ID: 9b58da86-e9d2-4418-b338-d062a17a9839
+Campus: Alpha Santa Barbara
+Email: gwen.royce@alpha.school
+Status: UPDATED
+
+--- User 87/100 ---
+User ID: ffeac7ab-33f3-4ae3-a1eb-7967ba5fac96
+Campus: Austin K-8
+Email: arman.caberwal@alpha.school
+Status: UPDATED
+
+--- User 88/100 ---
+User ID: 609dc454-aa01-4ba4-8b8b-07b4388133c6
+Campus: Esports Academy: Austin
+Email: xavier.siddall@nextgenacademy.school
+Status: UPDATED
+
+--- User 89/100 ---
+User ID: bf7d285f-d5b3-4841-ae03-a426437ee1de
+Campus: Austin K-8
+Email: eddie.margainjunco@alpha.school
+Status: UPDATED
+
+--- User 90/100 ---
+User ID: 2e9f82d7-2335-4305-9394-d5695fb5cb5f
+Campus: Brownsville K-8
+Email: ramsey.levin@alpha.school
+Status: UPDATED
+
+--- User 91/100 ---
+User ID: e6202870-0533-4576-a2d5-36629a9192ae
+Campus: Austin K-8
+Email: gia.clark@alpha.school
+Status: UPDATED
+
+--- User 92/100 ---
+User ID: 6316a22a-fb22-4306-a4ac-9f3bb45ea0ec
+Campus: Single-user 2hr learning
+Email: scotty.noel@alpha.school
+Status: UPDATED
+
+--- User 93/100 ---
+User ID: a3cec910-95d2-4c59-85e3-10e58289c42a
+Campus: Brownsville K-8
+Email: marcus.fuentes@alpha.school
+Status: UPDATED
+
+--- User 94/100 ---
+User ID: 64181407-913d-48bd-b159-2f1fb167676b
+Campus: Austin K-8
+Email: saachi.sharma@alpha.school
+Status: UPDATED
+
+--- User 95/100 ---
+User ID: 86378605-3932-43f7-9a8b-77e8c05e95ef
+Campus: Esports Academy: Austin
+Email: brendan.lopez@alpha.school
+Status: UPDATED
+
+--- User 96/100 ---
+User ID: ba7b07d7-5430-4324-9d4b-86bbfbf50348
+Campus: Brownsville K-8
+Email: emma.schipper@alpha.school
+Status: UPDATED
+
+--- User 97/100 ---
+User ID: 13e7899e-d764-4c90-8f5b-526cdf42da1b
+Campus: Single-user 2hr learning
+Email: jack.henry@2hourlearning.com
+Status: UPDATED
+
+--- User 98/100 ---
+User ID: 730bdeee-6041-4dcf-a48a-3088b16e587a
+Campus: GT School: Georgetown TX
+Email: calvin.barraza@2hourlearning.com
+Status: UPDATED
+
+--- User 99/100 ---
+User ID: 460e545c-6ce6-46af-bdac-738f06faf77d
+Campus: Austin K-8
+Email: rory.salton@alpha.school
+Status: UPDATED
+
+--- User 100/100 ---
+User ID: b9b64581-a268-4f34-87bb-232407888980
+Campus: Brownsville K-8
+Email: johnny.darcy@alpha.school
+Status: UPDATED
+
+===== Summary =====
+- Users processed: 100
+- Users found: 100
+- Users not found: 0
+- Successful updates: 100
+- Failed updates: 0
+==================
+  
+===== Campus Update - 2025-06-04T09:46:37.092Z =====
+Found 100 users to process
+
+
+--- User 1/100 ---
+User ID: 7fa92d47-0386-45e1-82ad-ea747a6b1ed2
+Campus: Austin K-8
+Email: claudia.hobart@alpha.school
+Status: UPDATED
+
+--- User 2/100 ---
+User ID: 89f79350-f7ef-42ec-bf45-1b01b9752cd9
+Campus: Austin K-8
+Email: brooklyn.allred@alpha.school
+Status: UPDATED
+
+--- User 3/100 ---
+User ID: 67ceda78-ad39-45b0-b217-fb9c4a7f034a
+Campus: High School SAT Prep
+Email: geetesh.parelly@2hourlearning.com
+Status: UPDATED
+
+--- User 4/100 ---
+User ID: b2f157ea-0954-4e16-a6e9-702b37019c49
+Campus: Alpha Miami
+Email: earay.kahn@alpha.school
+Status: UPDATED
+
+--- User 5/100 ---
+User ID: e543c39a-2718-47e7-a477-d0b5473457a3
+Campus: Brownsville K-8
+Email: orion.campbell@alpha.school
+Status: UPDATED
+
+--- User 6/100 ---
+User ID: bf0fd274-6064-4824-9eaf-f6978a1b5276
+Campus: Austin K-8
+Email: brady.york@alpha.school
+Status: UPDATED
+
+--- User 7/100 ---
+User ID: 2cba3d39-0753-4519-b3c4-43dc4a8ba27c
+Campus: Austin K-8
+Email: test.account4@alpha.school
+Status: UPDATED
+
+--- User 8/100 ---
+User ID: 1bc13c07-090a-48a0-a341-3ef6c5935209
+Campus: Austin K-8
+Email: emilia.lobo@alpha.school
+Status: UPDATED
+
+--- User 9/100 ---
+User ID: 5c060a4d-aedd-4c3f-8045-c01b4dd83079
+Campus: Texas Preparatory School
+Email: sofia.cruz-peralta@2hourlearning.com
+Status: UPDATED
+
+--- User 10/100 ---
+User ID: 2e940a0a-9a01-4d91-992b-d59b27f710da
+Campus: Alpha High School
+Email: elle.liemandt@alpha.school
+Status: UPDATED
+
+--- User 11/100 ---
+User ID: bde5685b-9abb-4607-89e2-c30f0b6b0419
+Campus: Brownsville K-8
+Email: theodore.salgado-singer@alpha.school
+Status: UPDATED
+
+--- User 12/100 ---
+User ID: a04b3703-ae7a-4e08-8d86-b2abbda3f5b1
+Campus: Alpha High School
+Email: vera.li@alpha.school
+Status: UPDATED
+
+--- User 13/100 ---
+User ID: 1b87b6bb-e2c8-455b-bc51-3a965e2a52ef
+Campus: Alpha Miami
+Email: julian.dziuba@alpha.school
+Status: UPDATED
+
+--- User 14/100 ---
+User ID: a166463e-50d7-4086-a62a-d0690c4d6df0
+Campus: Austin K-8
+Email: harry.osborne@alpha.school
+Status: UPDATED
+
+--- User 15/100 ---
+User ID: d8e79419-9109-4641-a01b-cbc6c300eb23
+Campus: Alpha Miami
+Email: ben.deamorim@alpha.school
+Status: UPDATED
+
+--- User 16/100 ---
+User ID: 08e10b5b-5bdd-4dab-8804-246ba69f6733
+Campus: Texas Preparatory School
+Email: victor.elias-galeana@2hourlearning.com
+Status: UPDATED
+
+--- User 17/100 ---
+User ID: 65b3cd7e-4684-483d-b371-59eabb8ded87
+Campus: Alpha High School
+Email: kavin.lingham@alpha.school
+Status: UPDATED
+
+--- User 18/100 ---
+User ID: 2301d7e5-57e5-40e8-8284-2f2c8cf1fd40
+Campus: Texas Preparatory School
+Email: leoxinelys.campos-ferrebus@2hourlearning.com
+Status: UPDATED
+
+--- User 19/100 ---
+User ID: c110a08e-8dc3-4f0d-a261-cf0713aaa504
+Campus: Alpha High School
+Email: lincoln.thomas@alpha.school
+Status: UPDATED
+
+--- User 20/100 ---
+User ID: d2d9fe9c-6d3c-4130-8c9d-244bba4bac04
+Campus: Austin K-8
+Email: elena.mentgen@alpha.school
+Status: UPDATED
+
+--- User 21/100 ---
+User ID: 01f6cbd9-94ec-46c0-831b-78b169df7fde
+Campus: Single-user 2hr learning
+Email: legend.smith@2hourlearning.com
+Status: UPDATED
+
+--- User 22/100 ---
+User ID: fdbff42c-8ef1-4da6-90d6-c02e4477a62b
+Campus: Havruta Learning Pod: Austin TX
+Email: athena.lonsdale@havruta.school
+Status: UPDATED
+
+--- User 23/100 ---
+User ID: 7a4641e7-df74-4d22-b112-ea39300d8708
+Campus: Austin K-8
+Email: mila.atamas@alpha.school
+Status: UPDATED
+
+--- User 24/100 ---
+User ID: 67501234-ff2b-46ae-95b3-a39787e7fb35
+Campus: Single-user 2hr learning
+Email: brett.noel@alpha.school
+Status: UPDATED
+
+--- User 25/100 ---
+User ID: 0698db48-c04f-4e47-a1f1-8c73b56c2e7d
+Campus: Alpha Miami
+Email: juan.ortega@alpha.school
+Status: UPDATED
+
+--- User 26/100 ---
+User ID: f074766b-9362-4b40-b5e0-591979af5604
+Campus: Austin K-8
+Email: bailey.carlson@alpha.school
+Status: UPDATED
+
+--- User 27/100 ---
+User ID: b86bc73d-2e4c-4091-bb43-c45c6279acfc
+Campus: Alpha High School
+Email: malaika.negrete@alpha.school
+Status: UPDATED
+
+--- User 28/100 ---
+User ID: 753c81c8-9813-416b-8b60-5258c753dcbd
+Campus: Alpha Miami
+Email: javier.martinez@alpha.school
+Status: UPDATED
+
+--- User 29/100 ---
+User ID: 90d76baa-5f91-4843-a244-3c64e6cfb1ad
+Campus: Sports Academy: Lakeway
+Email: marshall.jensen@alpha.school
+Status: UPDATED
+
+--- User 30/100 ---
+User ID: ce8d2387-8211-4159-aa1f-e74967fd429d
+Campus: Austin K-8
+Email: marilyn.pastor@alpha.school
+Status: UPDATED
+
+--- User 31/100 ---
+User ID: 74a58eb6-dd60-4791-be36-27484399a5ac
+Campus: Colearn Academy
+Email: james.thompson@2hourlearning.com
+Status: UPDATED
+
+--- User 32/100 ---
+User ID: 7a3ede84-6a3e-4e83-aa7e-a88b535aff25
+Campus: Alpha High School
+Email: sloane.price@alpha.school
+Status: UPDATED
+
+--- User 33/100 ---
+User ID: 194fcbfb-5276-4f58-b286-bc9878099054
+Campus: Alpha Santa Barbara
+Email: elle.royce@alpha.school
+Status: UPDATED
+
+--- User 34/100 ---
+User ID: 16ea09ce-258d-4560-9a78-2fea0af0aff8
+Campus: Valenta Academy
+Email: joan.olson@valenta.school
+Status: UPDATED
+
+--- User 35/100 ---
+User ID: c05ab002-301f-4a29-afd9-30b37c73e8e5
+Campus: Austin K-8
+Email: beau.stern@alpha.school
+Status: UPDATED
+
+--- User 36/100 ---
+User ID: cf2ec83c-bae8-425b-9e29-2dac8fa32f82
+Campus: Alpha High School
+Email: clara.aboelnil@alpha.school
+Status: UPDATED
+
+--- User 37/100 ---
+User ID: 0e7be818-f643-4cc9-904e-5dd18359259e
+Campus: Sports Academy: Lakeway
+Email: zac.tran@sportsacademy.school
+Status: UPDATED
+
+--- User 38/100 ---
+User ID: 9a76a137-ca32-4c44-9760-19df5b81ef16
+Campus: Austin K-8
+Email: kaiden.szpitalak@alpha.school
+Status: UPDATED
+
+--- User 39/100 ---
+User ID: 7edc22b7-b2be-4f3f-b687-4229cc3bc097
+Campus: Austin K-8
+Email: jackson.wiley@alpha.school
+Status: UPDATED
+
+--- User 40/100 ---
+User ID: 3476eef6-ac15-4f50-b343-a5a3eb02a5de
+Campus: Austin K-8
+Email: anthem.thomas@alpha.school
+Status: UPDATED
+
+--- User 41/100 ---
+User ID: 79da83e8-819f-4e88-aaf8-5b4335910119
+Campus: Texas Preparatory School
+Email: jarius.collins@2hourlearning.com
+Status: UPDATED
+
+--- User 42/100 ---
+User ID: 8e21a762-2b21-401e-94d6-36a4b5006166
+Campus: Colearn Academy
+Email: asher.buckner@2hourlearning.com
+Status: UPDATED
+
+--- User 43/100 ---
+User ID: 88fca5b0-9eac-4c74-b60b-f66f91938f87
+Campus: Austin K-8
+Email: blake.price@alpha.school
+Status: UPDATED
+
+--- User 44/100 ---
+User ID: 3e3738ed-bdc9-4b11-b2cc-2ba83353e859
+Campus: Austin K-8
+Email: nour.romman@alpha.school
+Status: UPDATED
+
+--- User 45/100 ---
+User ID: f21b9e35-9a4c-4ffb-8693-9bca02dab579
+Campus: Alpha High School
+Email: mccartney.cohen@alpha.school
+Status: UPDATED
+
+--- User 46/100 ---
+User ID: 39179ef3-2dce-4410-bf39-badaae261b54
+Campus: Austin K-8
+Email: aileya.klinefelter@alpha.school
+Status: UPDATED
+
+--- User 47/100 ---
+User ID: 43f14528-a56e-4615-9b6b-28e6c36c2fc0
+Campus: Single-user 2hr learning
+Email: warren.meyer@2hourlearning.com
+Status: UPDATED
+
+--- User 48/100 ---
+User ID: 7cce9012-c7bf-486f-a5af-67a386b6236a
+Campus: Single-user 2hr learning
+Email: jack.porto@2hourlearning.com
+Status: UPDATED
+
+--- User 49/100 ---
+User ID: 4dc92a18-72a4-41fb-a6ac-7da6df29bff1
+Campus: Alpha Santa Barbara
+Email: greyson.boyle@alpha.school
+Status: UPDATED
+
+--- User 50/100 ---
+User ID: 1020ec57-bb76-438b-a6c4-4515dd6fae0a
+Campus: Austin K-8
+Email: kanhai.shah@alpha.school
+Status: UPDATED
+
+--- User 51/100 ---
+User ID: 1a574dfc-b380-4c26-b848-fddbd028ebdd
+Campus: Sports Academy: Lakeway
+Email: dallace.jones@sportsacademy.school
+Status: UPDATED
+
+--- User 52/100 ---
+User ID: 7384975a-b58d-49b2-ba95-5778e4f8d9a0
+Campus: Alpha Miami
+Email: sol.felicevich@alpha.school
+Status: UPDATED
+
+--- User 53/100 ---
+User ID: 77bb4419-8f67-40a0-bcd7-9611a108a413
+Campus: Sports Academy: Lakeway
+Email: jay.lever@sportsacademy.school
+Status: UPDATED
+
+--- User 54/100 ---
+User ID: 8b726b7d-557f-40c4-950e-ab1b97bf980d
+Campus: Single-user 2hr learning
+Email: ryan.porto@2hourlearning.com
+Status: UPDATED
+
+--- User 55/100 ---
+User ID: 9f663691-817b-458f-a132-76494c0cee9e
+Campus: Valenta Academy
+Email: arianna.salazar@valenta.school
+Status: UPDATED
+
+--- User 56/100 ---
+User ID: 42e2a144-5ad0-4908-9b9e-e2ca5fb170db
+Campus: Sports Academy: Lakeway
+Email: zane.rogers@sportsacademy.school
+Status: UPDATED
+
+--- User 57/100 ---
+User ID: 36f6a826-59f7-4fc1-984a-ada623affdcd
+Campus: Austin K-8
+Email: helio.ortiz@alpha.school
+Status: UPDATED
+
+--- User 58/100 ---
+User ID: de157262-43ce-4168-a137-55748adee0d2
+Campus: Alpha Miami
+Email: adriana.danieri@alpha.school
+Status: UPDATED
+
+--- User 59/100 ---
+User ID: 0a6370c4-8b54-4f14-80e1-ec58df372f2a
+Campus: Austin K-8
+Email: chloe.curtis@alpha.school
+Status: UPDATED
+
+--- User 60/100 ---
+User ID: d1c2c8e0-fcf3-4d61-9d76-be2b3cca8a26
+Campus: Austin K-8
+Email: gwendolyn.meegan@alpha.school
+Status: UPDATED
+
+--- User 61/100 ---
+User ID: a5696bec-c0e6-4a65-8452-5c49d1efbbda
+Campus: Texas Preparatory School
+Email: alaynah.marquez@2hourlearning.com
+Status: UPDATED
+
+--- User 62/100 ---
+User ID: d5e1f898-dca1-4274-860e-2df0bc1128b5
+Campus: Austin K-8
+Email: brooke.tracy@alpha.school
+Status: UPDATED
+
+--- User 63/100 ---
+User ID: f5d37231-aa49-460d-95ce-b92af9fc7d00
+Campus: Alpha West Palm Beach
+Email: josi.posillico@alpha.school
+Status: UPDATED
+
+--- User 64/100 ---
+User ID: 2251dd7e-b1f1-48b3-9063-cbb03074cbb8
+Campus: Austin K-8
+Email: aoife.moore@alpha.school
+Status: UPDATED
+
+--- User 65/100 ---
+User ID: d8a6a9ed-dfea-46a3-81bb-5588aa108096
+Campus: Sports Academy: Lakeway
+Email: jovanni.hernandez@sportsacademy.school
+Status: UPDATED
+
+--- User 66/100 ---
+User ID: 6fcb1631-b9e1-4d6b-af89-253edd0edb9c
+Campus: Austin K-8
+Email: zakary.abdelmessih@alpha.school
+Status: UPDATED
+
+--- User 67/100 ---
+User ID: 989fe126-009a-45d5-b4f7-4ded3d9b6c63
+Campus: Colearn Academy
+Email: joshua.kennard@2hourlearning.com
+Status: UPDATED
+
+--- User 68/100 ---
+User ID: 62620919-4ce7-4859-bd2c-8d52657b92c2
+Campus: Alpha Miami
+Email: brianna.bentancourt@alpha.school
+Status: UPDATED
+
+--- User 69/100 ---
+User ID: 8d2c9f43-feaa-4460-b2ee-27b926fcdcad
+Campus: Austin K-8
+Email: zephyr.sharpe@alpha.school
+Status: UPDATED
+
+--- User 70/100 ---
+User ID: f3f87e1d-dd08-4f4d-8f58-57c7f9373eb9
+Campus: Austin K-8
+Email: nico.blanco@alpha.school
+Status: UPDATED
+
+--- User 71/100 ---
+User ID: 00e4dd99-49d7-407f-8f1d-ec593d3c61e1
+Campus: Austin K-8
+Email: naomi.kocek@alpha.school
+Status: UPDATED
+
+--- User 72/100 ---
+User ID: 54e4dd39-120a-4d62-9cf1-defdf2417261
+Campus: Alpha Tampa
+Email: maksim.kroger@alpha.school
+Status: UPDATED
+
+--- User 73/100 ---
+User ID: cb162296-1bd5-4351-867b-9a93a202bf3d
+Campus: Alpha High School
+Email: sonia.suthar@alpha.school
+Status: UPDATED
+
+--- User 74/100 ---
+User ID: 7f44a8cf-86d7-415b-8609-04c0a36db84d
+Campus: Alpha Miami
+Email: sofia.steinberg@alpha.school
+Status: UPDATED
+
+--- User 75/100 ---
+User ID: ee27611c-685a-4f02-b851-ac29ff2539db
+Campus: Colearn Academy
+Email: samuel.case@2hourlearning.com
+Status: UPDATED
+
+--- User 76/100 ---
+User ID: 02cb12cd-5401-48ba-a5d5-5f854628e816
+Campus: Austin K-8
+Email: john.guner@alpha.school
+Status: UPDATED
+
+--- User 77/100 ---
+User ID: 29f58f8e-d463-4cfd-9741-d16dbdc9224f
+Campus: Alpha High School
+Email: studyreeltest@alpha.school
+Status: UPDATED
+
+--- User 78/100 ---
+User ID: 542b47bb-797d-4783-9ef7-8250592e38ab
+Campus: Austin K-8
+Email: molly.joshi@alpha.school
+Status: UPDATED
+
+--- User 79/100 ---
+User ID: 71ef0e43-7a16-49a0-9f62-dd0967f77af4
+Campus: Alpha High School
+Email: jackson.price@alpha.school
+Status: UPDATED
+
+--- User 80/100 ---
+User ID: ebe3813c-1a3b-4e2c-82ba-eec4b78976cb
+Campus: Austin K-8
+Email: sylvi.hagman@alpha.school
+Status: UPDATED
+
+--- User 81/100 ---
+User ID: d100d2f7-eb88-4f1d-9e63-baaba95654de
+Campus: Esports Academy: Austin
+Email: landen.goikhman@nextgenacademy.school
+Status: UPDATED
+
+--- User 82/100 ---
+User ID: 83325b55-072f-4e4b-a9be-c44386b0d4c2
+Campus: Austin K-8
+Email: austin.wong@alpha.school
+Status: UPDATED
+
+--- User 83/100 ---
+User ID: 302104e6-61e1-4a97-9cc5-fc40c6090315
+Campus: Austin K-8
+Email: grady.swanson@alpha.school
+Status: UPDATED
+
+--- User 84/100 ---
+User ID: d7dd64c6-54c9-4c00-83b5-1803babd5795
+Campus: Alpha High School
+Email: ella.gremont@alpha.school
+Status: UPDATED
+
+--- User 85/100 ---
+User ID: ee32f5b3-903f-4b6e-8322-e7a38e9a6bb6
+Campus: Austin K-8
+Email: kiana.negrete@alpha.school
+Status: UPDATED
+
+--- User 86/100 ---
+User ID: 56870338-6d46-4426-83b0-d1420a3396aa
+Campus: Austin K-8
+Email: rocco.benetti@alpha.school
+Status: UPDATED
+
+--- User 87/100 ---
+User ID: b486d993-41d4-485e-9fd9-b6da2365fed1
+Campus: Colearn Academy
+Email: reagan.galbreth@2hourlearning.com
+Status: UPDATED
+
+--- User 88/100 ---
+User ID: 513c2d79-f9f2-4c51-b0ea-31ce3ddf0cac
+Campus: Sports Academy: Lakeway
+Email: lucius.walker@alpha.school
+Status: UPDATED
+
+--- User 89/100 ---
+User ID: 48094885-5b23-4ae5-976d-47cd003b8665
+Campus: Austin K-8
+Email: jack.bromberg@alpha.school
+Status: UPDATED
+
+--- User 90/100 ---
+User ID: 5ed72957-0099-4ea4-af68-1491d49a89f0
+Campus: Austin K-8
+Email: isabelle.moncure@alpha.school
+Status: UPDATED
+
+--- User 91/100 ---
+User ID: 0fe66212-ecc4-45a8-b87f-ef73cbfae2e5
+Campus: Sports Academy: Lakeway
+Email: kai.lever@sportsacademy.school
+Status: UPDATED
+
+--- User 92/100 ---
+User ID: e2a45cc2-a38f-4ca2-958b-292d563f97c7
+Campus: Austin K-8
+Email: parker.pesek@alpha.school
+Status: UPDATED
+
+--- User 93/100 ---
+User ID: f27d460a-9d7e-427a-a973-baf40884f12f
+Campus: Sports Academy: Lakeway
+Email: javierjulian.baez@sportsacademy.school
+Status: UPDATED
+
+--- User 94/100 ---
+User ID: b87733bf-2f88-40d9-9cdd-90a329418b03
+Campus: Alpha High School
+Email: maxime.auvray@alpha.school
+Status: UPDATED
+
+--- User 95/100 ---
+User ID: 2788d8e3-3d5e-47c3-98eb-a867fbd83df2
+Campus: Single-user 2hr learning
+Email: kealaula.licup@2hourlearning.com
+Status: UPDATED
+
+--- User 96/100 ---
+User ID: cef8af5e-519a-48e0-a2fe-4d050223195d
+Campus: Austin K-8
+Email: ella.mcmurry@alpha.school
+Status: UPDATED
+
+--- User 97/100 ---
+User ID: 6c1db09c-e383-4cfc-94e5-cba406b04eae
+Campus: Austin K-8
+Email: katherine.du@alpha.school
+Status: UPDATED
+
+--- User 98/100 ---
+User ID: 63717150-4f96-493a-943e-3e6188afb123
+Campus: Texas Preparatory School
+Email: anthonella.ochoa@2hourlearning.com
+Status: UPDATED
+
+--- User 99/100 ---
+User ID: 6af75bc0-3d7a-4394-ad8d-50d24e9130ba
+Campus: Texas Preparatory School
+Email: ezel.pereznellar@2hourlearning.com
+Status: UPDATED
+
+--- User 100/100 ---
+User ID: 31129aea-12b2-4e9e-a6e5-f5c8b712d674
+Campus: Single-user 2hr learning
+Email: alannah.carrion@2hourlearning.com
+Status: UPDATED
+
+===== Summary =====
+- Users processed: 100
+- Users found: 100
+- Users not found: 0
+- Successful updates: 100
+- Failed updates: 0
+==================
+  
+===== Campus Update - 2025-06-04T09:50:16.666Z =====
+Found 57 users to process
+
+
+--- User 1/57 ---
+User ID: 498f123f-fa6d-4176-a6d2-1ca6aa9f2655
+Campus: Texas Preparatory School
+Email: shamiya.johnson@2hourlearning.com
+Status: UPDATED
+
+--- User 2/57 ---
+User ID: d106e338-b3ce-41b8-9f70-6e22b79b09cb
+Campus: Colearn Academy
+Email: will.robinson@2hourlearning.com
+Status: UPDATED
+
+--- User 3/57 ---
+User ID: 25e76b68-acc3-46ff-88b0-575cab45178f
+Campus: Alpha Miami
+Email: thomas.page@alpha.school
+Status: UPDATED
+
+--- User 4/57 ---
+User ID: 55f82e79-9a6b-4ac0-aa5f-ac4b88d36350
+Campus: Single-user 2hr learning
+Email: hortense.puddlefoot@2hourlearning.com
+Status: UPDATED
+
+--- User 5/57 ---
+User ID: 42181f3a-3437-4600-8723-28afefc5e9c0
+Campus: Austin K-8
+Email: arjun.caberwal@alpha.school
+Status: UPDATED
+
+--- User 6/57 ---
+User ID: 25c5cec4-4f5f-4c71-b87f-92bd04b98d5b
+Campus: Sports Academy: Lakeway
+Email: thomas.gleinser@sportsacademy.school
+Status: UPDATED
+
+--- User 7/57 ---
+User ID: 8d0f6c9a-1be8-4b05-ae3c-79013cbb5258
+Campus: Texas Preparatory School
+Email: angel.gonzalez-romero@2hourlearning.com
+Status: UPDATED
+
+--- User 8/57 ---
+User ID: 34234a7a-38bc-45a9-97e6-8a7ccc7ba6ba
+Campus: Texas Preparatory School
+Email: thiaggo.rodriguez@2hourlearning.com
+Status: UPDATED
+
+--- User 9/57 ---
+User ID: c424c7b3-a22c-4370-99e0-70bb1bb589ef
+Campus: Texas Preparatory School
+Email: ysabella.ramos@2hourlearning.com
+Status: UPDATED
+
+--- User 10/57 ---
+User ID: 96bff6f4-1d8b-48a7-bc5b-166aec53f589
+Campus: Alpha High School
+Email: janna.zhang@alpha.school
+Status: UPDATED
+
+--- User 11/57 ---
+User ID: 95a31769-75cf-4069-9958-8f0b5fac4dd4
+Campus: Alpha Miami
+Email: asher.hazard@alpha.school
+Status: UPDATED
+
+--- User 12/57 ---
+User ID: 626bffaa-2383-4203-84c5-e3f0d4c37e65
+Campus: Alpha Fort Worth
+Email: emma.murphy@alpha.school
+Status: UPDATED
+
+--- User 13/57 ---
+User ID: ef76e3ff-70d8-4771-8e2e-5b7dc16717c6
+Campus: Austin K-8
+Email: scott.baehr@alpha.school
+Status: UPDATED
+
+--- User 14/57 ---
+User ID: 34d5d914-8f22-4485-afee-83af1c30f1dd
+Campus: Austin K-8
+Email: lore.saunders@alpha.school
+Status: UPDATED
+
+--- User 15/57 ---
+User ID: b6fa7128-f641-4efd-9075-375411fd6c39
+Campus: Austin K-8
+Email: duke.ajouz@alpha.school
+Status: UPDATED
+
+--- User 16/57 ---
+User ID: e45b5beb-4c37-4616-a15b-e1ac1ab73193
+Campus: Alpha High School
+Email: stella.grams@alpha.school
+Status: UPDATED
+
+--- User 17/57 ---
+User ID: 146a8313-eded-4c9f-a321-c3e69b99be61
+Campus: Vita High School
+Email: sophia.nurse@2hourlearning.com
+Status: UPDATED
+
+--- User 18/57 ---
+User ID: 9741628c-7133-4e2e-94bb-f95efc770fae
+Campus: Austin K-8
+Email: callum.carsonalford@alpha.school
+Status: UPDATED
+
+--- User 19/57 ---
+User ID: 9ed6f676-f695-40b2-af49-c28c0a47ce91
+Campus: GT School: Georgetown TX
+Email: nova.victore@2hourlearning.com
+Status: UPDATED
+
+--- User 20/57 ---
+User ID: 32db468c-b42b-4701-b166-b5b74c3763c4
+Campus: Alpha West Palm Beach
+Email: grace.goedereis@alpha.school
+Status: UPDATED
+
+--- User 21/57 ---
+User ID: f3d5984e-a208-4013-8686-6e6ad77fb7a7
+Campus: Brownsville K-8
+Email: evelyn.gabler@alpha.school
+Status: UPDATED
+
+--- User 22/57 ---
+User ID: 4e38e1f4-14e4-46e4-92d5-6c67332ecf1e
+Campus: Texas Preparatory School
+Email: justin.wooley@2hourlearning.com
+Status: UPDATED
+
+--- User 23/57 ---
+User ID: e0fcc6b9-9db1-4792-a6aa-0d1d4da8a57f
+Campus: Austin K-8
+Email: aubrey.curtis@alpha.school
+Status: UPDATED
+
+--- User 24/57 ---
+User ID: e2b3964b-b280-47e6-b330-f0e216a09d87
+Campus: Alpha Miami
+Email: leo.montagna@alpha.school
+Status: UPDATED
+
+--- User 25/57 ---
+User ID: ed089064-ae5c-48f8-b632-e82f25807d5b
+Campus: Austin K-8
+Email: miles.kozun@alpha.school
+Status: UPDATED
+
+--- User 26/57 ---
+User ID: f73bf3bc-7a9e-4199-8b5c-ea4e54df9738
+Campus: Austin K-8
+Email: gideon.griffin@alpha.school
+Status: UPDATED
+
+--- User 27/57 ---
+User ID: 9efbef62-5c9a-4a77-9c3c-1c6321eedaf8
+Campus: Alpha Miami
+Email: nicholas.mora@alpha.school
+Status: UPDATED
+
+--- User 28/57 ---
+User ID: 62a49c2f-420d-4163-9c91-4570975866e1
+Campus: Colearn Academy
+Email: evelyn.kennard@2hourlearning.com
+Status: UPDATED
+
+--- User 29/57 ---
+User ID: cc07d5d2-62c9-4a6e-bfb7-bbfd882cdf00
+Campus: Austin K-8
+Email: bobbi.sue.brown@alpha.school
+Status: UPDATED
+
+--- User 30/57 ---
+User ID: 321d8311-ec5d-498a-bc9a-0d4f429ef4e9
+Campus: Sports Academy: Lakeway
+Email: omar.ibarra@sportsacademy.school
+Status: UPDATED
+
+--- User 31/57 ---
+User ID: 958fd368-a48a-426b-87cb-05585b25efa4
+Campus: Brownsville K-8
+Email: cj.wright@alpha.school
+Status: UPDATED
+
+--- User 32/57 ---
+User ID: d5e58b79-325d-482d-ab49-a4db2d8a5aa3
+Campus: Single-user 2hr learning
+Email: alexander.wiebeck@2hourlearning.com
+Status: UPDATED
+
+--- User 33/57 ---
+User ID: 051cf892-d264-4484-8d5e-e10ad51615ab
+Campus: Austin K-8
+Email: madeline.moncure@alpha.school
+Status: UPDATED
+
+--- User 34/57 ---
+User ID: d693e856-979e-4255-80e9-f26a2169277f
+Campus: Single-user 2hr learning
+Email: diana.kostov@2hourlearning.com
+Status: UPDATED
+
+--- User 35/57 ---
+User ID: 63426c35-134a-4669-a900-b5133f9da42c
+Campus: Esports Academy: Austin
+Email: bennett.morris@nextgenacademy.school
+Status: UPDATED
+
+--- User 36/57 ---
+User ID: 207a95d2-11b9-4f05-936e-e8b883ea576c
+Campus: Austin K-8
+Email: bandon.peterson@alpha.school
+Status: UPDATED
+
+--- User 37/57 ---
+User ID: b1593c1a-a7e7-45cd-869d-225928a0d698
+Campus: Texas Preparatory School
+Email: sirkanden.freeman@2hourlearning.com
+Status: UPDATED
+
+--- User 38/57 ---
+User ID: e0cf8deb-29ab-4a20-a217-10bc6fb872bb
+Campus: Brownsville K-8
+Email: amelia.gabler@alpha.school
+Status: UPDATED
+
+--- User 39/57 ---
+User ID: 5fb4f721-295d-4d59-afe8-4ab4fcee3057
+Campus: Alpha Tampa
+Email: scarlett.kroger@alpha.school
+Status: UPDATED
+
+--- User 40/57 ---
+User ID: 4928b448-1876-41ff-b90c-9f88c8a83023
+Campus: Austin K-8
+Email: harper.hawkins@alpha.school
+Status: UPDATED
+
+--- User 41/57 ---
+User ID: 651052cd-9ab3-4451-948f-f030b05f4112
+Campus: Alpha Miami
+Email: sydney.barba@alpha.school
+Status: UPDATED
+
+--- User 42/57 ---
+User ID: c60d83ac-ab29-415f-a1aa-bf5f0cb1c1fc
+Campus: Alpha High School
+Email: caleb.walker@alpha.school
+Status: UPDATED
+
+--- User 43/57 ---
+User ID: 764ac19e-cc25-448a-a0dd-79bf4364b1c2
+Campus: Alpha Miami
+Email: tao.fernandez@alpha.school
+Status: UPDATED
+
+--- User 44/57 ---
+User ID: f39de852-9a6c-4721-b60d-5ede15c203f6
+Campus: Austin K-8
+Email: arden.mccord@alpha.school
+Status: UPDATED
+
+--- User 45/57 ---
+User ID: d42cb007-7c01-42d4-baf6-55437a34db0c
+Campus: Colearn Academy
+Email: rowan.thompson@2hourlearning.com
+Status: UPDATED
+
+--- User 46/57 ---
+User ID: 4449739e-3913-4dcc-8b65-5154b1f2c9db
+Campus: Texas Preparatory School
+Email: isabella.payan@2hourlearning.com
+Status: UPDATED
+
+--- User 47/57 ---
+User ID: 3988a901-bc31-49d0-baee-dbd02cdb71ad
+Campus: Texas Preparatory School
+Email: monica.maldonado-rafaela@2hourlearning.com
+Status: UPDATED
+
+--- User 48/57 ---
+User ID: a8f802d1-36ea-41f8-a644-9c38e22fb0a3
+Campus: Austin K-8
+Email: odeya.shinar@alpha.school
+Status: UPDATED
+
+--- User 49/57 ---
+User ID: b3c94e03-5dbf-441d-81b9-7426ca19986c
+Campus: Austin K-8
+Email: vayda.hendle@alpha.school
+Status: UPDATED
+
+--- User 50/57 ---
+User ID: 7ddcbeb5-48eb-476b-b794-e93cbc7a56b0
+Campus: Alpha Miami
+Email: siena.busch@alpha.school
+Status: UPDATED
+
+--- User 51/57 ---
+User ID: d72af576-2c42-46af-aeae-5e5cd24e1f55
+Campus: GT School: Georgetown TX
+Email: abraham.ayad@2hourlearning.com
+Status: UPDATED
+
+--- User 52/57 ---
+User ID: 1d60c88b-11e4-4ee1-a457-5c13ea7d4f78
+Campus: Brownsville K-8
+Email: elijah.hunter@alpha.school
+Status: UPDATED
+
+--- User 53/57 ---
+User ID: b0b2bc49-1d70-45cd-8aa2-5db2784f241b
+Campus: Alpha Fort Worth
+Email: tony.liang@alpha.school
+Status: UPDATED
+
+--- User 54/57 ---
+User ID: 5226187a-b243-4aa4-ad32-c95a0363f94a
+Campus: GT School: Georgetown TX
+Email: wyatt.victore@2hourlearning.com
+Status: UPDATED
+
+--- User 55/57 ---
+User ID: fe9dbe0c-33c1-4916-a3c2-7d7cf0ea3692
+Campus: Sports Academy: Lakeway
+Email: parth.thakkar@sportsacademy.school
+Status: UPDATED
+
+--- User 56/57 ---
+User ID: 0d92f705-1fc5-4dbc-b302-fefb62f51ab0
+Campus: Austin K-8
+Email: oslo.singer@alpha.school
+Status: UPDATED
+
+--- User 57/57 ---
+User ID: 7ecf2c30-df6e-40ed-ba3a-349048a768ab
+Campus: Brownsville K-8
+Email: rafaela.almanza@alpha.school
+Status: UPDATED
+
+===== Summary =====
+- Users processed: 57
+- Users found: 57
+- Users not found: 0
+- Successful updates: 57
+- Failed updates: 0
+==================
+  
