@@ -108,6 +108,7 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
   const mediaStreamRef = useRef<MediaStream | null>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const problemStartTimeRef = useRef<number>(Date.now());
+  const sharedSpeechStartTimeRef = useRef<number | null>(null); // Shared speech start time for both services
   const autoSubmitTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const hasSubmittedRef = useRef<boolean>(false);
   const audioContextRef = useRef<AudioContext | null>(null);
@@ -144,6 +145,7 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
     hasSubmittedRef.current = false;
     
     // Reset transcription data for new question
+    sharedSpeechStartTimeRef.current = null; // Reset shared speech start time
     transcriptionDataRef.current = {
       webSpeechTranscript: null,
       deepgramTranscript: null,
@@ -160,6 +162,7 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
       autoSubmitTimeoutRef.current = null;
     }
     
+    sharedSpeechStartTimeRef.current = null; // Reset shared speech start time
     transcriptionDataRef.current = {
       webSpeechTranscript: null,
       deepgramTranscript: null,
@@ -348,6 +351,13 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
         const now = Date.now();
         const timeSinceProblem = now - problemStartTimeRef.current;
         console.log('🗣️ Web Speech: Speech started at', timeSinceProblem, 'ms after problem shown');
+        
+        // Set shared speech start time for both services (first one wins)
+        if (!sharedSpeechStartTimeRef.current) {
+          sharedSpeechStartTimeRef.current = now;
+          console.log('🎤 Set shared speech start time:', now);
+        }
+        
         // Record when speech actually starts - only if not already set for this question
         if (!transcriptionDataRef.current.webSpeechStartTime) {
           transcriptionDataRef.current.webSpeechStartTime = now;
@@ -382,9 +392,17 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
                 // If webSpeechStartTime wasn't set by onspeechstart, set it now
                 // This handles cases where speech events don't fire in the expected order
                 if (!transcriptionDataRef.current.webSpeechStartTime) {
-                  // Estimate speech start time based on typical speech recognition delay
-                  transcriptionDataRef.current.webSpeechStartTime = now - 500; // Assume 500ms recognition delay
-                  console.log('⚠️ Web Speech start time not set by onspeechstart, estimating:', transcriptionDataRef.current.webSpeechStartTime);
+                  // Use shared speech start time if available
+                  if (sharedSpeechStartTimeRef.current) {
+                    transcriptionDataRef.current.webSpeechStartTime = sharedSpeechStartTimeRef.current;
+                    console.log('📍 Using shared speech start time for Web Speech:', sharedSpeechStartTimeRef.current);
+                  } else {
+                    // Estimate speech start time based on typical speech recognition delay
+                    const estimatedStart = now - 500; // Assume 500ms recognition delay
+                    transcriptionDataRef.current.webSpeechStartTime = estimatedStart;
+                    sharedSpeechStartTimeRef.current = estimatedStart; // Set shared time
+                    console.log('⚠️ Web Speech start time not set by onspeechstart, estimating:', estimatedStart);
+                  }
                 }
                 
                 // Calculate latency from when speech started
@@ -627,12 +645,25 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
                 const number = extractNumberFromSpeech(transcript);
                 
                 if (number !== null && isFinal) {
-                  // Calculate latency from problem start for Deepgram
                   const now = Date.now();
                   transcriptionDataRef.current.deepgramStartTime = now;
-                  transcriptionDataRef.current.deepgramLatency = now - problemStartTimeRef.current;
-                  transcriptionDataRef.current.deepgramProblemLatency = transcriptionDataRef.current.deepgramLatency;
-                  console.log('⏱️ Deepgram latency from problem start:', transcriptionDataRef.current.deepgramLatency, 'ms');
+                  
+                  // Calculate latency from problem display
+                  transcriptionDataRef.current.deepgramProblemLatency = now - problemStartTimeRef.current;
+                  
+                  // Calculate latency from speech start using shared reference
+                  if (sharedSpeechStartTimeRef.current) {
+                    transcriptionDataRef.current.deepgramLatency = now - sharedSpeechStartTimeRef.current;
+                    console.log('⏱️ Deepgram latency from speech start:', transcriptionDataRef.current.deepgramLatency, 'ms');
+                  } else {
+                    // If no shared speech start time, estimate based on typical delay
+                    const estimatedSpeechStart = now - 1000; // Assume ~1s from speech to transcription
+                    transcriptionDataRef.current.deepgramLatency = now - estimatedSpeechStart;
+                    sharedSpeechStartTimeRef.current = estimatedSpeechStart; // Set shared time
+                    console.log('⏱️ Deepgram latency (estimated from speech start):', transcriptionDataRef.current.deepgramLatency, 'ms');
+                  }
+                  
+                  console.log('⏱️ Deepgram latency from problem display:', transcriptionDataRef.current.deepgramProblemLatency, 'ms');
                   
                   transcriptionDataRef.current.deepgramTranscript = number.toString();
                   setDeepgramValue(number.toString());

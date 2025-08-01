@@ -5,8 +5,8 @@ export interface TranscriptionData {
   correctAnswer: number;
   webSpeechTranscript: string | null;
   deepgramTranscript: string | null;
-  webSpeechLatency: number | null; // in milliseconds from speech start
-  deepgramLatency: number | null; // in milliseconds from problem display
+  webSpeechLatency: number | null; // in milliseconds from speech start to input display
+  deepgramLatency: number | null; // in milliseconds from speech start to input display
   webSpeechProblemLatency?: number | null; // in milliseconds from problem display
   deepgramProblemLatency?: number | null; // in milliseconds from problem display
 }
@@ -77,7 +77,7 @@ export const TranscriptionResults: React.FC<TranscriptionResultsProps> = ({ resu
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 <span className="text-purple-600">Deepgram Latency</span><br />
-                <span className="text-xs text-gray-400">(from problem display)</span>
+                <span className="text-xs text-gray-400">(from speech start)</span>
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 First Response Time<br />
@@ -137,7 +137,7 @@ export const TranscriptionResults: React.FC<TranscriptionResultsProps> = ({ resu
                   <td className="px-6 py-4 whitespace-nowrap text-sm">
                     {(() => {
                       const webProblemLatency = result.webSpeechProblemLatency;
-                      const deepProblemLatency = result.deepgramProblemLatency || result.deepgramLatency;
+                      const deepProblemLatency = result.deepgramProblemLatency;
                       
                       // Helper to check if value is valid (not null and not undefined)
                       const isValid = (value: number | null | undefined): value is number => {
@@ -146,6 +146,7 @@ export const TranscriptionResults: React.FC<TranscriptionResultsProps> = ({ resu
                       
                       if (isValid(webProblemLatency) && isValid(deepProblemLatency)) {
                         // Both have latencies, show the lower one (first response)
+                        // Color based on which service responded first
                         if (webProblemLatency < deepProblemLatency) {
                           return (
                             <span className="text-blue-600 font-medium">
@@ -160,14 +161,14 @@ export const TranscriptionResults: React.FC<TranscriptionResultsProps> = ({ resu
                           );
                         }
                       } else if (isValid(webProblemLatency)) {
-                        // Only Web Speech has latency
+                        // Only Web Speech has latency - it was first by default
                         return (
                           <span className="text-blue-600 font-medium">
                             {webProblemLatency}ms
                           </span>
                         );
                       } else if (isValid(deepProblemLatency)) {
-                        // Only Deepgram has latency
+                        // Only Deepgram has latency - it was first by default
                         return (
                           <span className="text-purple-600 font-medium">
                             {deepProblemLatency}ms
@@ -199,7 +200,7 @@ export const TranscriptionResults: React.FC<TranscriptionResultsProps> = ({ resu
               </span>
             </p>
             <p>
-              Recognition Latency: {' '}
+              Avg Latency: {' '}
               <span className="font-semibold text-blue-600">
                 {avgWebSpeechRecognitionLatency !== null ? `${avgWebSpeechRecognitionLatency.toFixed(0)}ms` : 'N/A'}
               </span>
@@ -221,6 +222,19 @@ export const TranscriptionResults: React.FC<TranscriptionResultsProps> = ({ resu
               <span className="font-semibold">
                 {results.filter(r => r.deepgramTranscript === r.correctAnswer.toString()).length} / {results.length}
                 {' '}({((results.filter(r => r.deepgramTranscript === r.correctAnswer.toString()).length / results.length) * 100).toFixed(1)}%)
+              </span>
+            </p>
+            <p>
+              Avg Latency: {' '}
+              <span className="font-semibold text-purple-600">
+                {(() => {
+                  const deepgramLatencies = results
+                    .filter(r => r.deepgramLatency !== null)
+                    .map(r => r.deepgramLatency!);
+                  return deepgramLatencies.length > 0
+                    ? `${(deepgramLatencies.reduce((a, b) => a + b, 0) / deepgramLatencies.length).toFixed(0)}ms`
+                    : 'N/A';
+                })()}
               </span>
             </p>
             <p>
