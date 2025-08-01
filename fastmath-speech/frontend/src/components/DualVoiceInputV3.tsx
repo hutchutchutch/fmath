@@ -101,6 +101,9 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
   const [isWebSpeechReady, setIsWebSpeechReady] = useState(false);
   const [isDeepgramReady, setIsDeepgramReady] = useState(false);
   const [microphoneActive, setMicrophoneActive] = useState(false);
+  const [webSpeechEnabled, setWebSpeechEnabled] = useState(true);
+  const [deepgramEnabled, setDeepgramEnabled] = useState(true);
+  const [isListening, setIsListening] = useState(false);
   
   // Refs
   const recognitionRef = useRef<ISpeechRecognition | null>(null);
@@ -210,10 +213,15 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
         mediaStreamRef.current = stream;
         setupMicrophoneMonitoring(stream);
         
-        // Now initialize both services
+        // Now initialize enabled services
         if (mounted) {
-          initializeWebSpeech();
-          initializeDeepgram();
+          setIsListening(true);
+          if (webSpeechEnabled) {
+            initializeWebSpeech();
+          }
+          if (deepgramEnabled) {
+            initializeDeepgram();
+          }
         }
       } catch (error) {
         console.error('❌ Microphone permission denied:', error);
@@ -847,6 +855,13 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
       audioContextRef.current.close();
       audioContextRef.current = null;
     }
+    
+    // Update states
+    setIsListening(false);
+    setIsWebSpeechReady(false);
+    setIsDeepgramReady(false);
+    setWebSpeechStatus('Stopped');
+    setDeepgramStatus('Stopped');
   };
 
   const handleManualInput = (value: string) => {
@@ -862,6 +877,84 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
           inputMethod: 'keyboard' as const
         });
       }
+    }
+  };
+
+  const handleStop = () => {
+    console.log('🛑 Stop button clicked');
+    cleanup();
+  };
+
+  const handleStart = async () => {
+    console.log('▶️ Start button clicked');
+    
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ 
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true
+        } 
+      });
+      
+      mediaStreamRef.current = stream;
+      setupMicrophoneMonitoring(stream);
+      setIsListening(true);
+      
+      if (webSpeechEnabled) {
+        initializeWebSpeech();
+      }
+      if (deepgramEnabled) {
+        initializeDeepgram();
+      }
+    } catch (error) {
+      console.error('❌ Failed to start:', error);
+      setWebSpeechStatus('Mic permission denied');
+      setDeepgramStatus('Mic permission denied');
+    }
+  };
+
+  const handleWebSpeechToggle = () => {
+    const newState = !webSpeechEnabled;
+    setWebSpeechEnabled(newState);
+    
+    if (newState && isListening && !recognitionRef.current) {
+      // Enable Web Speech
+      initializeWebSpeech();
+    } else if (!newState && recognitionRef.current) {
+      // Disable Web Speech
+      try {
+        recognitionRef.current.abort();
+        recognitionRef.current = null;
+        setIsWebSpeechReady(false);
+        setWebSpeechStatus('Disabled');
+      } catch (error) {
+        console.error('Error stopping Web Speech:', error);
+      }
+    }
+  };
+
+  const handleDeepgramToggle = () => {
+    const newState = !deepgramEnabled;
+    setDeepgramEnabled(newState);
+    
+    if (newState && isListening && !deepgramSocketRef.current && mediaStreamRef.current) {
+      // Enable Deepgram
+      initializeDeepgram();
+    } else if (!newState && deepgramSocketRef.current) {
+      // Disable Deepgram
+      if (deepgramSocketRef.current.readyState === WebSocket.OPEN) {
+        deepgramSocketRef.current.close();
+      }
+      deepgramSocketRef.current = null;
+      
+      if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
+        mediaRecorderRef.current.stop();
+        mediaRecorderRef.current = null;
+      }
+      
+      setIsDeepgramReady(false);
+      setDeepgramStatus('Disabled');
     }
   };
 
@@ -907,23 +1000,74 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
         </p>
       </div>
 
-      {/* Microphone Activity Indicator */}
+      {/* Controls */}
       {!useTextFallback && (
-        <div className="flex justify-center items-center space-x-2">
-          <div className={`w-4 h-4 rounded-full transition-all ${
-            microphoneActive ? 'bg-red-500 animate-pulse' : 'bg-gray-300'
-          }`} />
-          <span className="text-sm text-gray-600">
-            {microphoneActive ? 'Microphone active' : 'Microphone idle'}
-          </span>
+        <div className="space-y-4">
+          {/* Microphone Activity Indicator */}
+          <div className="flex justify-center items-center space-x-2">
+            <div className={`w-4 h-4 rounded-full transition-all ${
+              microphoneActive ? 'bg-red-500 animate-pulse' : 'bg-gray-300'
+            }`} />
+            <span className="text-sm text-gray-600">
+              {microphoneActive ? 'Microphone active' : 'Microphone idle'}
+            </span>
+          </div>
+          
+          {/* Control Buttons */}
+          <div className="flex justify-center items-center space-x-4">
+            {/* Start/Stop Button */}
+            {isListening ? (
+              <button
+                onClick={handleStop}
+                className="px-4 py-2 rounded-lg font-medium transition-colors bg-red-500 hover:bg-red-600 text-white"
+              >
+                🛑 Stop
+              </button>
+            ) : (
+              <button
+                onClick={handleStart}
+                disabled={!webSpeechEnabled && !deepgramEnabled}
+                className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                  webSpeechEnabled || deepgramEnabled
+                    ? 'bg-green-500 hover:bg-green-600 text-white'
+                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                }`}
+              >
+                ▶️ Start
+              </button>
+            )}
+            
+            {/* Web Speech Toggle */}
+            <label className="flex items-center space-x-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={webSpeechEnabled}
+                onChange={handleWebSpeechToggle}
+                className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+              />
+              <span className="text-sm font-medium text-gray-700">Web Speech API</span>
+            </label>
+            
+            {/* Deepgram Toggle */}
+            <label className="flex items-center space-x-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={deepgramEnabled}
+                onChange={handleDeepgramToggle}
+                className="w-4 h-4 text-purple-600 rounded focus:ring-purple-500"
+              />
+              <span className="text-sm font-medium text-gray-700">Deepgram</span>
+            </label>
+          </div>
         </div>
       )}
 
       {/* Voice Input Display */}
       {!useTextFallback ? (
-        <div className="grid grid-cols-2 gap-4">
+        <div className={`grid ${webSpeechEnabled && deepgramEnabled ? 'grid-cols-2' : 'grid-cols-1'} gap-4`}>
           {/* Web Speech API Display */}
-          <div className="space-y-2">
+          {webSpeechEnabled && (
+            <div className="space-y-2">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-semibold text-blue-600">Web Speech API</h3>
               <div className="flex items-center space-x-2">
@@ -947,9 +1091,11 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
               )}
             </div>
           </div>
+          )}
 
           {/* Deepgram Display */}
-          <div className="space-y-2">
+          {deepgramEnabled && (
+            <div className="space-y-2">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-semibold text-purple-600">Deepgram</h3>
               <div className="flex items-center space-x-2">
@@ -973,6 +1119,7 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
               )}
             </div>
           </div>
+          )}
         </div>
       ) : (
         <div className="flex justify-between">
