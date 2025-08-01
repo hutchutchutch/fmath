@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LiveKit Audio Test</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 50px auto; 
+            padding: 20px;
+        }
+        .status { 
+            padding: 10px; 
+            margin: 10px 0; 
+            border-radius: 5px; 
+            background: #f0f0f0;
+        }
+        .connected { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        button { 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            margin: 10px 5px;
+            cursor: pointer;
+        }
+        #log {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 20px;
+            height: 300px;
+            overflow-y: auto;
+            background: #f9f9f9;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>LiveKit Audio Test</h1>
+    
+    <div id="status" class="status">Loading LiveKit SDK...</div>
+    
+    <div>
+        <button onclick="loadLiveKit()" id="loadBtn">Load LiveKit SDK</button>
+        <button onclick="testConnection()" disabled id="testBtn">Test Connection</button>
+    </div>
+    
+    <h3>Debug Log:</h3>
+    <div id="log"></div>
+    
+    <script>
+        let lk = null;
+        
+        function log(message) {
+            const logDiv = document.getElementById('log');
+            const timestamp = new Date().toLocaleTimeString();
+            logDiv.innerHTML += `[${timestamp}] ${message}<br>`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(message);
+        }
+        
+        function updateStatus(message, className) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = 'status ' + (className || '');
+            log('Status: ' + message);
+        }
+        
+        async function loadLiveKit() {
+            try {
+                updateStatus('Loading LiveKit SDK...');
+                
+                // Import LiveKit as ES module
+                const module = await import('https://unpkg.com/livekit-client@latest/dist/livekit-client.esm.mjs');
+                lk = module;
+                
+                log('LiveKit module loaded successfully');
+                log('Available exports: ' + Object.keys(module).join(', '));
+                
+                updateStatus('LiveKit SDK loaded!', 'connected');
+                document.getElementById('testBtn').disabled = false;
+                
+            } catch (error) {
+                updateStatus('Failed to load LiveKit: ' + error.message, 'error');
+                log('Error: ' + error.stack);
+            }
+        }
+        
+        async function testConnection() {
+            if (!lk) {
+                updateStatus('LiveKit not loaded', 'error');
+                return;
+            }
+            
+            try {
+                updateStatus('Creating room instance...');
+                
+                const room = new lk.Room({
+                    adaptiveStream: true,
+                    dynacast: true,
+                });
+                
+                log('Room instance created');
+                
+                // Get token from backend
+                log('Requesting token from backend...');
+                const response = await fetch('http://localhost:3001/api/livekit/token', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        roomName: 'test-room-' + Date.now(),
+                        participantName: 'test-user'
+                    })
+                });
+                
+                const data = await response.json();
+                log('Token received: ' + (data.token ? 'Yes' : 'No'));
+                log('URL: ' + data.url);
+                
+                updateStatus('Token received, connecting...', 'connected');
+                
+                // Set up event handlers
+                room.on('connected', () => {
+                    log('Connected to room!');
+                    updateStatus('Connected to LiveKit room!', 'connected');
+                });
+                
+                room.on('disconnected', (reason) => {
+                    log('Disconnected: ' + reason);
+                    updateStatus('Disconnected', 'error');
+                });
+                
+                // Connect
+                await room.connect(data.url, data.token);
+                
+                // Try to publish audio
+                log('Creating local audio track...');
+                const tracks = await lk.createLocalTracks({ audio: true, video: false });
+                log('Audio track created');
+                
+                await room.localParticipant.publishTracks(tracks);
+                log('Audio track published!');
+                
+                updateStatus('Successfully connected and publishing audio!', 'connected');
+                
+            } catch (error) {
+                updateStatus('Error: ' + error.message, 'error');
+                log('Error: ' + error.stack);
+            }
+        }
+        
+        // Auto-load on page load
+        window.addEventListener('load', () => {
+            log('Page loaded, checking for module support...');
+            if (!window.Promise || !window.fetch) {
+                updateStatus('Browser too old - missing Promise/fetch support', 'error');
+            } else {
+                log('Browser supports ES modules');
+                updateStatus('Ready to load LiveKit SDK');
+            }
+        });
+    </script>
+</body>
+</html>

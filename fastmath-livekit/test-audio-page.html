@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LiveKit Audio Pipeline Test</title>
+    <script src="https://unpkg.com/livekit-client/dist/livekit-client.umd.min.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 50px auto; 
+            padding: 20px;
+        }
+        .status { 
+            padding: 10px; 
+            margin: 10px 0; 
+            border-radius: 5px; 
+            background: #f0f0f0;
+        }
+        .connected { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        button { 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            margin: 10px 5px;
+            cursor: pointer;
+        }
+        #transcriptions {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 20px;
+            height: 200px;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+        .transcription {
+            margin: 5px 0;
+            padding: 5px;
+            border-left: 3px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>LiveKit Audio Pipeline Test</h1>
+    
+    <div id="status" class="status">Ready to connect</div>
+    
+    <div>
+        <button onclick="getToken()">1. Get Token</button>
+        <button onclick="connectToRoom()" disabled id="connectBtn">2. Connect to Room</button>
+        <button onclick="startAudio()" disabled id="audioBtn">3. Start Audio</button>
+        <button onclick="sayNumber()" disabled id="speakBtn">4. Say a Number</button>
+    </div>
+    
+    <div>
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Click "Get Token" to authenticate</li>
+            <li>Click "Connect to Room" to join the LiveKit room</li>
+            <li>Click "Start Audio" to publish your microphone</li>
+            <li>Click "Say a Number" or speak any number (0-20)</li>
+            <li>Watch for transcriptions below</li>
+        </ol>
+    </div>
+    
+    <h3>Server Transcriptions:</h3>
+    <div id="transcriptions"></div>
+    
+    <script>
+        let room;
+        let token;
+        const roomName = new URLSearchParams(window.location.search).get('room');
+        
+        async function getToken() {
+            try {
+                updateStatus('Getting token...', 'status');
+                const response = await fetch('http://localhost:3001/api/livekit/token', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        roomName: roomName,
+                        participantName: 'test-user-' + Date.now()
+                    })
+                });
+                
+                const data = await response.json();
+                if (data.token) {
+                    token = data.token;
+                    updateStatus('Token received! Ready to connect.', 'connected');
+                    document.getElementById('connectBtn').disabled = false;
+                    
+                    // Start monitoring transcriptions
+                    monitorTranscriptions();
+                } else {
+                    throw new Error('No token received');
+                }
+            } catch (error) {
+                updateStatus('Error: ' + error.message, 'error');
+            }
+        }
+        
+        async function connectToRoom() {
+            try {
+                updateStatus('Connecting to room...', 'status');
+                room = new LiveKit.Room();
+                
+                room.on('connected', () => {
+                    updateStatus('Connected to room!', 'connected');
+                    document.getElementById('audioBtn').disabled = false;
+                });
+                
+                room.on('disconnected', () => {
+                    updateStatus('Disconnected from room', 'error');
+                });
+                
+                const url = new URLSearchParams(window.location.search).get('url');
+                await room.connect(url, token);
+            } catch (error) {
+                updateStatus('Connection error: ' + error.message, 'error');
+            }
+        }
+        
+        async function startAudio() {
+            try {
+                updateStatus('Starting audio...', 'status');
+                const tracks = await LiveKit.createLocalTracks({
+                    audio: true,
+                    video: false
+                });
+                
+                await room.localParticipant.publishTracks(tracks);
+                updateStatus('Audio published! Speak any number.', 'connected');
+                document.getElementById('speakBtn').disabled = false;
+            } catch (error) {
+                updateStatus('Audio error: ' + error.message, 'error');
+            }
+        }
+        
+        function sayNumber() {
+            const numbers = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+            const number = numbers[Math.floor(Math.random() * numbers.length)];
+            
+            const utterance = new SpeechSynthesisUtterance(number);
+            window.speechSynthesis.speak(utterance);
+            
+            updateStatus('Said: ' + number, 'connected');
+        }
+        
+        function updateStatus(message, className) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = 'status ' + className;
+        }
+        
+        function monitorTranscriptions() {
+            const eventSource = new EventSource('http://localhost:3001/api/livekit/transcriptions');
+            
+            eventSource.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                if (data.type === 'transcription') {
+                    addTranscription(data);
+                }
+            };
+            
+            eventSource.onerror = (error) => {
+                console.error('SSE error:', error);
+            };
+        }
+        
+        function addTranscription(data) {
+            const container = document.getElementById('transcriptions');
+            const div = document.createElement('div');
+            div.className = 'transcription';
+            div.innerHTML = `
+                <strong>${data.service.toUpperCase()}</strong>: 
+                "${data.text}" 
+                ${data.number !== null ? `→ ${data.number}` : '(no number)'} 
+                <small>(${data.latency}ms)</small>
+            `;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+    </script>
+</body>
+</html>

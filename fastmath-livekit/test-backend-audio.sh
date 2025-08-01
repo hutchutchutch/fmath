@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "Testing backend audio routing..."
+echo ""
+echo "Please:"
+echo "1. Make sure the backend is restarted with the latest changes"
+echo "2. Open http://localhost:3000 in your browser"
+echo "3. Click 'Start' and speak a number"
+echo "4. Watch the backend logs below for audio processing messages"
+echo ""
+echo "Expected logs:"
+echo "- 🔌 New audio stream WebSocket connection"
+echo "- 📤 Audio chunk received messages"
+echo "- 🎵 Handling audio data messages"
+echo "- 🎯 Sending bytes to Groq messages"
+echo "- 📝 Transcription messages"
+echo ""
+echo "Press Ctrl+C to exit"

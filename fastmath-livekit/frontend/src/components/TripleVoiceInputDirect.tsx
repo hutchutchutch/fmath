@@ -3,7 +3,7 @@ import { useState, useRef, useEffect, useCallback } from "react"
 import { TouchpadInput } from "./TouchpadInput"
 import { DebugPanel } from "./DebugPanel"
 
-// Web Speech API types
+// Web Speech API types (same as before)
 interface ISpeechRecognition extends EventTarget {
   continuous: boolean;
   grammars: any;
@@ -61,15 +61,19 @@ declare global {
 export interface TranscriptionData {
   webSpeechTranscript: string | null;
   deepgramTranscript: string | null;
-  webSpeechLatency: number | null; // Latency from speech start
-  deepgramLatency: number | null; // Latency from problem display
+  groqTranscript: string | null;
+  webSpeechLatency: number | null;
+  deepgramLatency: number | null;
+  groqLatency: number | null;
   webSpeechStartTime: number | null;
   deepgramStartTime: number | null;
-  webSpeechProblemLatency: number | null; // Latency from problem display
-  deepgramProblemLatency: number | null; // Latency from problem display (same as deepgramLatency)
+  groqStartTime: number | null;
+  webSpeechProblemLatency: number | null;
+  deepgramProblemLatency: number | null;
+  groqProblemLatency: number | null;
 }
 
-interface DualVoiceInputV3Props {
+interface TripleVoiceInputDirectProps {
   question: {
     num1: number;
     num2: number;
@@ -79,159 +83,154 @@ interface DualVoiceInputV3Props {
   onAnswer: (answer: number, typingData?: { count: number; time: number; inputMethod: 'voice' | 'keyboard' }, transcriptionData?: TranscriptionData) => void;
   showFeedback: boolean;
   enableVoice?: boolean;
-  onServicesReady?: (webSpeechReady: boolean, deepgramReady: boolean) => void;
+  onServicesReady?: (webSpeechReady: boolean, deepgramReady: boolean, groqReady: boolean) => void;
 }
 
-export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({ 
+export const TripleVoiceInputDirect: React.FC<TripleVoiceInputDirectProps> = ({ 
   question, 
   onAnswer, 
   showFeedback, 
   enableVoice = true,
   onServicesReady 
 }) => {
-  // State for both inputs
+  // State for all three inputs
   const [webSpeechValue, setWebSpeechValue] = useState('');
   const [deepgramValue, setDeepgramValue] = useState('');
+  const [groqValue, setGroqValue] = useState('');
   const [webSpeechInterim, setWebSpeechInterim] = useState('');
   const [deepgramInterim, setDeepgramInterim] = useState('');
+  const [groqInterim, setGroqInterim] = useState('');
   const [webSpeechStatus, setWebSpeechStatus] = useState('Initializing...');
   const [deepgramStatus, setDeepgramStatus] = useState('Initializing...');
+  const [groqStatus, setGroqStatus] = useState('Initializing...');
   const [useTextFallback, setUseTextFallback] = useState(false);
   const [showDebug, setShowDebug] = useState(true);
   const [isWebSpeechReady, setIsWebSpeechReady] = useState(false);
   const [isDeepgramReady, setIsDeepgramReady] = useState(false);
+  const [isGroqReady, setIsGroqReady] = useState(false);
   const [microphoneActive, setMicrophoneActive] = useState(false);
   const [webSpeechEnabled, setWebSpeechEnabled] = useState(true);
   const [deepgramEnabled, setDeepgramEnabled] = useState(true);
+  const [groqEnabled, setGroqEnabled] = useState(true);
   const [isListening, setIsListening] = useState(false);
+  const [roomName] = useState(`fastmath-${Date.now()}`);
   
   // Refs
   const recognitionRef = useRef<ISpeechRecognition | null>(null);
-  const deepgramSocketRef = useRef<WebSocket | null>(null);
   const mediaStreamRef = useRef<MediaStream | null>(null);
-  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const audioContextRef = useRef<AudioContext | null>(null);
+  const processorRef = useRef<ScriptProcessorNode | null>(null);
+  const audioWebSocketRef = useRef<WebSocket | null>(null);
+  const transcriptionEventSourceRef = useRef<EventSource | null>(null);
   const problemStartTimeRef = useRef<number>(Date.now());
-  const sharedSpeechStartTimeRef = useRef<number | null>(null); // Shared speech start time for both services
+  const sharedSpeechStartTimeRef = useRef<number | null>(null);
   const autoSubmitTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const hasSubmittedRef = useRef<boolean>(false);
-  const audioContextRef = useRef<AudioContext | null>(null);
-  const analyserRef = useRef<AnalyserNode | null>(null);
   const micCheckIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const analyserRef = useRef<AnalyserNode | null>(null);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   
   // Transcription data
   const transcriptionDataRef = useRef<TranscriptionData>({
     webSpeechTranscript: null,
     deepgramTranscript: null,
+    groqTranscript: null,
     webSpeechLatency: null,
     deepgramLatency: null,
+    groqLatency: null,
     webSpeechStartTime: null,
     deepgramStartTime: null,
+    groqStartTime: null,
     webSpeechProblemLatency: null,
-    deepgramProblemLatency: null
+    deepgramProblemLatency: null,
+    groqProblemLatency: null
   });
 
   // Notify parent when services are ready
   useEffect(() => {
     if (onServicesReady) {
-      onServicesReady(isWebSpeechReady, isDeepgramReady);
+      onServicesReady(isWebSpeechReady, isDeepgramReady, isGroqReady);
     }
-  }, [isWebSpeechReady, isDeepgramReady, onServicesReady]);
+  }, [isWebSpeechReady, isDeepgramReady, isGroqReady, onServicesReady]);
 
   // Reset on new question
   useEffect(() => {
     console.log('🔄 New question:', `${question.num1} ${question.operator} ${question.num2}`);
     setWebSpeechValue('');
     setDeepgramValue('');
+    setGroqValue('');
     setWebSpeechInterim('');
     setDeepgramInterim('');
+    setGroqInterim('');
     problemStartTimeRef.current = Date.now();
     hasSubmittedRef.current = false;
     
-    // Reset transcription data for new question
-    sharedSpeechStartTimeRef.current = null; // Reset shared speech start time
+    // Reset transcription data
+    sharedSpeechStartTimeRef.current = null;
     transcriptionDataRef.current = {
       webSpeechTranscript: null,
       deepgramTranscript: null,
+      groqTranscript: null,
       webSpeechLatency: null,
       deepgramLatency: null,
+      groqLatency: null,
       webSpeechStartTime: null,
       deepgramStartTime: null,
+      groqStartTime: null,
       webSpeechProblemLatency: null,
-      deepgramProblemLatency: null
+      deepgramProblemLatency: null,
+      groqProblemLatency: null
     };
     
     if (autoSubmitTimeoutRef.current) {
       clearTimeout(autoSubmitTimeoutRef.current);
       autoSubmitTimeoutRef.current = null;
     }
-    
-    sharedSpeechStartTimeRef.current = null; // Reset shared speech start time
-    transcriptionDataRef.current = {
-      webSpeechTranscript: null,
-      deepgramTranscript: null,
-      webSpeechLatency: null,
-      deepgramLatency: null,
-      webSpeechStartTime: null,
-      deepgramStartTime: null,
-      webSpeechProblemLatency: null,
-      deepgramProblemLatency: null
-    };
   }, [question]);
 
-  // Initialize voice recognition only once
+  // Initialize voice recognition
   useEffect(() => {
     let mounted = true;
-    let initializationInProgress = false;
     
     const init = async () => {
-      if (!mounted || initializationInProgress || !enableVoice || useTextFallback) return;
-      
-      // Prevent multiple initializations
-      if (recognitionRef.current || deepgramSocketRef.current) {
-        console.log('⚠️ Services already initialized, skipping...');
-        return;
-      }
-      
-      initializationInProgress = true;
+      if (!mounted || !enableVoice || useTextFallback) return;
       
       try {
-        // Request microphone permission first
+        // Request microphone permission
         console.log('🎤 Requesting microphone permission...');
         const stream = await navigator.mediaDevices.getUserMedia({ 
           audio: {
             echoCancellation: true,
             noiseSuppression: true,
-            autoGainControl: true
+            autoGainControl: true,
+            sampleRate: 16000
           } 
         });
         
         console.log('✅ Microphone permission granted');
         
-        if (!mounted) return; // Component unmounted during async operation
+        if (!mounted) return;
         
-        // Keep the stream for monitoring
         mediaStreamRef.current = stream;
         setupMicrophoneMonitoring(stream);
         
-        // Now initialize enabled services
-        if (mounted) {
-          setIsListening(true);
-          if (webSpeechEnabled) {
-            initializeWebSpeech();
-          }
-          if (deepgramEnabled) {
-            initializeDeepgram();
-          }
+        // Initialize services
+        setIsListening(true);
+        if (webSpeechEnabled) {
+          initializeWebSpeech();
+        }
+        if (deepgramEnabled || groqEnabled) {
+          await initializeAudioStreaming();
+          startTranscriptionMonitoring();
         }
       } catch (error) {
         console.error('❌ Microphone permission denied:', error);
         if (mounted) {
           setWebSpeechStatus('Mic permission denied');
           setDeepgramStatus('Mic permission denied');
+          setGroqStatus('Mic permission denied');
           setUseTextFallback(true);
         }
-      } finally {
-        initializationInProgress = false;
       }
     };
     
@@ -242,19 +241,288 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
       cleanup();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [enableVoice, useTextFallback]); // Only re-init if these change
+  }, [enableVoice, useTextFallback]);
 
-  // Handle keyboard shortcuts
-  useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.key === 'd' || e.key === 'D') {
-        setShowDebug(prev => !prev);
+  // Initialize audio streaming
+  const initializeAudioStreaming = async () => {
+    try {
+      console.log('🎥 Initializing audio streaming...');
+      
+      // Connect to audio stream WebSocket
+      const wsUrl = `ws://localhost:3001/ws/audio-stream?room=${roomName}&participant=user`;
+      const ws = new WebSocket(wsUrl);
+      
+      ws.onopen = () => {
+        console.log('✅ Connected to audio stream WebSocket');
+        setDeepgramStatus('Connected');
+        setGroqStatus('Connected');
+        setIsDeepgramReady(true);
+        setIsGroqReady(true);
+        
+        // Start sending audio
+        setupAudioCapture();
+      };
+      
+      ws.onerror = (error) => {
+        console.error('❌ Audio stream WebSocket error:', error);
+        setDeepgramStatus('Connection failed');
+        setGroqStatus('Connection failed');
+      };
+      
+      ws.onclose = () => {
+        console.log('🔌 Audio stream WebSocket closed');
+        setDeepgramStatus('Disconnected');
+        setGroqStatus('Disconnected');
+        setIsDeepgramReady(false);
+        setIsGroqReady(false);
+      };
+      
+      audioWebSocketRef.current = ws;
+      
+      // Join backend services to process audio
+      await fetch('http://localhost:3001/api/livekit/join-room', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ roomName })
+      });
+      
+      console.log('🎯 Backend services initialized');
+      
+    } catch (error) {
+      console.error('❌ Failed to initialize audio streaming:', error);
+      setDeepgramStatus('Failed to connect');
+      setGroqStatus('Failed to connect');
+    }
+  };
+
+  // Setup audio capture and streaming
+  const setupAudioCapture = () => {
+    if (!mediaStreamRef.current || !audioWebSocketRef.current) return;
+    
+    console.log('🎤 Setting up audio capture...');
+    
+    try {
+      // For raw PCM streaming to Deepgram
+      const audioContext = new AudioContext({ sampleRate: 16000 });
+      const source = audioContext.createMediaStreamSource(mediaStreamRef.current);
+      
+      // Create a script processor for capturing audio
+      const processor = audioContext.createScriptProcessor(4096, 1, 1);
+      
+      processor.onaudioprocess = (e) => {
+        if (audioWebSocketRef.current?.readyState === WebSocket.OPEN) {
+          const inputData = e.inputBuffer.getChannelData(0);
+          
+          // Convert float32 to int16
+          const buffer = new ArrayBuffer(inputData.length * 2);
+          const view = new DataView(buffer);
+          
+          for (let i = 0; i < inputData.length; i++) {
+            const s = Math.max(-1, Math.min(1, inputData[i]));
+            view.setInt16(i * 2, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
+          }
+          
+          // Send audio data
+          audioWebSocketRef.current.send(buffer);
+        }
+      };
+      
+      source.connect(processor);
+      processor.connect(audioContext.destination);
+      
+      audioContextRef.current = audioContext;
+      processorRef.current = processor;
+      
+      // Also setup MediaRecorder for Groq (needs WebM format)
+      setupMediaRecorderForGroq();
+      
+      console.log('✅ Audio capture started');
+    } catch (error) {
+      console.error('❌ Failed to setup audio capture:', error);
+    }
+  };
+  
+  // Setup MediaRecorder for Groq
+  const setupMediaRecorderForGroq = () => {
+    if (!mediaStreamRef.current) return;
+    
+    try {
+      const mediaRecorder = new MediaRecorder(mediaStreamRef.current, {
+        mimeType: 'audio/webm;codecs=opus'
+      });
+      
+      const chunks: Blob[] = [];
+      
+      mediaRecorder.ondataavailable = (event) => {
+        if (event.data.size > 0) {
+          chunks.push(event.data);
+        }
+      };
+      
+      mediaRecorder.onstop = async () => {
+        console.log(`📦 MediaRecorder stopped, chunks collected: ${chunks.length}`);
+        if (chunks.length > 0) {
+          const blob = new Blob(chunks, { type: 'audio/webm;codecs=opus' });
+          const buffer = await blob.arrayBuffer();
+          console.log(`🎵 WebM blob size: ${blob.size} bytes, buffer size: ${buffer.byteLength} bytes`);
+          
+          // Send WebM audio for Groq processing
+          if (audioWebSocketRef.current?.readyState === WebSocket.OPEN) {
+            // Send with a marker to indicate it's WebM format
+            const marker = new TextEncoder().encode('WEBM:');
+            const combined = new Uint8Array(marker.length + buffer.byteLength);
+            combined.set(marker, 0);
+            combined.set(new Uint8Array(buffer), marker.length);
+            console.log(`📤 Sending WebM data to backend: ${combined.length} bytes`);
+            audioWebSocketRef.current.send(combined);
+          } else {
+            console.log('⚠️ WebSocket not open, cannot send WebM data');
+          }
+        }
+        chunks.length = 0;
+      };
+      
+      // Store MediaRecorder reference
+      mediaRecorderRef.current = mediaRecorder;
+      
+      // Record in 3-second chunks for Groq
+      const recordChunks = () => {
+        if (mediaRecorderRef.current && mediaRecorderRef.current.state === 'inactive') {
+          console.log('🎬 Starting MediaRecorder recording...');
+          mediaRecorderRef.current.start();
+          setTimeout(() => {
+            if (mediaRecorderRef.current && mediaRecorderRef.current.state === 'recording') {
+              console.log('🛑 Stopping MediaRecorder recording...');
+              mediaRecorderRef.current.stop();
+              setTimeout(recordChunks, 100); // Small gap between recordings
+            }
+          }, 3000);
+        }
+      };
+      
+      recordChunks();
+      console.log('📹 MediaRecorder setup complete for Groq');
+    } catch (error) {
+      console.error('❌ Failed to setup MediaRecorder:', error);
+    }
+  };
+
+  // Start monitoring server transcriptions
+  const startTranscriptionMonitoring = () => {
+    console.log('📡 Starting SSE transcription monitoring...');
+    
+    if (transcriptionEventSourceRef.current) {
+      console.log('🔄 Closing existing SSE connection');
+      transcriptionEventSourceRef.current.close();
+    }
+    
+    const eventSource = new EventSource('http://localhost:3001/api/livekit/transcriptions');
+    
+    eventSource.onopen = () => {
+      console.log('✅ SSE connection opened for transcriptions');
+    };
+    
+    eventSource.onmessage = (event) => {
+      console.log('📨 SSE message received:', event.data);
+      try {
+        const data = JSON.parse(event.data);
+        
+        if (data.type === 'connected') {
+          console.log('✅ SSE connected to transcription stream');
+        } else if (data.type === 'transcription') {
+          console.log('📝 Transcription from server:', data);
+          handleServerTranscription(data);
+        } else {
+          console.log('📦 Other SSE message type:', data.type);
+        }
+      } catch (error) {
+        console.error('Error parsing transcription:', error);
       }
     };
     
-    window.addEventListener('keydown', handleKeyPress);
-    return () => window.removeEventListener('keydown', handleKeyPress);
-  }, []);
+    eventSource.onerror = (error) => {
+      console.error('❌ SSE error:', error);
+      console.log('SSE readyState:', eventSource.readyState);
+      // Retry connection after error
+      if (eventSource.readyState === EventSource.CLOSED) {
+        console.log('🔄 SSE closed, will retry in 2 seconds...');
+        setTimeout(() => {
+          if (transcriptionEventSourceRef.current === eventSource) {
+            startTranscriptionMonitoring();
+          }
+        }, 2000);
+      }
+    };
+    
+    transcriptionEventSourceRef.current = eventSource;
+  };
+
+  // Handle transcriptions from server
+  const handleServerTranscription = (data: any) => {
+    const { service, text, latency, number, roomName: dataRoom, participantId } = data;
+    
+    // Only process transcriptions for our room
+    if (dataRoom !== roomName) {
+      console.log(`📤 Ignoring transcription for different room: ${dataRoom}`);
+      return;
+    }
+    
+    console.log(`📝 ${service.toUpperCase()} transcription:`, {
+      text,
+      number,
+      latency,
+      roomName: dataRoom,
+      participantId,
+      enabledStates: { deepgramEnabled, groqEnabled }
+    });
+    
+    // Set shared speech start time if not already set
+    if (!sharedSpeechStartTimeRef.current && latency) {
+      const estimatedStart = Date.now() - latency;
+      sharedSpeechStartTimeRef.current = estimatedStart;
+      console.log('🎤 Set shared speech start time from server:', estimatedStart);
+    }
+    
+    if (service === 'deepgram' && deepgramEnabled) {
+      console.log('🟣 Processing Deepgram transcription');
+      if (number !== null) {
+        const now = Date.now();
+        transcriptionDataRef.current.deepgramTranscript = number.toString();
+        transcriptionDataRef.current.deepgramStartTime = now;
+        transcriptionDataRef.current.deepgramLatency = latency;
+        transcriptionDataRef.current.deepgramProblemLatency = now - problemStartTimeRef.current;
+        
+        setDeepgramValue(number.toString());
+        setDeepgramInterim('');
+        setDeepgramStatus(`Heard: ${number}`);
+        console.log('✅ Deepgram value set:', number);
+      } else if (text) {
+        // Show interim result
+        setDeepgramInterim(text);
+        console.log('📝 Deepgram interim:', text);
+      }
+    } else if (service === 'groq' && groqEnabled) {
+      console.log('🟠 Processing Groq transcription');
+      if (number !== null) {
+        const now = Date.now();
+        transcriptionDataRef.current.groqTranscript = number.toString();
+        transcriptionDataRef.current.groqStartTime = now;
+        transcriptionDataRef.current.groqLatency = latency;
+        transcriptionDataRef.current.groqProblemLatency = now - problemStartTimeRef.current;
+        
+        setGroqValue(number.toString());
+        setGroqInterim('');
+        setGroqStatus(`Heard: ${number}`);
+        console.log('✅ Groq value set:', number);
+      } else if (text) {
+        // Show interim result
+        setGroqInterim(text);
+        console.log('📝 Groq interim:', text);
+      }
+    } else {
+      console.log(`⚠️ Service ${service} transcription ignored - service not enabled or unknown`);
+    }
+  };
 
   // Setup microphone activity monitoring
   const setupMicrophoneMonitoring = (stream: MediaStream) => {
@@ -266,7 +534,6 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
       source.connect(analyser);
       analyser.fftSize = 256;
       
-      audioContextRef.current = audioContext;
       analyserRef.current = analyser;
       
       // Check microphone activity
@@ -288,43 +555,52 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
     }
   };
 
+  // Handle keyboard shortcuts
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key === 'd' || e.key === 'D') {
+        setShowDebug(prev => !prev);
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, []);
+
   // Check if we should auto-submit
   const checkAutoSubmit = useCallback(() => {
     if (showFeedback || hasSubmittedRef.current) return;
     
     const hasWebSpeech = webSpeechValue !== '';
     const hasDeepgram = deepgramValue !== '';
+    const hasGroq = groqValue !== '';
     
-    console.log('📊 Input status - Web Speech:', webSpeechValue, 'Deepgram:', deepgramValue);
-    console.log('🔧 Service states - Web Speech enabled:', webSpeechEnabled, 'Deepgram enabled:', deepgramEnabled);
+    const enabledCount = [webSpeechEnabled, deepgramEnabled, groqEnabled].filter(Boolean).length;
+    const valueCount = [hasWebSpeech, hasDeepgram, hasGroq].filter(Boolean).length;
+    
+    console.log('📊 Input status - Web Speech:', webSpeechValue, 'Deepgram:', deepgramValue, 'Groq:', groqValue);
+    console.log('🔧 Enabled services:', enabledCount, 'Values received:', valueCount);
     
     // If only one service is enabled and has a value, submit immediately
-    if (webSpeechEnabled && !deepgramEnabled && hasWebSpeech) {
-      console.log('✅ Only Web Speech enabled and has value, submitting immediately...');
+    if (enabledCount === 1 && valueCount === 1) {
+      console.log('✅ Single service has value, submitting...');
       submitAnswer();
     }
-    else if (!webSpeechEnabled && deepgramEnabled && hasDeepgram) {
-      console.log('✅ Only Deepgram enabled and has value, submitting immediately...');
+    // If all enabled services have values, submit immediately
+    else if (valueCount === enabledCount && valueCount > 0) {
+      console.log('✅ All enabled services have values, submitting...');
       submitAnswer();
     }
-    // If both services are enabled
-    else if (webSpeechEnabled && deepgramEnabled) {
-      // If both have values, submit immediately
-      if (hasWebSpeech && hasDeepgram) {
-        console.log('✅ Both inputs have values, submitting...');
+    // If at least one has value, start timer
+    else if (valueCount > 0 && !autoSubmitTimeoutRef.current) {
+      console.log('⏰ Starting 5-second timer for auto-submit...');
+      autoSubmitTimeoutRef.current = setTimeout(() => {
+        console.log('⏰ Timer expired, submitting with available data...');
         submitAnswer();
-      }
-      // If one has value, start 5-second timer
-      else if ((hasWebSpeech || hasDeepgram) && !autoSubmitTimeoutRef.current) {
-        console.log('⏰ Starting 5-second timer for auto-submit...');
-        autoSubmitTimeoutRef.current = setTimeout(() => {
-          console.log('⏰ Timer expired, submitting with available data...');
-          submitAnswer();
-        }, 5000);
-      }
+      }, 5000);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [webSpeechValue, deepgramValue, showFeedback, webSpeechEnabled, deepgramEnabled]);
+  }, [webSpeechValue, deepgramValue, groqValue, showFeedback, webSpeechEnabled, deepgramEnabled, groqEnabled]);
 
   useEffect(() => {
     checkAutoSubmit();
@@ -332,7 +608,6 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
 
   const initializeWebSpeech = () => {
     try {
-      // Check if already initialized
       if (recognitionRef.current) {
         console.log('⚠️ Web Speech already initialized');
         return;
@@ -350,22 +625,13 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
       const recognition = new SpeechRecognition();
       recognition.continuous = true;
       recognition.interimResults = true;
-      recognition.maxAlternatives = 3; // Get more alternatives
+      recognition.maxAlternatives = 3;
       recognition.lang = 'en-US';
 
-      // All event handlers
       recognition.onstart = () => {
         console.log('✅ Web Speech API started');
         setWebSpeechStatus('Listening...');
         setIsWebSpeechReady(true);
-      };
-
-      recognition.onaudiostart = () => {
-        console.log('🔊 Web Speech: Audio started');
-      };
-
-      recognition.onsoundstart = () => {
-        console.log('🔊 Web Speech: Sound detected');
       };
 
       recognition.onspeechstart = () => {
@@ -373,13 +639,11 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
         const timeSinceProblem = now - problemStartTimeRef.current;
         console.log('🗣️ Web Speech: Speech started at', timeSinceProblem, 'ms after problem shown');
         
-        // Set shared speech start time for both services (first one wins)
         if (!sharedSpeechStartTimeRef.current) {
           sharedSpeechStartTimeRef.current = now;
           console.log('🎤 Set shared speech start time:', now);
         }
         
-        // Record when speech actually starts - only if not already set for this question
         if (!transcriptionDataRef.current.webSpeechStartTime) {
           transcriptionDataRef.current.webSpeechStartTime = now;
           console.log('📍 Set webSpeechStartTime:', now);
@@ -397,17 +661,15 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
             const confidence = result[0].confidence;
             console.log(`🗣️ Web Speech transcript:`, transcript, 'Confidence:', confidence, 'Final:', result.isFinal);
             
-            // Show interim results - only show if we can extract a number
             if (!result.isFinal) {
               const interimNumber = extractNumberFromSpeech(transcript);
               if (interimNumber !== null) {
                 setWebSpeechInterim(interimNumber.toString());
               } else {
-                setWebSpeechInterim(''); // Don't show non-numeric interim results
+                setWebSpeechInterim('');
               }
             }
             
-            // Try all alternatives for number extraction
             for (let j = 0; j < result.length; j++) {
               const altTranscript = result[j].transcript.trim();
               const number = extractNumberFromSpeech(altTranscript);
@@ -415,29 +677,23 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
               if (number !== null && result.isFinal) {
                 const now = Date.now();
                 
-                // If webSpeechStartTime wasn't set by onspeechstart, set it now
-                // This handles cases where speech events don't fire in the expected order
                 if (!transcriptionDataRef.current.webSpeechStartTime) {
-                  // Use shared speech start time if available
                   if (sharedSpeechStartTimeRef.current) {
                     transcriptionDataRef.current.webSpeechStartTime = sharedSpeechStartTimeRef.current;
                     console.log('📍 Using shared speech start time for Web Speech:', sharedSpeechStartTimeRef.current);
                   } else {
-                    // Estimate speech start time based on typical speech recognition delay
-                    const estimatedStart = now - 500; // Assume 500ms recognition delay
+                    const estimatedStart = now - 500;
                     transcriptionDataRef.current.webSpeechStartTime = estimatedStart;
-                    sharedSpeechStartTimeRef.current = estimatedStart; // Set shared time
+                    sharedSpeechStartTimeRef.current = estimatedStart;
                     console.log('⚠️ Web Speech start time not set by onspeechstart, estimating:', estimatedStart);
                   }
                 }
                 
-                // Calculate latency from when speech started
                 if (transcriptionDataRef.current.webSpeechStartTime) {
                   transcriptionDataRef.current.webSpeechLatency = now - transcriptionDataRef.current.webSpeechStartTime;
                   console.log('⏱️ Web Speech latency (from speech start):', transcriptionDataRef.current.webSpeechLatency, 'ms');
                 }
                 
-                // Always calculate latency from problem display
                 transcriptionDataRef.current.webSpeechProblemLatency = now - problemStartTimeRef.current;
                 console.log('⏱️ Web Speech latency (from problem display):', transcriptionDataRef.current.webSpeechProblemLatency, 'ms');
                 
@@ -447,23 +703,11 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
                 setWebSpeechStatus(`Heard: ${number}`);
                 console.log('✅ Web Speech captured number:', number);
                 console.log('📊 Updated transcriptionData:', transcriptionDataRef.current);
-                break; // Found a number, stop checking alternatives
+                break;
               }
             }
           }
         }
-      };
-
-      recognition.onspeechend = () => {
-        console.log('🔇 Web Speech: Speech ended');
-      };
-
-      recognition.onsoundend = () => {
-        console.log('🔇 Web Speech: Sound ended');
-      };
-
-      recognition.onaudioend = () => {
-        console.log('🔇 Web Speech: Audio ended');
       };
 
       recognition.onerror = (event: ISpeechRecognitionErrorEvent) => {
@@ -471,7 +715,6 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
         setWebSpeechStatus(`Error: ${event.error}`);
         
         if (event.error === 'no-speech') {
-          // This is normal - continue listening
           return;
         }
         
@@ -481,7 +724,6 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
         }
         
         if (event.error === 'aborted') {
-          // Don't try to restart on abort - it's usually because we're cleaning up
           console.log('🛑 Recognition aborted - not restarting');
         }
       };
@@ -490,7 +732,6 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
         console.log('🔚 Web Speech ended');
         setIsWebSpeechReady(false);
         
-        // Only restart if we're still the active instance and not showing feedback
         if (!useTextFallback && !showFeedback && enableVoice && recognitionRef.current === recognition) {
           setTimeout(() => {
             try {
@@ -501,13 +742,12 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
             } catch (error) {
               console.error('Failed to restart Web Speech:', error);
             }
-          }, 1000); // Longer delay to prevent rapid restarts
+          }, 1000);
         }
       };
 
       recognitionRef.current = recognition;
       
-      // Start recognition immediately since we already have permission
       if (!showFeedback) {
         try {
           recognition.start();
@@ -524,219 +764,12 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
     }
   };
 
-  const initializeDeepgram = async () => {
-    try {
-      console.log('🌐 Initializing Deepgram...');
-      setDeepgramStatus('Connecting...');
-      
-      // Get configuration
-      let config, token;
-      try {
-        const configResponse = await fetch('http://localhost:3001/api/voice/deepgram/config');
-        if (!configResponse.ok) {
-          throw new Error(`Config fetch failed: ${configResponse.status}`);
-        }
-        config = await configResponse.json();
-        console.log('📋 Deepgram config:', config);
-
-        // Get token
-        const tokenResponse = await fetch('http://localhost:3001/api/voice/deepgram/token', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
-        if (!tokenResponse.ok) {
-          throw new Error(`Token fetch failed: ${tokenResponse.status}`);
-        }
-        const tokenData = await tokenResponse.json();
-        token = tokenData.token;
-        console.log('🔑 Got Deepgram token:', token ? 'Yes' : 'No');
-      } catch (error) {
-        console.error('❌ Failed to get Deepgram config/token:', error);
-        setDeepgramStatus('Config/token error');
-        setIsDeepgramReady(false);
-        return;
-      }
-
-      // Use existing media stream
-      const stream = mediaStreamRef.current;
-      if (!stream) {
-        console.error('❌ No media stream available for Deepgram');
-        setDeepgramStatus('No microphone access');
-        return;
-      }
-      console.log('🎤 Using existing media stream for Deepgram');
-
-      // Create WebSocket
-      let websocketUrl: string;
-      if (config.useSimulator) {
-        websocketUrl = config.websocketUrl;
-        console.log('🔧 Using Deepgram simulator at:', websocketUrl);
-      } else {
-        // For real Deepgram API, use wss:// protocol
-        // Use simplified URL - Deepgram auto-detects audio parameters
-        websocketUrl = 'wss://api.deepgram.com/v1/listen';
-        console.log('☁️ Using real Deepgram API with simplified URL');
-      }
-
-      // For client-side connections, use Sec-WebSocket-Protocol header
-      // Create WebSocket with proper protocol headers for Deepgram
-      const socket = config.useSimulator 
-        ? new WebSocket(websocketUrl)
-        : new WebSocket(websocketUrl, ['token', token]);
-      
-      console.log('🔌 Creating WebSocket connection...');
-
-      socket.onopen = () => {
-        console.log('✅ Deepgram WebSocket connected');
-        console.log('WebSocket URL:', websocketUrl);
-        console.log('WebSocket protocol:', socket.protocol);
-        console.log('WebSocket readyState:', socket.readyState);
-        setDeepgramStatus('Connected');
-        setIsDeepgramReady(true);
-
-        // Start sending audio
-        // Use simple audio/webm format that worked in test
-        const mimeType = 'audio/webm';
-        console.log('🎤 Using MIME type:', mimeType);
-        
-        const mediaRecorder = new MediaRecorder(stream, {
-          mimeType: mimeType
-        });
-
-        let chunkCount = 0;
-        mediaRecorder.ondataavailable = (event) => {
-          if (event.data.size > 0 && socket.readyState === WebSocket.OPEN) {
-            chunkCount++;
-            if (chunkCount <= 5 || chunkCount % 10 === 0) {
-              console.log(`📤 Sending audio chunk #${chunkCount} to Deepgram, size:`, event.data.size);
-            }
-            socket.send(event.data);
-          } else if (socket.readyState !== WebSocket.OPEN) {
-            console.warn('⚠️ WebSocket not open, skipping audio chunk');
-          }
-        };
-
-        mediaRecorder.start(250); // Send every 250ms (Deepgram recommended)
-        mediaRecorderRef.current = mediaRecorder;
-        console.log('🎙️ Started sending audio to Deepgram');
-        console.log('MediaRecorder state:', mediaRecorder.state);
-        console.log('MediaRecorder mimeType:', mediaRecorder.mimeType);
-        console.log('Audio tracks:', stream.getAudioTracks().map(t => ({
-          label: t.label,
-          enabled: t.enabled,
-          muted: t.muted,
-          readyState: t.readyState
-        })));
-      };
-
-      socket.onmessage = (event) => {
-        try {
-          const data = JSON.parse(event.data);
-          console.log('📨 Deepgram message type:', data.type);
-          console.log('Full message:', JSON.stringify(data, null, 2));
-          
-          // Check different message types
-          if (data.type === 'Metadata') {
-            console.log('🔄 Deepgram metadata received');
-            return;
-          }
-          
-          // Handle transcription results
-          if (data.type === 'Results') {
-            console.log('Deepgram Results - has channel:', !!data.channel);
-            console.log('Deepgram Results - has alternatives:', !!data.channel?.alternatives);
-            console.log('Deepgram Results - alternatives length:', data.channel?.alternatives?.length);
-            
-            if (data.channel?.alternatives?.[0]) {
-              const transcript = data.channel.alternatives[0].transcript || '';
-              const isFinal = data.is_final || data.speech_final || false;
-              console.log('Transcript present:', !!transcript, 'Length:', transcript.length);
-              
-              if (transcript) {
-                console.log('🗣️ Deepgram transcript:', transcript, 'Final:', isFinal);
-                
-                // Also log if transcript is empty
-                if (!transcript && isFinal) {
-                  console.log('⚠️ Deepgram sent final result with empty transcript');
-                  console.log('Alternative 0:', JSON.stringify(data.channel.alternatives[0]));
-                }
-                
-                // Show interim results
-                if (!isFinal) {
-                  setDeepgramInterim(transcript);
-                }
-                
-                const number = extractNumberFromSpeech(transcript);
-                
-                if (number !== null && isFinal) {
-                  const now = Date.now();
-                  transcriptionDataRef.current.deepgramStartTime = now;
-                  
-                  // Calculate latency from problem display
-                  transcriptionDataRef.current.deepgramProblemLatency = now - problemStartTimeRef.current;
-                  
-                  // Calculate latency from speech start using shared reference
-                  if (sharedSpeechStartTimeRef.current) {
-                    transcriptionDataRef.current.deepgramLatency = now - sharedSpeechStartTimeRef.current;
-                    console.log('⏱️ Deepgram latency from speech start:', transcriptionDataRef.current.deepgramLatency, 'ms');
-                  } else {
-                    // If no shared speech start time, estimate based on typical delay
-                    const estimatedSpeechStart = now - 1000; // Assume ~1s from speech to transcription
-                    transcriptionDataRef.current.deepgramLatency = now - estimatedSpeechStart;
-                    sharedSpeechStartTimeRef.current = estimatedSpeechStart; // Set shared time
-                    console.log('⏱️ Deepgram latency (estimated from speech start):', transcriptionDataRef.current.deepgramLatency, 'ms');
-                  }
-                  
-                  console.log('⏱️ Deepgram latency from problem display:', transcriptionDataRef.current.deepgramProblemLatency, 'ms');
-                  
-                  transcriptionDataRef.current.deepgramTranscript = number.toString();
-                  setDeepgramValue(number.toString());
-                  setDeepgramInterim('');
-                  setDeepgramStatus(`Heard: ${number}`);
-                }
-              }
-            } else {
-              console.log('⚠️ No alternatives in Deepgram result');
-            }
-          } else if (data.type === 'Error') {
-            console.error('❌ Deepgram error message:', data);
-            setDeepgramStatus(`Error: ${data.error || 'Unknown'}`);
-          }
-        } catch (error) {
-          console.error('❌ Failed to parse Deepgram message:', error);
-        }
-      };
-
-      socket.onerror = (error) => {
-        console.error('❌ Deepgram WebSocket error:', error);
-        setDeepgramStatus('Connection error');
-        setIsDeepgramReady(false);
-      };
-
-      socket.onclose = () => {
-        console.log('🔚 Deepgram WebSocket closed');
-        setDeepgramStatus('Disconnected');
-        setIsDeepgramReady(false);
-      };
-
-      deepgramSocketRef.current = socket;
-      
-    } catch (error) {
-      console.error('❌ Failed to initialize Deepgram:', error);
-      setDeepgramStatus('Failed to connect');
-      setIsDeepgramReady(false);
-    }
-  };
-
   const extractNumberFromSpeech = (transcript: string): number | null => {
     const cleanTranscript = transcript.toLowerCase().trim();
     console.log('🔍 Extracting number from:', cleanTranscript);
     
-    // Sound-alike replacements (applied before other processing)
+    // Sound-alike replacements
     const soundAlikeReplacements: { [key: string]: string } = {
-      // Common homophones and misrecognitions for single digits
       'won': '1', 'one': '1', 'juan': '1', 'wan': '1',
       'to': '2', 'too': '2', 'two': '2', 'tu': '2',
       'tree': '3', 'three': '3', 'free': '3', 'thee': '3',
@@ -746,8 +779,6 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
       'seven': '7', 'heaven': '7',
       'ate': '8', 'eight': '8', 'hate': '8', 'eat': '8',
       'nine': '9', 'nein': '9', 'none': '9', 'nun': '9', 'mine': '9',
-      
-      // Teen numbers
       'ten': '10', 'tan': '10', 'tin': '10', 'pen': '10',
       'eleven': '11', 'leaven': '11',
       'twelve': '12', 'shelf': '12',
@@ -758,8 +789,6 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
       'seventeen': '17', 'seventing': '17',
       'eighteen': '18', 'aching': '18', 'eighting': '18',
       'nineteen': '19', 'nineting': '19',
-      
-      // Tens
       'twenty': '20', 'plenty': '20', 'twenny': '20',
       'thirty': '30', 'thurty': '30', 'dirty': '30',
       'forty': '40', 'fourty': '40',
@@ -768,20 +797,11 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
       'seventy': '70', 'sevendy': '70',
       'eighty': '80', 'aidy': '80',
       'ninety': '90', 'ninedy': '90',
-      
-      // Additional number words
       'zero': '0', 'oh': '0', 'o': '0', 'hero': '0',
-      
-      // Common single letter/word confusions
-      'a': '8', // sometimes "eight" is heard as "a"
-      'it': '8', // sometimes "eight" is heard as "it"
-      'i': '1', // sometimes "one" is heard as "I"
-      'see': '3', // sometimes "three" sounds like "see"
-      'be': '3', // sometimes "three" sounds like "be"
-      'we': '3', // sometimes "three" sounds like "we"
+      'a': '8', 'it': '8', 'i': '1',
+      'see': '3', 'be': '3', 'we': '3',
     };
     
-    // Apply sound-alike replacements
     let processedTranscript = cleanTranscript;
     for (const [soundAlike, number] of Object.entries(soundAlikeReplacements)) {
       const regex = new RegExp(`\\b${soundAlike}\\b`, 'g');
@@ -792,7 +812,6 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
       console.log('🔄 Applied sound-alike conversion:', cleanTranscript, '→', processedTranscript);
     }
     
-    // Direct number match (after sound-alike processing)
     const directNumberMatch = processedTranscript.match(/\b\d+\b/);
     if (directNumberMatch) {
       const num = parseInt(directNumberMatch[0]);
@@ -809,25 +828,14 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
   const submitAnswer = () => {
     if (hasSubmittedRef.current || showFeedback) return;
     
-    // Use whichever value we have
-    const finalAnswer = webSpeechValue || deepgramValue || '';
+    const finalAnswer = webSpeechValue || deepgramValue || groqValue || '';
     const numValue = parseInt(finalAnswer);
     
     if (!isNaN(numValue)) {
       console.log('📤 Submitting answer:', numValue);
-      console.log('📊 Transcription data at submission:', {
-        webSpeechTranscript: transcriptionDataRef.current.webSpeechTranscript,
-        deepgramTranscript: transcriptionDataRef.current.deepgramTranscript,
-        webSpeechLatency: transcriptionDataRef.current.webSpeechLatency,
-        deepgramLatency: transcriptionDataRef.current.deepgramLatency,
-        webSpeechStartTime: transcriptionDataRef.current.webSpeechStartTime,
-        deepgramStartTime: transcriptionDataRef.current.deepgramStartTime,
-        webSpeechProblemLatency: transcriptionDataRef.current.webSpeechProblemLatency,
-        deepgramProblemLatency: transcriptionDataRef.current.deepgramProblemLatency
-      });
+      console.log('📊 Transcription data at submission:', transcriptionDataRef.current);
       hasSubmittedRef.current = true;
       
-      // Clear any pending timer
       if (autoSubmitTimeoutRef.current) {
         clearTimeout(autoSubmitTimeoutRef.current);
         autoSubmitTimeoutRef.current = null;
@@ -844,28 +852,44 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
   const cleanup = () => {
     console.log('🧹 Cleaning up voice recognition...');
     
-    // Clear the recognition reference first to prevent restart attempts
     const recognition = recognitionRef.current;
     recognitionRef.current = null;
     
     if (recognition) {
       try {
-        recognition.abort(); // Use abort to immediately stop
+        recognition.abort();
       } catch (error) {
         console.log('Error aborting recognition:', error);
       }
     }
     
-    if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
-      mediaRecorderRef.current.stop();
+    if (audioWebSocketRef.current) {
+      audioWebSocketRef.current.close();
+      audioWebSocketRef.current = null;
+    }
+    
+    if (transcriptionEventSourceRef.current) {
+      transcriptionEventSourceRef.current.close();
+      transcriptionEventSourceRef.current = null;
+    }
+    
+    if (processorRef.current) {
+      processorRef.current.disconnect();
+      processorRef.current = null;
+    }
+    
+    if (audioContextRef.current) {
+      audioContextRef.current.close();
+      audioContextRef.current = null;
+    }
+    
+    if (mediaRecorderRef.current) {
+      if (mediaRecorderRef.current.state !== 'inactive') {
+        mediaRecorderRef.current.stop();
+      }
       mediaRecorderRef.current = null;
     }
-
-    if (deepgramSocketRef.current) {
-      deepgramSocketRef.current.close();
-      deepgramSocketRef.current = null;
-    }
-
+    
     if (mediaStreamRef.current) {
       mediaStreamRef.current.getTracks().forEach(track => track.stop());
       mediaStreamRef.current = null;
@@ -881,25 +905,19 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
       micCheckIntervalRef.current = null;
     }
     
-    if (audioContextRef.current) {
-      audioContextRef.current.close();
-      audioContextRef.current = null;
-    }
-    
-    // Update states
     setIsListening(false);
     setIsWebSpeechReady(false);
     setIsDeepgramReady(false);
+    setIsGroqReady(false);
     setWebSpeechStatus('Stopped');
     setDeepgramStatus('Stopped');
+    setGroqStatus('Stopped');
   };
 
   const handleManualInput = (value: string) => {
-    // Only allow numeric input
     const numericValue = value.replace(/\D/g, '');
     setWebSpeechValue(numericValue);
     
-    // Auto-submit for single digit answers
     if (numericValue.length === question.answer.toString().length) {
       const numValue = parseInt(numericValue);
       if (!isNaN(numValue)) {
@@ -925,7 +943,8 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
         audio: {
           echoCancellation: true,
           noiseSuppression: true,
-          autoGainControl: true
+          autoGainControl: true,
+          sampleRate: 16000
         } 
       });
       
@@ -936,13 +955,15 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
       if (webSpeechEnabled) {
         initializeWebSpeech();
       }
-      if (deepgramEnabled) {
-        initializeDeepgram();
+      if (deepgramEnabled || groqEnabled) {
+        await initializeAudioStreaming();
+        startTranscriptionMonitoring();
       }
     } catch (error) {
       console.error('❌ Failed to start:', error);
       setWebSpeechStatus('Mic permission denied');
       setDeepgramStatus('Mic permission denied');
+      setGroqStatus('Mic permission denied');
     }
   };
 
@@ -951,10 +972,8 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
     setWebSpeechEnabled(newState);
     
     if (newState && isListening && !recognitionRef.current) {
-      // Enable Web Speech
       initializeWebSpeech();
     } else if (!newState && recognitionRef.current) {
-      // Disable Web Speech
       try {
         recognitionRef.current.abort();
         recognitionRef.current = null;
@@ -970,23 +989,25 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
     const newState = !deepgramEnabled;
     setDeepgramEnabled(newState);
     
-    if (newState && isListening && !deepgramSocketRef.current && mediaStreamRef.current) {
-      // Enable Deepgram
-      initializeDeepgram();
-    } else if (!newState && deepgramSocketRef.current) {
-      // Disable Deepgram
-      if (deepgramSocketRef.current.readyState === WebSocket.OPEN) {
-        deepgramSocketRef.current.close();
-      }
-      deepgramSocketRef.current = null;
-      
-      if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
-        mediaRecorderRef.current.stop();
-        mediaRecorderRef.current = null;
-      }
-      
+    if (newState && isListening && !audioWebSocketRef.current) {
+      initializeAudioStreaming();
+      startTranscriptionMonitoring();
+    } else if (!newState) {
       setIsDeepgramReady(false);
       setDeepgramStatus('Disabled');
+    }
+  };
+
+  const handleGroqToggle = () => {
+    const newState = !groqEnabled;
+    setGroqEnabled(newState);
+    
+    if (newState && isListening && !audioWebSocketRef.current) {
+      initializeAudioStreaming();
+      startTranscriptionMonitoring();
+    } else if (!newState) {
+      setIsGroqReady(false);
+      setGroqStatus('Disabled');
     }
   };
 
@@ -1015,13 +1036,14 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
       }`;
     }
     
-    // Highlight when value is captured
     if (hasValue) {
       return `${baseClasses} border-blue-400 bg-blue-50 text-gray-700`;
     }
     
     return `${baseClasses} border-gray-200 bg-white text-gray-700`;
   };
+
+  const enabledServicesCount = [webSpeechEnabled, deepgramEnabled, groqEnabled].filter(Boolean).length;
 
   return (
     <div className="space-y-6">
@@ -1058,9 +1080,9 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
             ) : (
               <button
                 onClick={handleStart}
-                disabled={!webSpeechEnabled && !deepgramEnabled}
+                disabled={!webSpeechEnabled && !deepgramEnabled && !groqEnabled}
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                  webSpeechEnabled || deepgramEnabled
+                  webSpeechEnabled || deepgramEnabled || groqEnabled
                     ? 'bg-green-500 hover:bg-green-600 text-white'
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                 }`}
@@ -1069,7 +1091,7 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
               </button>
             )}
             
-            {/* Web Speech Toggle */}
+            {/* Service Toggles */}
             <label className="flex items-center space-x-2 cursor-pointer">
               <input
                 type="checkbox"
@@ -1077,10 +1099,9 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
                 onChange={handleWebSpeechToggle}
                 className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
               />
-              <span className="text-sm font-medium text-gray-700">Web Speech API</span>
+              <span className="text-sm font-medium text-gray-700">Web Speech</span>
             </label>
             
-            {/* Deepgram Toggle */}
             <label className="flex items-center space-x-2 cursor-pointer">
               <input
                 type="checkbox"
@@ -1090,67 +1111,105 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
               />
               <span className="text-sm font-medium text-gray-700">Deepgram</span>
             </label>
+            
+            <label className="flex items-center space-x-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={groqEnabled}
+                onChange={handleGroqToggle}
+                className="w-4 h-4 text-orange-600 rounded focus:ring-orange-500"
+              />
+              <span className="text-sm font-medium text-gray-700">Groq/Whisper</span>
+            </label>
           </div>
         </div>
       )}
 
       {/* Voice Input Display */}
       {!useTextFallback ? (
-        <div className={`grid ${webSpeechEnabled && deepgramEnabled ? 'grid-cols-2' : 'grid-cols-1'} gap-4`}>
+        <div className={`grid grid-cols-${enabledServicesCount} gap-4`}>
           {/* Web Speech API Display */}
           {webSpeechEnabled && (
             <div className="space-y-2">
-            <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-blue-600">Web Speech API</h3>
-              <div className="flex items-center space-x-2">
-                <div className={`w-2 h-2 rounded-full ${
-                  isWebSpeechReady ? 'bg-green-500' : 'bg-gray-300'
-                }`} />
-                <span className="text-sm text-gray-500">{webSpeechStatus}</span>
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg font-semibold text-blue-600">Web Speech API</h3>
+                <div className="flex items-center space-x-2">
+                  <div className={`w-2 h-2 rounded-full ${
+                    isWebSpeechReady ? 'bg-green-500' : 'bg-gray-300'
+                  }`} />
+                  <span className="text-sm text-gray-500">{webSpeechStatus}</span>
+                </div>
+              </div>
+              <div className={getInputClassName(showFeedback && webSpeechValue === question.answer.toString(), !!webSpeechValue)}>
+                {webSpeechValue ? (
+                  <span>{webSpeechValue}</span>
+                ) : webSpeechInterim ? (
+                  <span className="text-gray-500 italic">{webSpeechInterim}</span>
+                ) : (
+                  isWebSpeechReady ? (
+                    <span className="text-gray-400">Listening for speech...</span>
+                  ) : (
+                    <span className="text-gray-400">Connecting...</span>
+                  )
+                )}
               </div>
             </div>
-            <div className={getInputClassName(showFeedback && webSpeechValue === question.answer.toString(), !!webSpeechValue)}>
-              {webSpeechValue ? (
-                <span>{webSpeechValue}</span>
-              ) : webSpeechInterim ? (
-                <span className="text-gray-500 italic">{webSpeechInterim}</span>
-              ) : (
-                isWebSpeechReady ? (
-                  <span className="text-gray-400">Listening for speech...</span>
-                ) : (
-                  <span className="text-gray-400">Connecting...</span>
-                )
-              )}
-            </div>
-          </div>
           )}
 
           {/* Deepgram Display */}
           {deepgramEnabled && (
             <div className="space-y-2">
-            <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-purple-600">Deepgram</h3>
-              <div className="flex items-center space-x-2">
-                <div className={`w-2 h-2 rounded-full ${
-                  isDeepgramReady ? 'bg-green-500' : 'bg-gray-300'
-                }`} />
-                <span className="text-sm text-gray-500">{deepgramStatus}</span>
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg font-semibold text-purple-600">Deepgram</h3>
+                <div className="flex items-center space-x-2">
+                  <div className={`w-2 h-2 rounded-full ${
+                    isDeepgramReady ? 'bg-green-500' : 'bg-gray-300'
+                  }`} />
+                  <span className="text-sm text-gray-500">{deepgramStatus}</span>
+                </div>
+              </div>
+              <div className={getInputClassName(showFeedback && deepgramValue === question.answer.toString(), !!deepgramValue)}>
+                {deepgramValue ? (
+                  <span>{deepgramValue}</span>
+                ) : deepgramInterim ? (
+                  <span className="text-gray-500 italic">{deepgramInterim}</span>
+                ) : (
+                  isDeepgramReady ? (
+                    <span className="text-gray-400">Listening for speech...</span>
+                  ) : (
+                    <span className="text-gray-400">Connecting...</span>
+                  )
+                )}
               </div>
             </div>
-            <div className={getInputClassName(showFeedback && deepgramValue === question.answer.toString(), !!deepgramValue)}>
-              {deepgramValue ? (
-                <span>{deepgramValue}</span>
-              ) : deepgramInterim ? (
-                <span className="text-gray-500 italic">{deepgramInterim}</span>
-              ) : (
-                isDeepgramReady ? (
-                  <span className="text-gray-400">Listening for speech...</span>
+          )}
+
+          {/* Groq/Whisper Display */}
+          {groqEnabled && (
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg font-semibold text-orange-600">Groq/Whisper</h3>
+                <div className="flex items-center space-x-2">
+                  <div className={`w-2 h-2 rounded-full ${
+                    isGroqReady ? 'bg-green-500' : 'bg-gray-300'
+                  }`} />
+                  <span className="text-sm text-gray-500">{groqStatus}</span>
+                </div>
+              </div>
+              <div className={getInputClassName(showFeedback && groqValue === question.answer.toString(), !!groqValue)}>
+                {groqValue ? (
+                  <span>{groqValue}</span>
+                ) : groqInterim ? (
+                  <span className="text-gray-500 italic">{groqInterim}</span>
                 ) : (
-                  <span className="text-gray-400">Connecting...</span>
-                )
-              )}
+                  isGroqReady ? (
+                    <span className="text-gray-400">Listening for speech...</span>
+                  ) : (
+                    <span className="text-gray-400">Connecting...</span>
+                  )
+                )}
+              </div>
             </div>
-          </div>
           )}
         </div>
       ) : (
@@ -1183,12 +1242,12 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
         {!useTextFallback ? (
           <div>
             <p>Say your answer clearly</p>
-            {(webSpeechValue || deepgramValue) && !showFeedback && (
+            {(webSpeechValue || deepgramValue || groqValue) && !showFeedback && (
               <p className="text-yellow-600 mt-1">
-                Waiting for both inputs or 5 seconds...
+                Waiting for all services or 5 seconds...
               </p>
             )}
-            {(!isWebSpeechReady || !isDeepgramReady) && (
+            {(!isWebSpeechReady || !isDeepgramReady || !isGroqReady) && (
               <p className="text-orange-600 mt-1">
                 Waiting for services to connect...
               </p>
@@ -1200,7 +1259,6 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
             <button
               onClick={() => {
                 setUseTextFallback(false);
-                // Re-initialization will happen via useEffect when useTextFallback changes
               }}
               className="text-blue-600 hover:underline mt-2"
             >
@@ -1211,7 +1269,7 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
       </div>
 
       {/* Show correct answer if wrong */}
-      {showFeedback && webSpeechValue !== question.answer.toString() && deepgramValue !== question.answer.toString() && (
+      {showFeedback && webSpeechValue !== question.answer.toString() && deepgramValue !== question.answer.toString() && groqValue !== question.answer.toString() && (
         <div className="text-center">
           <p className="text-2xl text-green-600 font-bold">
             Correct answer: {question.answer}
@@ -1224,13 +1282,17 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
         show={showDebug}
         webSpeechStatus={webSpeechStatus}
         deepgramStatus={deepgramStatus}
+        groqStatus={groqStatus}
         webSpeechValue={webSpeechValue}
         deepgramValue={deepgramValue}
+        groqValue={groqValue}
         latencies={{
           webSpeech: transcriptionDataRef.current.webSpeechLatency,
           deepgram: transcriptionDataRef.current.deepgramLatency,
+          groq: transcriptionDataRef.current.groqLatency,
           webSpeechProblem: transcriptionDataRef.current.webSpeechProblemLatency,
-          deepgramProblem: transcriptionDataRef.current.deepgramProblemLatency
+          deepgramProblem: transcriptionDataRef.current.deepgramProblemLatency,
+          groqProblem: transcriptionDataRef.current.groqProblemLatency
         }}
         problemStartTime={problemStartTimeRef.current}
       />
