@@ -72,10 +72,12 @@ export const TranscriptionResults: React.FC<TranscriptionResultsProps> = ({ resu
                 <span className="text-purple-600">Deepgram</span>
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                <span className="text-blue-600">Web Speech Latency</span>
+                <span className="text-blue-600">Web Speech Latency</span><br />
+                <span className="text-xs text-gray-400">(from speech start)</span>
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                <span className="text-purple-600">Deepgram Latency</span>
+                <span className="text-purple-600">Deepgram Latency</span><br />
+                <span className="text-xs text-gray-400">(from problem display)</span>
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 First Response Time<br />
