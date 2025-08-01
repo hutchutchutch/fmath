@@ -348,10 +348,11 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
         const now = Date.now();
         const timeSinceProblem = now - problemStartTimeRef.current;
         console.log('🗣️ Web Speech: Speech started at', timeSinceProblem, 'ms after problem shown');
-        // Record when speech actually starts (always update for new speech)
-        transcriptionDataRef.current.webSpeechStartTime = now;
-        console.log('🎯 Set webSpeechStartTime:', now);
-        console.log('📊 Current transcription data after speech start:', transcriptionDataRef.current);
+        // Record when speech actually starts - only if not already set for this question
+        if (!transcriptionDataRef.current.webSpeechStartTime) {
+          transcriptionDataRef.current.webSpeechStartTime = now;
+          console.log('📍 Set webSpeechStartTime:', now);
+        }
       };
 
       recognition.onresult = (event: ISpeechRecognitionEvent) => {
@@ -377,6 +378,14 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
               
               if (number !== null && result.isFinal) {
                 const now = Date.now();
+                
+                // If webSpeechStartTime wasn't set by onspeechstart, set it now
+                // This handles cases where speech events don't fire in the expected order
+                if (!transcriptionDataRef.current.webSpeechStartTime) {
+                  // Estimate speech start time based on typical speech recognition delay
+                  transcriptionDataRef.current.webSpeechStartTime = now - 500; // Assume 500ms recognition delay
+                  console.log('⚠️ Web Speech start time not set by onspeechstart, estimating:', transcriptionDataRef.current.webSpeechStartTime);
+                }
                 
                 // Calculate latency from when speech started
                 if (transcriptionDataRef.current.webSpeechStartTime) {

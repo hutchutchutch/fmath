@@ -41,9 +41,7 @@ export const TranscriptionResults: React.FC<TranscriptionResultsProps> = ({ resu
     ? webSpeechRecognitionLatencies.reduce((a, b) => a + b, 0) / webSpeechRecognitionLatencies.length 
     : null;
   
-  const avgDeepgramLatency = deepgramLatencies.length > 0
-    ? deepgramLatencies.reduce((a, b) => a + b, 0) / deepgramLatencies.length
-    : null;
+  // Removed unused avgDeepgramLatency - using avgDeepgramProblemLatency instead
     
   const avgWebSpeechProblemLatency = webSpeechProblemLatencies.length > 0
     ? webSpeechProblemLatencies.reduce((a, b) => a + b, 0) / webSpeechProblemLatencies.length
@@ -139,8 +137,13 @@ export const TranscriptionResults: React.FC<TranscriptionResultsProps> = ({ resu
                       const webProblemLatency = result.webSpeechProblemLatency;
                       const deepProblemLatency = result.deepgramProblemLatency || result.deepgramLatency;
                       
-                      if (webProblemLatency !== null && webProblemLatency !== undefined && deepProblemLatency !== null && deepProblemLatency !== undefined) {
-                        // Both have latencies, show the lower one
+                      // Helper to check if value is valid (not null and not undefined)
+                      const isValid = (value: number | null | undefined): value is number => {
+                        return value !== null && value !== undefined && !isNaN(value);
+                      };
+                      
+                      if (isValid(webProblemLatency) && isValid(deepProblemLatency)) {
+                        // Both have latencies, show the lower one (first response)
                         if (webProblemLatency < deepProblemLatency) {
                           return (
                             <span className="text-blue-600 font-medium">
@@ -154,14 +157,14 @@ export const TranscriptionResults: React.FC<TranscriptionResultsProps> = ({ resu
                             </span>
                           );
                         }
-                      } else if (webProblemLatency !== null) {
+                      } else if (isValid(webProblemLatency)) {
                         // Only Web Speech has latency
                         return (
                           <span className="text-blue-600 font-medium">
                             {webProblemLatency}ms
                           </span>
                         );
-                      } else if (deepProblemLatency !== null) {
+                      } else if (isValid(deepProblemLatency)) {
                         // Only Deepgram has latency
                         return (
                           <span className="text-purple-600 font-medium">
