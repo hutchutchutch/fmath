@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
 import { VoiceExerciseWithComparison } from './components/VoiceExerciseWithComparison';
 import { WebSpeechTest } from './components/WebSpeechTest';
+import { DeepgramTest } from './components/DeepgramTest';
 import './index.css';
 
 function App() {
-  const [showTest, setShowTest] = useState(false);
+  const [testMode, setTestMode] = useState('');
   
   // Check URL parameter for test mode
   React.useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('test') === 'webspeech') {
-      setShowTest(true);
+    const test = urlParams.get('test');
+    if (test) {
+      setTestMode(test);
     }
   }, []);
   
   return (
     <div className="App">
-      {showTest ? (
+      {testMode === 'webspeech' ? (
         <WebSpeechTest />
+      ) : testMode === 'deepgram' ? (
+        <DeepgramTest />
       ) : (
         <VoiceExerciseWithComparison />
       )}

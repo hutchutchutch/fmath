@@ -143,6 +143,18 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
     problemStartTimeRef.current = Date.now();
     hasSubmittedRef.current = false;
     
+    // Reset transcription data for new question
+    transcriptionDataRef.current = {
+      webSpeechTranscript: null,
+      deepgramTranscript: null,
+      webSpeechLatency: null,
+      deepgramLatency: null,
+      webSpeechStartTime: null,
+      deepgramStartTime: null,
+      webSpeechProblemLatency: null,
+      deepgramProblemLatency: null
+    };
+    
     if (autoSubmitTimeoutRef.current) {
       clearTimeout(autoSubmitTimeoutRef.current);
       autoSubmitTimeoutRef.current = null;
@@ -333,11 +345,13 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
       };
 
       recognition.onspeechstart = () => {
-        console.log('🗣️ Web Speech: Speech started at', Date.now() - problemStartTimeRef.current, 'ms after problem shown');
-        // Record when speech actually starts
-        if (!transcriptionDataRef.current.webSpeechStartTime) {
-          transcriptionDataRef.current.webSpeechStartTime = Date.now();
-        }
+        const now = Date.now();
+        const timeSinceProblem = now - problemStartTimeRef.current;
+        console.log('🗣️ Web Speech: Speech started at', timeSinceProblem, 'ms after problem shown');
+        // Record when speech actually starts (always update for new speech)
+        transcriptionDataRef.current.webSpeechStartTime = now;
+        console.log('🎯 Set webSpeechStartTime:', now);
+        console.log('📊 Current transcription data after speech start:', transcriptionDataRef.current);
       };
 
       recognition.onresult = (event: ISpeechRecognitionEvent) => {
@@ -378,6 +392,8 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
                 setWebSpeechValue(number.toString());
                 setWebSpeechInterim('');
                 setWebSpeechStatus(`Heard: ${number}`);
+                console.log('✅ Web Speech captured number:', number);
+                console.log('📊 Updated transcriptionData:', transcriptionDataRef.current);
                 break; // Found a number, stop checking alternatives
               }
             }
@@ -473,6 +489,9 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
         // Get token
         const tokenResponse = await fetch('http://localhost:3001/api/voice/deepgram/token', {
           method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          }
         });
         if (!tokenResponse.ok) {
           throw new Error(`Token fetch failed: ${tokenResponse.status}`);
@@ -503,8 +522,9 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
         console.log('🔧 Using Deepgram simulator at:', websocketUrl);
       } else {
         // For real Deepgram API, use wss:// protocol
-        websocketUrl = `wss://api.deepgram.com/v1/listen?model=nova-2&language=en-US&smart_format=true&interim_results=true&encoding=webm&channels=1&sample_rate=48000`;
-        console.log('☁️ Using real Deepgram API with URL:', websocketUrl);
+        // Use simplified URL - Deepgram auto-detects audio parameters
+        websocketUrl = 'wss://api.deepgram.com/v1/listen';
+        console.log('☁️ Using real Deepgram API with simplified URL');
       }
 
       // For client-side connections, use Sec-WebSocket-Protocol header
@@ -524,11 +544,8 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
         setIsDeepgramReady(true);
 
         // Start sending audio
-        // Check supported MIME types
-        const mimeType = MediaRecorder.isTypeSupported('audio/webm;codecs=opus') 
-          ? 'audio/webm;codecs=opus' 
-          : 'audio/webm';
-        
+        // Use simple audio/webm format that worked in test
+        const mimeType = 'audio/webm';
         console.log('🎤 Using MIME type:', mimeType);
         
         const mediaRecorder = new MediaRecorder(stream, {
@@ -548,7 +565,7 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
           }
         };
 
-        mediaRecorder.start(100); // Send every 100ms
+        mediaRecorder.start(250); // Send every 250ms (Deepgram recommended)
         mediaRecorderRef.current = mediaRecorder;
         console.log('🎙️ Started sending audio to Deepgram');
         console.log('MediaRecorder state:', mediaRecorder.state);
@@ -720,6 +737,16 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
     
     if (!isNaN(numValue)) {
       console.log('📤 Submitting answer:', numValue);
+      console.log('📊 Transcription data at submission:', {
+        webSpeechTranscript: transcriptionDataRef.current.webSpeechTranscript,
+        deepgramTranscript: transcriptionDataRef.current.deepgramTranscript,
+        webSpeechLatency: transcriptionDataRef.current.webSpeechLatency,
+        deepgramLatency: transcriptionDataRef.current.deepgramLatency,
+        webSpeechStartTime: transcriptionDataRef.current.webSpeechStartTime,
+        deepgramStartTime: transcriptionDataRef.current.deepgramStartTime,
+        webSpeechProblemLatency: transcriptionDataRef.current.webSpeechProblemLatency,
+        deepgramProblemLatency: transcriptionDataRef.current.deepgramProblemLatency
+      });
       hasSubmittedRef.current = true;
       
       // Clear any pending timer
@@ -798,7 +825,7 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
     }
   };
 
-  const getInputClassName = (isCorrect?: boolean) => {
+  const getInputClassName = (isCorrect?: boolean, hasValue?: boolean) => {
     const baseClasses = `
       w-full 
       p-4 
@@ -821,6 +848,11 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
         ? 'border-green-500 bg-green-50 text-green-700'
         : 'border-red-500 bg-red-50 text-red-700'
       }`;
+    }
+    
+    // Highlight when value is captured
+    if (hasValue) {
+      return `${baseClasses} border-blue-400 bg-blue-50 text-gray-700`;
     }
     
     return `${baseClasses} border-gray-200 bg-white text-gray-700`;
@@ -861,7 +893,7 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
                 <span className="text-sm text-gray-500">{webSpeechStatus}</span>
               </div>
             </div>
-            <div className={getInputClassName(showFeedback && webSpeechValue === question.answer.toString())}>
+            <div className={getInputClassName(showFeedback && webSpeechValue === question.answer.toString(), !!webSpeechValue)}>
               {webSpeechValue ? (
                 <span>{webSpeechValue}</span>
               ) : webSpeechInterim ? (
@@ -887,7 +919,7 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
                 <span className="text-sm text-gray-500">{deepgramStatus}</span>
               </div>
             </div>
-            <div className={getInputClassName(showFeedback && deepgramValue === question.answer.toString())}>
+            <div className={getInputClassName(showFeedback && deepgramValue === question.answer.toString(), !!deepgramValue)}>
               {deepgramValue ? (
                 <span>{deepgramValue}</span>
               ) : deepgramInterim ? (
@@ -913,7 +945,7 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
               onChange={(e) => handleManualInput(e.target.value.replace(/\D/g, ''))}
               disabled={showFeedback}
               placeholder="Type your answer"
-              className={getInputClassName()}
+              className={getInputClassName(undefined, !!webSpeechValue)}
               autoFocus
             />
           </div>

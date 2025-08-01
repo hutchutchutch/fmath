@@ -3,7 +3,7 @@ import cors from 'cors';
 import { createServer } from 'http';
 import { exerciseRouter } from './routes/exercise';
 import { voiceRouter } from './routes/voice';
-import { DeepgramSimulator } from './services/deepgramSimulator';
+// import { DeepgramSimulator } from './services/deepgramSimulator';
 import dotenv from 'dotenv';
 
 // Load environment variables
@@ -29,15 +29,15 @@ app.get('/health', (req, res) => {
 });
 
 // Start Deepgram simulator if enabled
-let deepgramSimulator: DeepgramSimulator | null = null;
-if (USE_DEEPGRAM_SIMULATOR) {
-  deepgramSimulator = new DeepgramSimulator({
-    port: Number(DEEPGRAM_SIMULATOR_PORT),
-    simulateLatency: true,
-    latencyRange: { min: 50, max: 200 }
-  });
-  console.log(`Deepgram simulator enabled on port ${DEEPGRAM_SIMULATOR_PORT}`);
-}
+// let deepgramSimulator: DeepgramSimulator | null = null;
+// if (USE_DEEPGRAM_SIMULATOR) {
+//   deepgramSimulator = new DeepgramSimulator({
+//     port: Number(DEEPGRAM_SIMULATOR_PORT),
+//     simulateLatency: true,
+//     latencyRange: { min: 50, max: 200 }
+//   });
+//   console.log(`Deepgram simulator enabled on port ${DEEPGRAM_SIMULATOR_PORT}`);
+// }
 
 server.listen(PORT, () => {
   console.log(`Voice test backend running on port ${PORT}`);
