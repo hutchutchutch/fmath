@@ -296,22 +296,35 @@ export const DualVoiceInputV3: React.FC<DualVoiceInputV3Props> = ({
     const hasDeepgram = deepgramValue !== '';
     
     console.log('📊 Input status - Web Speech:', webSpeechValue, 'Deepgram:', deepgramValue);
+    console.log('🔧 Service states - Web Speech enabled:', webSpeechEnabled, 'Deepgram enabled:', deepgramEnabled);
     
-    // If both have values, submit immediately
-    if (hasWebSpeech && hasDeepgram) {
-      console.log('✅ Both inputs have values, submitting...');
+    // If only one service is enabled and has a value, submit immediately
+    if (webSpeechEnabled && !deepgramEnabled && hasWebSpeech) {
+      console.log('✅ Only Web Speech enabled and has value, submitting immediately...');
       submitAnswer();
     }
-    // If one has value, start 5-second timer
-    else if ((hasWebSpeech || hasDeepgram) && !autoSubmitTimeoutRef.current) {
-      console.log('⏰ Starting 5-second timer for auto-submit...');
-      autoSubmitTimeoutRef.current = setTimeout(() => {
-        console.log('⏰ Timer expired, submitting with available data...');
+    else if (!webSpeechEnabled && deepgramEnabled && hasDeepgram) {
+      console.log('✅ Only Deepgram enabled and has value, submitting immediately...');
+      submitAnswer();
+    }
+    // If both services are enabled
+    else if (webSpeechEnabled && deepgramEnabled) {
+      // If both have values, submit immediately
+      if (hasWebSpeech && hasDeepgram) {
+        console.log('✅ Both inputs have values, submitting...');
         submitAnswer();
-      }, 5000);
+      }
+      // If one has value, start 5-second timer
+      else if ((hasWebSpeech || hasDeepgram) && !autoSubmitTimeoutRef.current) {
+        console.log('⏰ Starting 5-second timer for auto-submit...');
+        autoSubmitTimeoutRef.current = setTimeout(() => {
+          console.log('⏰ Timer expired, submitting with available data...');
+          submitAnswer();
+        }, 5000);
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [webSpeechValue, deepgramValue, showFeedback]);
+  }, [webSpeechValue, deepgramValue, showFeedback, webSpeechEnabled, deepgramEnabled]);
 
   useEffect(() => {
     checkAutoSubmit();
