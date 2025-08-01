@@ -56,8 +56,8 @@ export class LiveKitRoomManager extends EventEmitter {
       // - Use a headless browser client
       // - Or implement a custom WebRTC client
       
-      // For this demo, we'll simulate audio data for testing
-      this.simulateAudioForTesting(roomName, identity);
+      // DISABLED: Simulation was causing empty audio buffers to be sent to transcription services
+      // this.simulateAudioForTesting(roomName, identity);
       
     } catch (error) {
       console.error(`❌ Failed to join room ${roomName}:`, error);

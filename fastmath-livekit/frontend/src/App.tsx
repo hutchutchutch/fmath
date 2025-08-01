@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { VoiceExerciseWithDirect } from './components/VoiceExerciseWithDirect';
-import { WebSpeechTest } from './components/WebSpeechTest';
+import { VoiceExerciseWithDeepgram } from './components/VoiceExerciseWithDeepgram';
 import { DeepgramTest } from './components/DeepgramTest';
+import { AudioTest } from './components/AudioTest';
 import './index.css';
 
 function App() {
@@ -18,12 +18,12 @@ function App() {
   
   return (
     <div className="App">
-      {testMode === 'webspeech' ? (
-        <WebSpeechTest />
-      ) : testMode === 'deepgram' ? (
+      {testMode === 'deepgram' ? (
         <DeepgramTest />
+      ) : testMode === 'audio' ? (
+        <AudioTest />
       ) : (
-        <VoiceExerciseWithDirect />
+        <VoiceExerciseWithDeepgram />
       )}
     </div>
   );

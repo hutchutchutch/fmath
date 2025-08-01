@@ -72,15 +72,6 @@ app.get('/api/livekit/test', (req, res) => {
   });
 });
 
-// Groq test endpoint
-app.get('/api/groq/test', (req, res) => {
-  const { groqService } = require('./services/groqService');
-  res.json({
-    configured: groqService.isAvailable(),
-    hasApiKey: !!process.env.GROQ_API_KEY,
-    apiKeyLength: process.env.GROQ_API_KEY?.length || 0
-  });
-});
 
 // Start Deepgram simulator if enabled
 // let deepgramSimulator: DeepgramSimulator | null = null;

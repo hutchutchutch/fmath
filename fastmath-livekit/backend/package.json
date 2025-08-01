@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@livekit/rtc-node": "^0.13.18",
     "@types/ws": "^8.18.1",
     "axios": "^1.11.0",
     "cors": "^2.8.5",

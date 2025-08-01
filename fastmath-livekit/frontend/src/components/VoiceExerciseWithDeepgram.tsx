@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { DualVoiceInputV3, TranscriptionData } from './DualVoiceInputV3';
-import { TranscriptionResults, TranscriptionData as ResultData } from './TranscriptionResults';
+import { VoiceInputLiveKit, TranscriptionData } from './VoiceInputLiveKit';
 import Timer from './Timer';
 import axios from 'axios';
 
@@ -29,11 +28,10 @@ interface ProblemResult {
   inputMethod: 'voice' | 'keyboard';
 }
 
-export const VoiceExerciseWithComparison: React.FC = () => {
+export const VoiceExerciseWithDeepgram: React.FC = () => {
   const [session, setSession] = useState<ExerciseSession | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [results, setResults] = useState<ProblemResult[]>([]);
-  const [transcriptionResults, setTranscriptionResults] = useState<ResultData[]>([]);
   const [showFeedback, setShowFeedback] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [problemStartTime, setProblemStartTime] = useState(Date.now());
@@ -52,7 +50,6 @@ export const VoiceExerciseWithComparison: React.FC = () => {
       setSession(response.data);
       setCurrentIndex(0);
       setResults([]);
-      setTranscriptionResults([]);
       setSessionComplete(false);
       setProblemStartTime(Date.now());
     } catch (error) {
@@ -60,15 +57,14 @@ export const VoiceExerciseWithComparison: React.FC = () => {
     }
   };
 
-  const handleServicesReady = (webSpeechReady: boolean, deepgramReady: boolean) => {
-    const bothReady = webSpeechReady && deepgramReady;
-    setServicesReady(bothReady);
+  const handleServicesReady = (deepgramReady: boolean) => {
+    setServicesReady(deepgramReady);
     
-    // Start timer only when both services are ready and we haven't started yet
-    if (bothReady && !timerStarted && !showFeedback) {
+    // Start timer only when service is ready and we haven't started yet
+    if (deepgramReady && !timerStarted && !showFeedback) {
       setProblemStartTime(Date.now());
       setTimerStarted(true);
-      console.log('⏱️ Both services ready - starting timer');
+      console.log('⏱️ Deepgram ready - starting timer');
     }
   };
 
@@ -96,19 +92,6 @@ export const VoiceExerciseWithComparison: React.FC = () => {
     };
 
     setResults([...results, result]);
-
-    // Record transcription data if voice was used
-    if (typingData?.inputMethod === 'voice' && transcriptionData) {
-      const transcriptionResult: ResultData = {
-        problem: `${currentProblem.num1} + ${currentProblem.num2}`,
-        correctAnswer: currentProblem.answer,
-        webSpeechTranscript: transcriptionData.webSpeechTranscript,
-        deepgramTranscript: transcriptionData.deepgramTranscript,
-        webSpeechLatency: transcriptionData.webSpeechLatency,
-        deepgramLatency: transcriptionData.deepgramLatency
-      };
-      setTranscriptionResults([...transcriptionResults, transcriptionResult]);
-    }
 
     // Send result to backend
     try {
@@ -169,12 +152,6 @@ export const VoiceExerciseWithComparison: React.FC = () => {
               Start New Session
             </button>
           </div>
-          
-          {/* Show transcription comparison results */}
-          <TranscriptionResults 
-            results={transcriptionResults}
-            sessionComplete={sessionComplete}
-          />
         </div>
       </div>
     );
@@ -192,7 +169,7 @@ export const VoiceExerciseWithComparison: React.FC = () => {
               Problem {currentIndex + 1} of {session.problems.length}
             </span>
             <span className="text-sm text-gray-600">
-              Dual Voice Input Test (Web Speech API + Deepgram)
+              Deepgram Speech Recognition (LiveKit)
             </span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2">
@@ -221,7 +198,7 @@ export const VoiceExerciseWithComparison: React.FC = () => {
             </div>
             {!servicesReady && (
               <p className="text-center text-sm text-orange-600 mt-2">
-                Waiting for services to connect...
+                Waiting for Deepgram to connect...
               </p>
             )}
           </div>
@@ -229,7 +206,7 @@ export const VoiceExerciseWithComparison: React.FC = () => {
 
         {/* Main exercise area */}
         <div className="bg-white rounded-lg shadow-lg p-8">
-          <DualVoiceInputV3
+          <VoiceInputLiveKit
             question={{
               num1: currentProblem.num1,
               num2: currentProblem.num2,
@@ -255,7 +232,7 @@ export const VoiceExerciseWithComparison: React.FC = () => {
         {/* Instructions */}
         <div className="mt-8 text-center text-gray-600">
           <p>Say your answer out loud or type it in</p>
-          <p className="text-sm mt-2">Both Web Speech API and Deepgram are listening</p>
+          <p className="text-sm mt-2">Using Deepgram real-time speech recognition</p>
         </div>
       </div>
     </div>

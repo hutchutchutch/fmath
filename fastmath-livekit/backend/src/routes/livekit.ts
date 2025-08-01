@@ -3,6 +3,7 @@ import { WebhookReceiver } from 'livekit-server-sdk';
 import { livekitConfig } from '../config/livekit';
 import { roomManager } from '../services/livekitRoomManagerFixed';
 import { audioRouter } from '../services/audioRouter';
+import { liveKitAudioHandler } from '../services/liveKitAudioHandler';
 
 const router = Router();
 
@@ -73,19 +74,22 @@ router.post('/join-room', async (req, res) => {
       return res.status(400).json({ error: 'Room name required' });
     }
 
-    // Join the room to receive audio
-    await roomManager.joinRoom(roomName, 'fastmath-server');
+    console.log(`🏠 Backend joining LiveKit room: ${roomName}`);
     
     // Connect to Deepgram if API key available
     const deepgramKey = process.env.DEEPGRAM_API_KEY;
     if (deepgramKey && !audioRouter.getStatus().deepgram) {
       await audioRouter.connectDeepgram(deepgramKey);
     }
-
+    
+    // Join the LiveKit room as backend participant
+    await liveKitAudioHandler.joinRoom(roomName);
+    
     res.json({ 
       success: true, 
       roomName,
-      services: audioRouter.getStatus()
+      services: audioRouter.getStatus(),
+      backendJoined: true
     });
   } catch (error: any) {
     console.error('Error joining room:', error);
@@ -102,7 +106,8 @@ router.post('/leave-room', async (req, res) => {
       return res.status(400).json({ error: 'Room name required' });
     }
 
-    await roomManager.leaveRoom(roomName);
+    // For now, we're not using the backend to join LiveKit rooms
+    console.log(`Leave room request for: ${roomName} (skipping backend leave)`);
     
     res.json({ success: true, roomName });
   } catch (error: any) {
@@ -113,20 +118,22 @@ router.post('/leave-room', async (req, res) => {
 
 // Get audio routing status
 router.get('/status', (req, res) => {
-  const roomManagerStatus = {
-    activeRooms: roomManager.getActiveRooms(),
+  const liveKitStatus = {
+    activeRooms: liveKitAudioHandler.getActiveRooms(),
   };
   
   const routerStatus = audioRouter.getStatus();
   
   res.json({
-    rooms: roomManagerStatus,
+    rooms: liveKitStatus,
     services: routerStatus,
   });
 });
 
 // Subscribe to transcription events via SSE
 router.get('/transcriptions', (req, res) => {
+  console.log('🔄 SSE transcription endpoint connected');
+  
   // Set up Server-Sent Events
   res.writeHead(200, {
     'Content-Type': 'text/event-stream',
@@ -136,18 +143,35 @@ router.get('/transcriptions', (req, res) => {
   });
 
   // Send initial connection message
-  res.write(`data: ${JSON.stringify({ type: 'connected' })}\n\n`);
+  const connectedMsg = JSON.stringify({ type: 'connected' });
+  console.log('📤 Sending SSE connected message:', connectedMsg);
+  res.write(`data: ${connectedMsg}\n\n`);
 
   // Listen for transcription events
   const transcriptionHandler = (result: any) => {
-    res.write(`data: ${JSON.stringify({ type: 'transcription', ...result })}\n\n`);
+    console.log('🎯 SSE transcriptionHandler called with:', result);
+    
+    const message = JSON.stringify({ type: 'transcription', ...result });
+    console.log('📤 Sending SSE transcription message:', message);
+    
+    try {
+      res.write(`data: ${message}\n\n`);
+      console.log('✅ SSE message sent successfully');
+    } catch (error) {
+      console.error('❌ Error sending SSE message:', error);
+    }
   };
 
+  console.log('🎧 Registering transcription handler for SSE');
   audioRouter.on('transcription', transcriptionHandler);
+  
+  console.log('👥 Current transcription listeners:', audioRouter.listenerCount('transcription'));
 
   // Clean up on client disconnect
   req.on('close', () => {
+    console.log('🔌 SSE client disconnected, cleaning up');
     audioRouter.off('transcription', transcriptionHandler);
+    console.log('👥 Remaining transcription listeners:', audioRouter.listenerCount('transcription'));
   });
 });
 

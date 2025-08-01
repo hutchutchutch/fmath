@@ -22,6 +22,9 @@ export function setupAudioStreamWebSocket(server: HTTPServer) {
     
     console.log(`📡 Audio stream connected for room: ${roomName}, participant: ${participantId}`);
     
+    // Track connection time for proper timestamp correlation
+    const connectionTime = Date.now();
+    
     // Ensure Deepgram is connected
     const deepgramKey = process.env.DEEPGRAM_API_KEY;
     if (deepgramKey && !audioRouter.getStatus().deepgram) {
@@ -35,77 +38,70 @@ export function setupAudioStreamWebSocket(server: HTTPServer) {
     }
     
     let messageCount = 0;
-    let pcmMessageCount = 0;
-    let webmMessageCount = 0;
     let firstAudioTime = 0;
     let silenceCount = 0;
+    let firstMessageTime = 0;
+    const CHUNK_DURATION_MS = 1024; // 16384 samples at 16kHz = 1024ms per chunk (OPTIMIZED)
     
     ws.on('message', (data) => {
       if (data instanceof Buffer) {
         messageCount++;
         
-        // Check if this is WebM data (for Groq)
-        const isWebM = data.length > 5 && data.toString('utf8', 0, 5) === 'WEBM:';
+        // Track first message time for accurate timestamp calculation
+        if (firstMessageTime === 0) {
+          firstMessageTime = Date.now();
+        }
         
-        if (isWebM) {
-          webmMessageCount++;
-          // Extract WebM data without the marker
-          const webmData = data.slice(5);
-          
-          if (webmMessageCount <= 5 || webmMessageCount % 10 === 0) {
-            console.log(`📹 WebM chunk #${webmMessageCount} received for Groq, size: ${webmData.length} bytes`);
-          }
-          
-          // Send WebM data specifically for Groq
-          audioRouter.emit('webmAudioData', {
-            roomName,
-            participantId,
-            data: webmData,
-            timestamp: Date.now(),
-          });
-        } else {
-          pcmMessageCount++;
-          
-          // Check for silence (very small audio values)
-          const view = new DataView(data.buffer, data.byteOffset, data.byteLength);
-          let maxAmplitude = 0;
-          for (let i = 0; i < data.length / 2; i++) {
-            const sample = Math.abs(view.getInt16(i * 2, true));
-            maxAmplitude = Math.max(maxAmplitude, sample);
-          }
-          
-          // If audio is very quiet, it's likely silence
-          if (maxAmplitude < 500) {
-            silenceCount++;
-            if (silenceCount > 50) { // ~1 second of silence
+        // Calculate estimated timestamp based on chunk index and duration
+        const estimatedTimestamp = firstMessageTime + (messageCount - 1) * CHUNK_DURATION_MS;
+        
+        // Check for silence (very small audio values)
+        const view = new DataView(data.buffer, data.byteOffset, data.byteLength);
+        let maxAmplitude = 0;
+        for (let i = 0; i < data.length / 2; i++) {
+          const sample = Math.abs(view.getInt16(i * 2, true));
+          maxAmplitude = Math.max(maxAmplitude, sample);
+        }
+        
+        // If audio is very quiet, it's likely silence
+        // FIXED: Lowered threshold from 500 to 100 and increased timeout from 1s to 3s
+        if (maxAmplitude < 100) {
+          silenceCount++;
+          if (silenceCount > 150) { // ~3 seconds of silence (was 50 = 1 second)
+            // Don't immediately reset - wait for actual new speech
+            if (firstAudioTime > 0 && Date.now() - firstAudioTime > 5000) {
               firstAudioTime = 0; // Reset for next utterance
               audioRouter.emit('resetSpeechTimer', {});
-            }
-          } else {
-            silenceCount = 0;
-            if (firstAudioTime === 0) {
-              firstAudioTime = Date.now();
-              console.log('🎤 Speech detected, starting timer');
+              console.log('🔇 Silence detected after 3s, resetting speech timer');
             }
           }
-          
-          // This is PCM16 data for Deepgram
-          if (pcmMessageCount <= 5 || pcmMessageCount % 100 === 0) {
-            console.log(`📤 PCM16 chunk #${pcmMessageCount} received for Deepgram, size: ${data.length} bytes`);
+        } else {
+          silenceCount = 0;
+          if (firstAudioTime === 0) {
+            firstAudioTime = Date.now();
+            console.log('🎤 Speech detected, starting timer');
           }
-          
-          // Forward PCM16 audio data to audio router
-          audioRouter.emit('audioData', {
-            roomName,
-            participantId,
-            trackId: 'websocket-audio',
-            data: data,
-            timestamp: firstAudioTime || Date.now(),
-            sampleRate: 16000, // 16kHz
-            channels: 1,
-            samplesPerChannel: data.length / 2, // 16-bit samples
-          });
         }
+        
+        // This is PCM16 data for Deepgram
+        if (messageCount <= 5 || messageCount % 100 === 0) {
+          console.log(`📤 PCM16 chunk #${messageCount} received for Deepgram, size: ${data.length} bytes`);
+        }
+        
+        // Forward PCM16 audio data to audio router with improved timestamp
+        audioRouter.emit('audioData', {
+          roomName,
+          participantId,
+          trackId: 'websocket-audio',
+          data: data,
+          // Use firstAudioTime when speech is detected, otherwise use estimated timestamp
+          timestamp: firstAudioTime || estimatedTimestamp,
+          actualMessageTime: Date.now(),
+          chunkIndex: messageCount,
+          sampleRate: 16000, // 16kHz
+          channels: 1,
+          samplesPerChannel: data.length / 2, // 16-bit samples
+        });
       }
     });
     
@@ -126,8 +122,7 @@ router.get('/status', (req, res) => {
   res.json({
     status: 'ready',
     audioRouterConnected: {
-      deepgram: audioRouter.getStatus().deepgram,
-      groq: audioRouter.getStatus().groq,
+      deepgram: audioRouter.getStatus().deepgram
     }
   });
 });
