@@ -4,7 +4,6 @@ import { createServer } from 'http';
 import { exerciseRouter } from './routes/exercise';
 import { voiceRouter } from './routes/voice';
 import { livekitRouter } from './routes/livekit';
-import audioStreamRoutes, { setupAudioStreamWebSocket } from './routes/audioStream';
 // import { DeepgramSimulator } from './services/deepgramSimulator';
 import dotenv from 'dotenv';
 import { createToken, validateLiveKitConfig } from './config/livekit';
@@ -26,7 +25,6 @@ app.use(express.json());
 app.use('/api/exercise', exerciseRouter);
 app.use('/api/voice', voiceRouter);
 app.use('/api/livekit', livekitRouter);
-app.use('/api/audio-stream', audioStreamRoutes);
 
 // Health check
 app.get('/health', (req, res) => {
@@ -84,14 +82,10 @@ app.get('/api/livekit/test', (req, res) => {
 //   console.log(`Deepgram simulator enabled on port ${DEEPGRAM_SIMULATOR_PORT}`);
 // }
 
-// Setup WebSocket for audio streaming
-setupAudioStreamWebSocket(server);
-
 server.listen(PORT, () => {
   console.log(`Voice test backend running on port ${PORT}`);
-  console.log(`Audio stream WebSocket available at ws://localhost:${PORT}/ws/audio-stream`);
   if (USE_DEEPGRAM_SIMULATOR) {
-    console.log(`Deepgram simulator WebSocket available at ws://localhost:${DEEPGRAM_SIMULATOR_PORT}`);
+    console.log(`Deepgram simulator available at http://localhost:${DEEPGRAM_SIMULATOR_PORT}`);
   }
 });
 

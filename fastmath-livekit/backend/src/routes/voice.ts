@@ -17,13 +17,13 @@ voiceRouter.get('/deepgram/config', (req, res) => {
   if (USE_DEEPGRAM_SIMULATOR) {
     res.json({
       useSimulator: true,
-      websocketUrl: `ws://localhost:${DEEPGRAM_SIMULATOR_PORT}`,
+      apiUrl: `http://localhost:${DEEPGRAM_SIMULATOR_PORT}`,
       token: 'simulator-token'
     });
   } else {
     res.json({
       useSimulator: false,
-      websocketUrl: 'wss://api.deepgram.com/v1/listen',
+      apiUrl: 'https://api.deepgram.com/v1/listen',
       needsToken: true
     });
   }

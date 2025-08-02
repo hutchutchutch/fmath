@@ -2,10 +2,47 @@ import { Router } from 'express';
 import { WebhookReceiver } from 'livekit-server-sdk';
 import { livekitConfig } from '../config/livekit';
 import { roomManager } from '../services/livekitRoomManagerFixed';
-import { audioRouter } from '../services/audioRouter';
+import { transcriptionEmitter } from '../services/transcriptionEmitter';
 import { liveKitAudioHandler } from '../services/liveKitAudioHandler';
+import { simpleLiveKitHandler } from '../services/simpleLiveKitHandler';
+import { eventBasedLiveKitHandler } from '../services/eventBasedLiveKitHandler';
+import { liveKitDirectAudioHandler } from '../services/livekitDirectAudioHandler';
 
 const router = Router();
+
+// Simple number extraction function
+function extractNumberFromText(text: string): number | null {
+  const cleanText = text.toLowerCase().trim();
+  
+  // First try to find numeric digits
+  const numberMatch = cleanText.match(/\b\d+\b/);
+  if (numberMatch) {
+    return parseInt(numberMatch[0]);
+  }
+  
+  // Word to number mapping with sound-alikes
+  const wordMap: { [key: string]: number } = {
+    'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4,
+    'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9,
+    'ten': 10, 'eleven': 11, 'twelve': 12, 'thirteen': 13,
+    'fourteen': 14, 'fifteen': 15, 'sixteen': 16, 'seventeen': 17,
+    'eighteen': 18, 'nineteen': 19, 'twenty': 20,
+    // Sound-alikes
+    'to': 2, 'too': 2, 'tu': 2,
+    'for': 4, 'fore': 4,
+    'ate': 8, 'ait': 8,
+    'none': 9, 'non': 9, 'nun': 9,
+  };
+  
+  // Check for exact word matches
+  for (const [word, num] of Object.entries(wordMap)) {
+    if (cleanText === word) {
+      return num;
+    }
+  }
+  
+  return null;
+}
 
 // Initialize webhook receiver
 const webhookReceiver = new WebhookReceiver(
@@ -44,7 +81,7 @@ router.post('/webhook', async (req, res) => {
       
       case 'track_published':
         console.log(`Track published: ${event.track?.type} by ${event.participant?.identity}`);
-        if (event.track?.type === 'AUDIO') {
+        if (event.track?.type === 0) { // 0 is AUDIO in the enum
           // Audio track published - could trigger audio processing here
           console.log('Audio track available for processing');
         }
@@ -76,19 +113,59 @@ router.post('/join-room', async (req, res) => {
 
     console.log(`🏠 Backend joining LiveKit room: ${roomName}`);
     
-    // Connect to Deepgram if API key available
-    const deepgramKey = process.env.DEEPGRAM_API_KEY;
-    if (deepgramKey && !audioRouter.getStatus().deepgram) {
-      await audioRouter.connectDeepgram(deepgramKey);
-    }
+    // Use LiveKit WebRTC for audio, not direct connections
+    // const deepgramKey = process.env.DEEPGRAM_API_KEY;
+    // if (deepgramKey && !audioRouter.getStatus().deepgram) {
+    //   await audioRouter.connectDeepgram(deepgramKey);
+    // }
     
-    // Join the LiveKit room as backend participant
-    await liveKitAudioHandler.joinRoom(roomName);
+    // Use direct audio handler for testing
+    console.log('🔧 Using direct audio handler');
+    await liveKitDirectAudioHandler.joinRoom(roomName);
+    
+    // Set up transcription forwarding
+    liveKitDirectAudioHandler.on('transcription', (data) => {
+      console.log('🎯 Forwarding transcription to SSE:', data);
+      transcriptionEmitter.emitTranscription({
+        service: 'deepgram',
+        text: data.text,
+        timestamp: data.timestamp,
+        latency: Date.now() - data.timestamp,
+        participantId: 'livekit-user',
+        roomName: roomName,
+        number: extractNumberFromText(data.text),
+        isFinal: true,
+        confidence: data.confidence
+      });
+    });
+    
+    // FALLBACK: Use event-based for comparison
+    const useEventBased = false; // Toggle this to switch between handlers
+    
+    if (useEventBased) {
+      console.log('🔧 Using simplified LiveKit handler for debugging');
+      await simpleLiveKitHandler.joinRoom(roomName);
+      
+      // Set up transcription forwarding
+      simpleLiveKitHandler.on('transcription', (data) => {
+        console.log('🎯 Forwarding transcription to SSE:', data);
+        transcriptionEmitter.emitTranscription({
+          service: 'deepgram',
+          text: data.text,
+          timestamp: data.timestamp,
+          latency: Date.now() - data.timestamp,
+          participantId: 'livekit-user',
+          roomName: roomName,
+          number: extractNumberFromText(data.text),
+          isFinal: true,
+          confidence: data.confidence
+        });
+      });
+    }
     
     res.json({ 
       success: true, 
       roomName,
-      services: audioRouter.getStatus(),
       backendJoined: true
     });
   } catch (error: any) {
@@ -122,11 +199,8 @@ router.get('/status', (req, res) => {
     activeRooms: liveKitAudioHandler.getActiveRooms(),
   };
   
-  const routerStatus = audioRouter.getStatus();
-  
   res.json({
     rooms: liveKitStatus,
-    services: routerStatus,
   });
 });
 
@@ -163,15 +237,15 @@ router.get('/transcriptions', (req, res) => {
   };
 
   console.log('🎧 Registering transcription handler for SSE');
-  audioRouter.on('transcription', transcriptionHandler);
+  transcriptionEmitter.on('transcription', transcriptionHandler);
   
-  console.log('👥 Current transcription listeners:', audioRouter.listenerCount('transcription'));
+  console.log('👥 Current transcription listeners:', transcriptionEmitter.listenerCount('transcription'));
 
   // Clean up on client disconnect
   req.on('close', () => {
     console.log('🔌 SSE client disconnected, cleaning up');
-    audioRouter.off('transcription', transcriptionHandler);
-    console.log('👥 Remaining transcription listeners:', audioRouter.listenerCount('transcription'));
+    transcriptionEmitter.off('transcription', transcriptionHandler);
+    console.log('👥 Remaining transcription listeners:', transcriptionEmitter.listenerCount('transcription'));
   });
 });
 

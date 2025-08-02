@@ -1,7 +1,6 @@
 import { RoomServiceClient, AccessToken } from 'livekit-server-sdk';
 import { livekitConfig } from '../config/livekit';
 import EventEmitter from 'events';
-import WebSocket from 'ws';
 
 export interface AudioData {
   participantId: string;
@@ -13,7 +12,7 @@ export interface AudioData {
 export class LiveKitRoomManager extends EventEmitter {
   private roomClient: RoomServiceClient;
   private activeRooms: Set<string> = new Set();
-  private wsConnections: Map<string, WebSocket> = new Map();
+  private cleanupFunctions: Map<string, () => void> = new Map();
 
   constructor() {
     super();
@@ -91,7 +90,7 @@ export class LiveKitRoomManager extends EventEmitter {
     }, 100);
     
     // Store interval for cleanup
-    this.wsConnections.set(roomName, { close: () => clearInterval(interval) } as any);
+    this.cleanupFunctions.set(roomName, () => clearInterval(interval));
   }
 
   /**
@@ -107,11 +106,11 @@ export class LiveKitRoomManager extends EventEmitter {
       // Remove from active rooms
       this.activeRooms.delete(roomName);
       
-      // Cleanup any connections
-      const connection = this.wsConnections.get(roomName);
-      if (connection) {
-        connection.close();
-        this.wsConnections.delete(roomName);
+      // Cleanup any functions
+      const cleanup = this.cleanupFunctions.get(roomName);
+      if (cleanup) {
+        cleanup();
+        this.cleanupFunctions.delete(roomName);
       }
       
       console.log(`👋 Stopped monitoring room: ${roomName}`);

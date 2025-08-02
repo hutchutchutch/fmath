@@ -34,13 +34,15 @@ export const VoiceInputLiveKit: React.FC<VoiceInputLiveKitProps> = ({
   // State for inputs
   const [deepgramValue, setDeepgramValue] = useState('');
   const [deepgramInterim, setDeepgramInterim] = useState('');
-  const [deepgramStatus, setDeepgramStatus] = useState('Initializing...');
+  const [deepgramStatus, setDeepgramStatus] = useState('Click Start to begin');
   const [useTextFallback, setUseTextFallback] = useState(false);
   const [showDebug, setShowDebug] = useState(true);
   const [isDeepgramReady, setIsDeepgramReady] = useState(false);
   const [microphoneActive, setMicrophoneActive] = useState(false);
   const [isListening, setIsListening] = useState(false);
-  const [liveKitStatus, setLiveKitStatus] = useState('Disconnected');
+  const [liveKitStatus, setLiveKitStatus] = useState('Not started');
+  const [audioStarted, setAudioStarted] = useState(false);
+  const [audioLevel, setAudioLevel] = useState(0);
   
   // Refs
   const roomRef = useRef<Room | null>(null);
@@ -98,10 +100,8 @@ export const VoiceInputLiveKit: React.FC<VoiceInputLiveKitProps> = ({
     const init = async () => {
       if (!mounted || !enableVoice || useTextFallback) return;
       
-      // Initialize services
-      if (mounted) {
-        await connectToLiveKit();
-      }
+      // Don't auto-connect - wait for user gesture
+      console.log('🎤 Audio services ready, waiting for user to start...');
     };
     
     init();
@@ -112,6 +112,13 @@ export const VoiceInputLiveKit: React.FC<VoiceInputLiveKitProps> = ({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enableVoice, useTextFallback]);
+
+  // Start audio with user gesture
+  const handleStartAudio = async () => {
+    console.log('🎤 Start button clicked - initializing audio...');
+    setAudioStarted(true);
+    await connectToLiveKit();
+  };
 
   // Connect to LiveKit
   const connectToLiveKit = async () => {
@@ -194,6 +201,28 @@ export const VoiceInputLiveKit: React.FC<VoiceInputLiveKitProps> = ({
       
       if (tracks.length > 0 && tracks[0].kind === Track.Kind.Audio) {
         audioTrackRef.current = tracks[0] as LocalAudioTrack;
+        
+        // Monitor audio levels
+        const audioTrack = tracks[0] as LocalAudioTrack;
+        const monitorInterval = setInterval(() => {
+          if (room.localParticipant) {
+            const level = room.localParticipant.audioLevel;
+            const isSpeaking = room.localParticipant.isSpeaking;
+            setAudioLevel(level);
+            
+            // Log every second
+            console.log(`🔊 Audio Level: ${level.toFixed(3)}, Speaking: ${isSpeaking}`);
+            
+            if (level > 0.01) {
+              setMicrophoneActive(true);
+            } else {
+              setMicrophoneActive(false);
+            }
+          }
+        }, 100);
+        
+        // Store interval for cleanup
+        (audioTrack as any).monitorInterval = monitorInterval;
         
         // Publish the audio track to LiveKit room
         await room.localParticipant.publishTrack(tracks[0]);
@@ -334,8 +363,12 @@ export const VoiceInputLiveKit: React.FC<VoiceInputLiveKitProps> = ({
     
     // If Deepgram has a value, submit immediately
     if (hasDeepgram) {
-      console.log('✅ Deepgram has value, submitting...');
-      submitAnswer();
+      console.log('✅ Deepgram has value, will submit in 1 second...');
+      // Add a small delay so the transcription is visible
+      setTimeout(() => {
+        console.log('⏰ Delayed submit executing...');
+        submitAnswer();
+      }, 1000); // 1 second delay
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [deepgramValue, showFeedback]);
@@ -371,6 +404,18 @@ export const VoiceInputLiveKit: React.FC<VoiceInputLiveKitProps> = ({
   const cleanup = () => {
     console.log('>� Cleaning up voice recognition...');
     
+    // Clean up audio track and monitoring
+    if (audioTrackRef.current) {
+      // Clean up monitor interval
+      const monitorInterval = (audioTrackRef.current as any).monitorInterval;
+      if (monitorInterval) {
+        clearInterval(monitorInterval);
+      }
+      
+      audioTrackRef.current.stop();
+      audioTrackRef.current = null;
+    }
+    
     if (roomRef.current) {
       roomRef.current.disconnect();
       roomRef.current = null;
@@ -391,6 +436,8 @@ export const VoiceInputLiveKit: React.FC<VoiceInputLiveKitProps> = ({
     setIsDeepgramReady(false);
     setDeepgramStatus('Stopped');
     setLiveKitStatus('Disconnected');
+    setAudioLevel(0);
+    setMicrophoneActive(false);
   };
 
   const handleManualInput = (value: string) => {
@@ -425,7 +472,14 @@ export const VoiceInputLiveKit: React.FC<VoiceInputLiveKitProps> = ({
       console.log('✅ Microphone access granted');
       
       setIsListening(true);
-      await connectToLiveKit();
+      setAudioStarted(true);
+      
+      // Only connect if not already connected
+      if (!roomRef.current) {
+        await connectToLiveKit();
+      } else {
+        console.log('🔗 Already connected to LiveKit');
+      }
     } catch (error) {
       console.error('❌ Microphone access denied:', error);
       alert('Please allow microphone access to use voice input');
@@ -492,7 +546,8 @@ export const VoiceInputLiveKit: React.FC<VoiceInputLiveKitProps> = ({
               microphoneActive ? 'bg-red-500 animate-pulse' : 'bg-gray-300'
             }`} />
             <span className="text-sm text-gray-600">
-              {microphoneActive ? 'Microphone active' : 'Microphone idle'}
+              {microphoneActive ? 'Microphone active' : 'Microphone idle'} 
+              {audioStarted && ` (Level: ${(audioLevel * 100).toFixed(1)}%)`}
             </span>
           </div>
           

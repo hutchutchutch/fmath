@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { VoiceExerciseWithDeepgram } from './components/VoiceExerciseWithDeepgram';
-import { DeepgramTest } from './components/DeepgramTest';
 import { AudioTest } from './components/AudioTest';
 import './index.css';
 
@@ -18,9 +17,7 @@ function App() {
   
   return (
     <div className="App">
-      {testMode === 'deepgram' ? (
-        <DeepgramTest />
-      ) : testMode === 'audio' ? (
+      {testMode === 'audio' ? (
         <AudioTest />
       ) : (
         <VoiceExerciseWithDeepgram />
