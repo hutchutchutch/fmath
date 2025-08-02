@@ -1,6 +1,8 @@
 import * as React from "react"
 import { useState, useRef, useEffect } from "react"
 import { TouchpadInput } from "./TouchpadInput"
+import { QuestionVoiceInputEnhanced } from "../Voice/QuestionVoiceInputEnhanced"
+import { FEATURES } from "../../config/features"
 
 // Web Speech API types
 interface ISpeechRecognition extends EventTarget {
@@ -550,6 +552,9 @@ export const QuestionTextInput: React.FC<QuestionTextInputProps> = ({ question, 
 };
 
 // Export QuestionVoiceInput as an alias for practice components
-export const QuestionVoiceInput = QuestionTextInput;
+// Use the enhanced version if Deepgram feature is enabled
+export const QuestionVoiceInput = FEATURES.VOICE_INPUT_DEEPGRAM 
+  ? QuestionVoiceInputEnhanced 
+  : QuestionTextInput;
 
 export { Input }

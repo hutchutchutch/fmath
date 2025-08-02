@@ -15,6 +15,7 @@ import sessionAnalyticsRoutes from './routes/sessionAnalytics';
 import timeEstimationRoutes from './routes/timeEstimation';
 import dailyGoalsRoutes from './routes/dailyGoals';
 import onboardingRoutes from './routes/onboarding';
+import voiceRoutes from './routes/voice';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -42,6 +43,7 @@ app.use('/sessionAnalytics', sessionAnalyticsRoutes);
 app.use('/timeEstimation', timeEstimationRoutes);
 app.use('/dailyGoals', dailyGoalsRoutes);
 app.use('/onboarding', onboardingRoutes);
+app.use('/voice', voiceRoutes);
 
 app.get('/health', (req, res) => {
   res.json({ status: 'ok' });

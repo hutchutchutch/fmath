@@ -5,6 +5,7 @@ import { ProgressAssessment, ProgressAssessmentResponse } from '../types/progres
 import { jwtDecode } from 'jwt-decode';
 import { useAuth } from '../context/AuthContext';
 import { logError } from '../utils/errorReporting';
+import { VoiceSessionResponse, VoiceTokenResponse } from '../types/voice';
 
 // Add type augmentation for Axios config to support metadata
 declare module 'axios' {
@@ -938,5 +939,58 @@ export const updateUserFocusTrack = async (userId: string): Promise<{success: bo
     console.error('[API] updateUserFocusTrack failed:', error instanceof Error ? error.message : 'Unknown error',
       error instanceof AxiosError ? `status: ${error.response?.status}, data: ${JSON.stringify(error.response?.data)}` : '');
     throw error instanceof Error ? error : new Error('Failed to update user focus track');
+  }
+};
+
+// Voice Input API Functions
+
+export const createVoiceSession = async (
+  userId: string,
+  trackId: string
+): Promise<VoiceSessionResponse> => {
+  try {
+    const response = await api.post('/voice/session', { userId, trackId });
+    return response.data;
+  } catch (error) {
+    console.error('[API] createVoiceSession failed:', error);
+    throw error instanceof Error ? error : new Error('Failed to create voice session');
+  }
+};
+
+export const getVoiceToken = async (
+  roomName: string,
+  participantName: string
+): Promise<VoiceTokenResponse> => {
+  try {
+    const response = await api.post('/voice/token', { roomName, participantName });
+    return response.data;
+  } catch (error) {
+    console.error('[API] getVoiceToken failed:', error);
+    throw error instanceof Error ? error : new Error('Failed to get voice token');
+  }
+};
+
+export const joinVoiceRoom = async (
+  roomName: string,
+  userId: string
+): Promise<{ success: boolean; message?: string }> => {
+  try {
+    const response = await api.post('/voice/join-room', { roomName, userId });
+    return response.data;
+  } catch (error) {
+    console.error('[API] joinVoiceRoom failed:', error);
+    throw error instanceof Error ? error : new Error('Failed to join voice room');
+  }
+};
+
+export const endVoiceSession = async (
+  sessionId: string
+): Promise<{ success: boolean; message?: string }> => {
+  try {
+    const response = await api.post('/voice/end-session', { sessionId });
+    return response.data;
+  } catch (error) {
+    console.error('[API] endVoiceSession failed:', error);
+    throw error instanceof Error ? error : new Error('Failed to end voice session');
   }
 };
