@@ -20,18 +20,20 @@ mockUsers.set('hutch.herchenbach@gauntletai.com', {
     focusTrack: 'TRACK1'
 });
 
-router.post('/signup', async (req: Request, res: Response) => {
+router.post('/signup', async (req: Request, res: Response): Promise<void> => {
     try {
         const { email, password, name, ageGrade } = req.body;
         
         if (!email || !password) {
-            return res.status(400).json({ message: 'Email and password are required' });
+            res.status(400).json({ message: 'Email and password are required' });
+            return;
         }
         
         const normalizedEmail = email.toLowerCase();
         
         if (mockUsers.has(normalizedEmail)) {
-            return res.status(400).json({ message: 'User already exists' });
+            res.status(400).json({ message: 'User already exists' });
+            return;
         }
         
         const userId = uuidv4();
@@ -69,7 +71,7 @@ router.post('/signup', async (req: Request, res: Response) => {
     }
 });
 
-router.post('/login', async (req: Request, res: Response) => {
+router.post('/login', async (req: Request, res: Response): Promise<void> => {
     try {
         const { email, password } = req.body;
         const normalizedEmail = email.toLowerCase();
@@ -77,12 +79,14 @@ router.post('/login', async (req: Request, res: Response) => {
         const user = mockUsers.get(normalizedEmail);
         
         if (!user) {
-            return res.status(401).json({ message: 'Invalid credentials' });
+            res.status(401).json({ message: 'Invalid credentials' });
+            return;
         }
         
         // Simple password check (in real app, use bcrypt)
         if (user.password !== password) {
-            return res.status(401).json({ message: 'Invalid credentials' });
+            res.status(401).json({ message: 'Invalid credentials' });
+            return;
         }
         
         const token = jwt.sign(
@@ -107,19 +111,21 @@ router.post('/login', async (req: Request, res: Response) => {
     }
 });
 
-router.post('/validate', (req: Request, res: Response) => {
+router.post('/validate', (req: Request, res: Response): void => {
     try {
         const token = req.headers.authorization?.split(' ')[1];
         
         if (!token) {
-            return res.status(401).json({ valid: false, message: 'No token provided' });
+            res.status(401).json({ valid: false, message: 'No token provided' });
+            return;
         }
         
         const decoded = jwt.verify(token, JWT_SECRET) as any;
         const user = mockUsers.get(decoded.email);
         
         if (!user) {
-            return res.status(401).json({ valid: false, message: 'User not found' });
+            res.status(401).json({ valid: false, message: 'User not found' });
+            return;
         }
         
         res.json({

@@ -17,6 +17,7 @@ export class DeepgramService extends EventEmitter {
   }
 
   async startTranscription(config: TranscriptionConfig = {}): Promise<void> {
+    console.log('🌊 [Backend/Deepgram] Starting transcription service...');
     try {
       // Default configuration optimized for low latency
       const transcriptionConfig = {
@@ -26,46 +27,78 @@ export class DeepgramService extends EventEmitter {
         sample_rate: config.sampleRate || 48000,
         channels: config.channels || 1,
         interim_results: config.interimResults !== false, // Default to true
+        endpointing: 300, // Reduce endpointing to 300ms for faster results
+        vad_events: true, // Enable voice activity detection events
+        utterance_end_ms: 1000, // End utterance after 1 second of silence
       };
 
-      console.log('[DeepgramService] Starting transcription with config:', transcriptionConfig);
+      console.log('📝 [Backend/Deepgram] Starting transcription with config:', transcriptionConfig);
       
       this.connection = this.deepgram.listen.live(transcriptionConfig);
 
       // Set up event handlers
-      this.connection.on(LiveTranscriptionEvents.Open, () => {
-        console.log('[DeepgramService] Connection opened');
-        this.emit('open');
-        
-        // Start keep-alive to prevent connection delays
-        this.startKeepAlive();
-      });
+      if (this.connection) {
+        this.connection.on(LiveTranscriptionEvents.Open, () => {
+          console.log('✅ [Backend/Deepgram] Connection opened');
+          this.emit('open');
+          
+          // Start keep-alive to prevent connection delays
+          this.startKeepAlive();
+          console.log('🕓 [Backend/Deepgram] Keep-alive started');
+        });
 
-      this.connection.on(LiveTranscriptionEvents.Transcript, (data: any) => {
-        const transcript = data.channel?.alternatives?.[0];
-        if (transcript && transcript.transcript) {
-          this.emit('transcription', {
-            text: transcript.transcript,
-            isFinal: data.is_final || false,
-            confidence: transcript.confidence || 0,
-            timestamp: Date.now()
+        this.connection.on(LiveTranscriptionEvents.Transcript, (data: any) => {
+          const transcript = data.channel?.alternatives?.[0];
+          if (transcript && transcript.transcript && transcript.transcript.trim()) {
+            // Log the full data structure to debug
+            console.log(`🔍 [Backend/Deepgram] Full transcript data:`, {
+              is_final: data.is_final,
+              speech_final: data.speech_final,
+              type: data.type,
+              duration: data.duration,
+              start: data.start
+            });
+            
+            const transcriptionData = {
+              text: transcript.transcript,
+              isFinal: data.is_final || false,
+              speechFinal: data.speech_final || false, // Deepgram's endpointing signal
+              confidence: transcript.confidence || 0,
+              timestamp: Date.now()
+            };
+            
+            // Emit both 'transcription' event and specific events for interim/final
+            this.emit('transcription', transcriptionData);
+            
+            if (data.is_final) {
+              console.log(`📝 [Backend/Deepgram] Final: "${transcript.transcript}" (confidence: ${transcriptionData.confidence}, speech_final: ${data.speech_final})`);
+            } else {
+              console.log(`⚡ [Backend/Deepgram] Interim: "${transcript.transcript}" (confidence: ${transcriptionData.confidence})`);
+              // Also emit interim event for compatibility
+              this.emit('interim', transcript.transcript);
+            }
+          }
+        });
+
+        this.connection.on(LiveTranscriptionEvents.Close, () => {
+          console.log('🔌 [Backend/Deepgram] Connection closed');
+          this.emit('close');
+          this.stopKeepAlive();
+        });
+
+        this.connection.on(LiveTranscriptionEvents.Error, (error: any) => {
+          console.error('❌ [Backend/Deepgram] Error:', error);
+          console.error('[Backend/Deepgram] Error details:', {
+            message: error.message,
+            code: error.code,
+            type: error.type
           });
-        }
-      });
-
-      this.connection.on(LiveTranscriptionEvents.Close, () => {
-        console.log('[DeepgramService] Connection closed');
-        this.emit('close');
-        this.stopKeepAlive();
-      });
-
-      this.connection.on(LiveTranscriptionEvents.Error, (error: any) => {
-        console.error('[DeepgramService] Error:', error);
-        this.emit('error', error);
-      });
+          this.emit('error', error);
+        });
+      }
 
     } catch (error) {
-      console.error('[DeepgramService] Failed to start transcription:', error);
+      console.error('❌ [Backend/Deepgram] Failed to start transcription:', error);
       throw error;
     }
   }
@@ -74,17 +107,19 @@ export class DeepgramService extends EventEmitter {
     if (this.connection && this.connection.getReadyState() === 1) {
       this.connection.send(audioData);
     } else {
-      console.warn('[DeepgramService] Connection not ready, skipping audio data');
+      const state = this.connection?.getReadyState();
+      console.warn(`⚠️ [Backend/Deepgram] Connection not ready (state: ${state}), skipping ${audioData.length} bytes`);
     }
   }
 
   stop(): void {
-    console.log('[DeepgramService] Stopping transcription');
+    console.log('🚫 [Backend/Deepgram] Stopping transcription');
     this.stopKeepAlive();
     
     if (this.connection) {
       this.connection.finish();
       this.connection = null;
+      console.log('✅ [Backend/Deepgram] Connection closed and cleaned up');
     }
   }
 

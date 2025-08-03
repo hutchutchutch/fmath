@@ -9,7 +9,7 @@ export interface AuthRequest extends Request {
   };
 }
 
-export const verifyToken = (req: AuthRequest, res: Response, next: NextFunction) => {
+export const authenticate = (req: AuthRequest, res: Response, next: NextFunction) => {
   const authHeader = req.headers.authorization;
   
   if (!authHeader) {
@@ -30,4 +30,7 @@ export const verifyToken = (req: AuthRequest, res: Response, next: NextFunction)
     console.error('Token verification error:', error);
     return res.status(401).json({ error: 'Invalid token' });
   }
-}; 
+};
+
+// Export verifyToken as an alias for backward compatibility
+export const verifyToken = authenticate; 

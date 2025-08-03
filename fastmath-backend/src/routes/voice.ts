@@ -1,202 +1,157 @@
-import express, { Request, Response, NextFunction } from 'express';
-import asyncHandler from 'express-async-handler';
+import express, { Request, Response } from 'express';
+import { AccessToken } from 'livekit-server-sdk';
 import { authenticate } from '../middleware/auth';
-import { voiceService } from '../services/voice/voiceService';
-import { setupSSE, SSEClient } from '../middleware/sse';
+import { audioHandler } from '../services/voice/audioHandler';
 
 const router = express.Router();
 
-// Map to store SSE connections
-const sseConnections = new Map<string, SSEClient>();
-
-// Create voice session and get token
-router.post('/token', authenticate, asyncHandler(async (req: Request, res: Response) => {
-  const { roomName, participantName } = req.body;
-  
-  if (!roomName || !participantName) {
-    return res.status(400).json({ 
-      success: false, 
-      message: 'roomName and participantName are required' 
-    });
-  }
-
+// Generate token for client
+router.post('/token', authenticate as any, async (req: Request, res: Response): Promise<void> => {
+  console.log('🎫 [Backend/Route] Token request received:', req.body);
   try {
-    const token = await voiceService.generateUserToken(roomName, participantName);
+    const { roomName, participantName } = req.body;
     
-    res.json({
-      success: true,
-      token,
-      url: process.env.LIVEKIT_URL
-    });
-  } catch (error) {
-    console.error('[Voice Routes] Token generation failed:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to generate token' 
-    });
-  }
-}));
+    if (!roomName || !participantName) {
+      console.error('❌ [Backend/Route] Missing required params');
+      res.status(400).json({ error: 'roomName and participantName required' });
+      return;
+    }
 
-// Create a new voice session
-router.post('/session', authenticate, asyncHandler(async (req: Request, res: Response) => {
-  const { userId, trackId } = req.body;
-  
-  if (!userId || !trackId) {
-    return res.status(400).json({ 
-      success: false, 
-      message: 'userId and trackId are required' 
-    });
-  }
+    const apiKey = process.env.LIVEKIT_API_KEY!;
+    const apiSecret = process.env.LIVEKIT_API_SECRET!;
+    
+    const token = new AccessToken(
+      apiKey,
+      apiSecret,
+      {
+        identity: participantName,
+        name: participantName,
+      }
+    );
 
+    token.addGrant({
+      roomJoin: true,
+      room: roomName,
+      canPublish: true,
+      canSubscribe: true,
+    });
+
+    const jwt = await token.toJwt();
+    
+    console.log('✅ [Backend/Route] Token generated successfully');
+    res.json({ 
+      token: jwt,
+      url: process.env.LIVEKIT_URL 
+    });
+  } catch (error: any) {
+    console.error('❌ [Backend/Route] Token generation error:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Join room as backend bot
+router.post('/join-room', authenticate as any, async (req: Request, res: Response): Promise<void> => {
+  console.log('🤖 [Backend/Route] Join room request received:', req.body);
   try {
-    const session = await voiceService.createVoiceSession(userId, trackId);
+    const { roomName } = req.body;
     
-    res.json({
-      success: true,
-      sessionId: session.sessionId,
-      roomName: session.roomName
-    });
-  } catch (error) {
-    console.error('[Voice Routes] Session creation failed:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to create voice session' 
-    });
-  }
-}));
+    if (!roomName) {
+      console.error('❌ [Backend/Route] Missing roomName');
+      res.status(400).json({ error: 'roomName required' });
+      return;
+    }
 
-// Join voice room (backend joins to process audio)
-router.post('/join-room', authenticate, asyncHandler(async (req: Request, res: Response) => {
-  const { roomName, userId } = req.body;
-  
-  if (!roomName || !userId) {
-    return res.status(400).json({ 
-      success: false, 
-      message: 'roomName and userId are required' 
-    });
-  }
-
-  try {
-    await voiceService.joinRoom(roomName, userId);
+    await audioHandler.joinRoom(roomName);
     
-    res.json({
+    console.log('✅ [Backend/Route] Backend successfully joined room');
+    res.json({ 
       success: true,
-      message: 'Backend joined room successfully'
+      message: 'Backend joined room'
     });
-  } catch (error) {
-    console.error('[Voice Routes] Room join failed:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to join room' 
-    });
+  } catch (error: any) {
+    console.error('❌ [Backend/Route] Join room error:', error);
+    res.status(500).json({ error: error.message });
   }
-}));
+});
 
-// Stream transcriptions via SSE
-router.get('/transcriptions/:sessionId', authenticate, (req: Request, res: Response) => {
-  const { sessionId } = req.params;
+// SSE endpoint for transcriptions
+router.get('/transcriptions', (req: Request, res: Response) => {
+  console.log('📻 [Backend/Route] SSE connection requested');
   
-  if (!sessionId) {
-    return res.status(400).json({ 
-      success: false, 
-      message: 'sessionId is required' 
-    });
-  }
+  // Generate unique connection ID
+  const connectionId = `sse-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+  console.log(`🆔 [Backend/Route] SSE connection ID: ${connectionId}`);
+  
+  res.writeHead(200, {
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    'Connection': 'keep-alive',
+    'Access-Control-Allow-Origin': '*',
+  });
 
-  // Set up SSE
-  const sseClient = setupSSE(req, res);
-  sseConnections.set(sessionId, sseClient);
+  // Send initial connection message
+  res.write(`data: ${JSON.stringify({ type: 'connected' })}\n\n`);
+  console.log('✅ [Backend/Route] SSE connection established');
 
-  // Set up transcription listener
+  // Keep track of last sent message to prevent duplicates
+  let lastInterimText = '';
+  let lastInterimNumber: number | null = null;
+  let lastFinalText = '';
+  let lastFinalTimestamp = 0;
+  
+  // Listen for transcriptions
   const transcriptionHandler = (data: any) => {
-    if (data.sessionId === sessionId) {
-      sseClient.send({
-        type: 'transcription',
-        data: data.transcription
-      });
+    const now = Date.now();
+    
+    if (!data.isFinal) {
+      // For interim results, only send if the text or number has changed
+      if (data.text === lastInterimText && data.number === lastInterimNumber) {
+        return;
+      }
+      lastInterimText = data.text;
+      lastInterimNumber = data.number;
+    } else {
+      // For final results, prevent duplicate within 500ms window
+      if (data.text === lastFinalText && (now - lastFinalTimestamp) < 500) {
+        console.log(`⏭️ [Backend/Route] Skipping duplicate final transcription: "${data.text}"`);
+        return;
+      }
+      lastFinalText = data.text;
+      lastFinalTimestamp = now;
+      // Reset interim tracking on final result
+      lastInterimText = '';
+      lastInterimNumber = null;
     }
+    
+    console.log(`📤 [Backend/Route] Sending transcription via SSE [${connectionId}]:`, {
+      text: data.text,
+      number: data.number,
+      isFinal: data.isFinal,
+      speechFinal: data.speechFinal,
+      latency: data.latency
+    });
+    res.write(`data: ${JSON.stringify({ type: 'transcription', ...data })}\n\n`);
   };
 
-  const audioLevelHandler = (data: any) => {
-    if (data.sessionId === sessionId) {
-      sseClient.send({
-        type: 'audioLevel',
-        data: { level: data.level }
-      });
-    }
-  };
+  audioHandler.on('transcription', transcriptionHandler);
+  console.log(`🎙️ [Backend/Route] Listening for transcriptions from audioHandler [${connectionId}]`);
 
-  // Add listeners
-  voiceService.on('transcription', transcriptionHandler);
-  voiceService.on('audioLevel', audioLevelHandler);
+  // Listen for backend ready event
+  const backendReadyHandler = () => {
+    console.log(`🚀 [Backend/Route] Backend ready signal received [${connectionId}]`);
+    res.write(`data: ${JSON.stringify({ type: 'backend_ready' })}
+
+`);
+  };
+  
+  audioHandler.on('backend_ready', backendReadyHandler);
 
   // Clean up on disconnect
   req.on('close', () => {
-    voiceService.removeListener('transcription', transcriptionHandler);
-    voiceService.removeListener('audioLevel', audioLevelHandler);
-    sseConnections.delete(sessionId);
-    console.log(`[Voice Routes] SSE connection closed for session ${sessionId}`);
+    console.log(`🔌 [Backend/Route] SSE connection closed [${connectionId}]`);
+    audioHandler.off('transcription', transcriptionHandler);
+    audioHandler.off('backend_ready', backendReadyHandler);
   });
 });
-
-// End voice session
-router.post('/end-session', authenticate, asyncHandler(async (req: Request, res: Response) => {
-  const { sessionId } = req.body;
-  
-  if (!sessionId) {
-    return res.status(400).json({ 
-      success: false, 
-      message: 'sessionId is required' 
-    });
-  }
-
-  try {
-    await voiceService.endVoiceSession(sessionId);
-    
-    // Close SSE connection if exists
-    const sseClient = sseConnections.get(sessionId);
-    if (sseClient) {
-      sseClient.close();
-      sseConnections.delete(sessionId);
-    }
-    
-    res.json({
-      success: true,
-      message: 'Voice session ended successfully'
-    });
-  } catch (error) {
-    console.error('[Voice Routes] Session end failed:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to end voice session' 
-    });
-  }
-}));
-
-// Get session metrics
-router.get('/metrics/:sessionId', authenticate, asyncHandler(async (req: Request, res: Response) => {
-  const { sessionId } = req.params;
-  
-  if (!sessionId) {
-    return res.status(400).json({ 
-      success: false, 
-      message: 'sessionId is required' 
-    });
-  }
-
-  const metrics = voiceService.getSessionMetrics(sessionId);
-  
-  if (!metrics) {
-    return res.status(404).json({ 
-      success: false, 
-      message: 'Session not found' 
-    });
-  }
-
-  res.json({
-    success: true,
-    metrics
-  });
-}));
 
 export default router;

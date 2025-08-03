@@ -22,6 +22,7 @@ import CQPMBenchmarkPage from './components/CQPMBenchmark/CQPMBenchmark';
 import { DocsPage } from './components/Docs/DocsPage';
 import OnboardingAssessments from './components/OnboardingAssessments';
 import { SentryUserTracker } from './components/SentryUserTracker';
+import SimpleVoiceTest from './components/TestVoiceAssessment/SimpleVoiceTest';
 // Import the progress queue service - this will initialize the queue on load
 import './services/ProgressQueueService';
 
@@ -109,6 +110,11 @@ function App() {
                                 <Route path="/onboarding" element={
                                     <ProtectedRoute requireAuth={true}>
                                         <OnboardingAssessments />
+                                    </ProtectedRoute>
+                                } />
+                                <Route path="/test-voice-assessment" element={
+                                    <ProtectedRoute requireAuth={true}>
+                                        <SimpleVoiceTest />
                                     </ProtectedRoute>
                                 } />
                             </Routes>

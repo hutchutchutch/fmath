@@ -2,7 +2,7 @@ import { EventEmitter } from 'events';
 import { v4 as uuidv4 } from 'uuid';
 import { DeepgramService } from './deepgramService';
 import { LivekitService } from './livekitService';
-import { AudioHandler } from './audioHandler';
+import { audioHandler } from './audioHandler';
 import { VoiceSession, VoiceConnection, Transcription } from '../../types/voice';
 
 export class VoiceService extends EventEmitter {
@@ -10,7 +10,7 @@ export class VoiceService extends EventEmitter {
   private livekitService: LivekitService;
   private activeConnections: Map<string, VoiceConnection>;
   private sessions: Map<string, VoiceSession>;
-  private audioHandlers: Map<string, AudioHandler>;
+  private audioHandlers: Map<string, any>;
 
   constructor() {
     super();
@@ -72,7 +72,8 @@ export class VoiceService extends EventEmitter {
       const backendToken = await this.livekitService.createBackendToken(roomName);
 
       // Create new audio handler for this session
-      const audioHandler = new AudioHandler(this.deepgramService);
+      // For now, just use the singleton audioHandler
+      // In a real implementation, you'd want to manage multiple instances
       this.audioHandlers.set(connection.sessionId, audioHandler);
 
       // Set up transcription event forwarding
@@ -110,7 +111,7 @@ export class VoiceService extends EventEmitter {
       });
 
       // Join the room
-      await audioHandler.joinRoom(roomName, backendToken);
+      await audioHandler.joinRoom(roomName);
       console.log(`[VoiceService] Backend joined room ${roomName} for user ${userId}`);
 
     } catch (error) {

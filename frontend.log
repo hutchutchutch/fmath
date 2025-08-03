@@ -1,0 +1,719 @@
+
+> fast-math@0.1 start
+> PORT=3001 react-scripts start
+
+Browserslist: browsers data (caniuse-lite) is 10 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+(node:42526) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:42526) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view fast-math in the browser.
+
+  Local:            http://localhost:3001
+  On Your Network:  http://10.17.0.251:3001
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+(node:42526) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 113:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 113:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 120:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 120:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 38:30:  'setLastTranscriptTime' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  Line 39:10:  'autoSubmitTimer' is assigned a value but never used          @typescript-eslint/no-unused-vars
+  Line 39:27:  'setAutoSubmitTimer' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 122:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 38:30:  'setLastTranscriptTime' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  Line 39:10:  'autoSubmitTimer' is assigned a value but never used          @typescript-eslint/no-unused-vars
+  Line 39:27:  'setAutoSubmitTimer' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 122:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 136:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 136:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 142:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 142:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 40:10:  'isProcessing' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  Line 40:24:  'setIsProcessing' is assigned a value but never used          @typescript-eslint/no-unused-vars
+  Line 143:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 40:10:  'isProcessing' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  Line 40:24:  'setIsProcessing' is assigned a value but never used          @typescript-eslint/no-unused-vars
+  Line 143:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 40:10:  'isProcessing' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  Line 150:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 40:10:  'isProcessing' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  Line 150:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 40:10:  'isProcessing' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  Line 150:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 40:10:  'isProcessing' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  Line 150:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 150:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 150:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 156:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 156:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 163:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 163:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 169:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 169:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 171:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 171:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 171:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 171:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 171:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 171:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 171:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 171:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 171:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 171:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+No issues found.
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 171:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 36:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 38:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 171:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 7:10:   'BorderTrail' is defined but never used                       @typescript-eslint/no-unused-vars
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 172:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 7:10:   'BorderTrail' is defined but never used                       @typescript-eslint/no-unused-vars
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 172:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 172:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 172:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 172:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 172:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 42:10:  'questionStartTime' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  Line 42:29:  'setQuestionStartTime' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 173:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 42:10:  'questionStartTime' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  Line 42:29:  'setQuestionStartTime' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 173:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 42:10:  'questionStartTime' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  Line 174:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 42:10:  'questionStartTime' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  Line 174:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 42:10:  'questionStartTime' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  Line 174:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/TestVoiceAssessment/VoiceInputLiveKit.tsx
+  Line 344:6:  React Hook useEffect has a missing dependency: 'startTranscriptionMonitoring'. Either include it or remove the dependency array          react-hooks/exhaustive-deps
+  Line 351:6:  React Hook useEffect has missing dependencies: 'connectToLiveKit' and 'isConnected'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 363:6:  React Hook useEffect has a missing dependency: 'disconnect'. Either include it or remove the dependency array                            react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 42:10:  'questionStartTime' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  Line 174:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/TestVoiceAssessment/VoiceInputLiveKit.tsx
+  Line 344:6:  React Hook useEffect has a missing dependency: 'startTranscriptionMonitoring'. Either include it or remove the dependency array          react-hooks/exhaustive-deps
+  Line 351:6:  React Hook useEffect has missing dependencies: 'connectToLiveKit' and 'isConnected'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 363:6:  React Hook useEffect has a missing dependency: 'disconnect'. Either include it or remove the dependency array                            react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 42:10:  'questionStartTime' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  Line 174:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/TestVoiceAssessment/VoiceInputLiveKit.tsx
+  Line 344:6:  React Hook useEffect has a missing dependency: 'startTranscriptionMonitoring'. Either include it or remove the dependency array          react-hooks/exhaustive-deps
+  Line 351:6:  React Hook useEffect has missing dependencies: 'connectToLiveKit' and 'isConnected'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 363:6:  React Hook useEffect has a missing dependency: 'disconnect'. Either include it or remove the dependency array                            react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 42:10:  'questionStartTime' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  Line 174:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/TestVoiceAssessment/VoiceInputLiveKit.tsx
+  Line 344:6:  React Hook useEffect has a missing dependency: 'startTranscriptionMonitoring'. Either include it or remove the dependency array          react-hooks/exhaustive-deps
+  Line 351:6:  React Hook useEffect has missing dependencies: 'connectToLiveKit' and 'isConnected'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 363:6:  React Hook useEffect has a missing dependency: 'disconnect'. Either include it or remove the dependency array                            react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 181:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/TestVoiceAssessment/VoiceInputLiveKit.tsx
+  Line 344:6:  React Hook useEffect has a missing dependency: 'startTranscriptionMonitoring'. Either include it or remove the dependency array          react-hooks/exhaustive-deps
+  Line 351:6:  React Hook useEffect has missing dependencies: 'connectToLiveKit' and 'isConnected'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 363:6:  React Hook useEffect has a missing dependency: 'disconnect'. Either include it or remove the dependency array                            react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 181:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/TestVoiceAssessment/VoiceInputLiveKit.tsx
+  Line 344:6:  React Hook useEffect has a missing dependency: 'startTranscriptionMonitoring'. Either include it or remove the dependency array          react-hooks/exhaustive-deps
+  Line 351:6:  React Hook useEffect has missing dependencies: 'connectToLiveKit' and 'isConnected'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 363:6:  React Hook useEffect has a missing dependency: 'disconnect'. Either include it or remove the dependency array                            react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 182:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/TestVoiceAssessment/VoiceInputLiveKit.tsx
+  Line 344:6:  React Hook useEffect has a missing dependency: 'startTranscriptionMonitoring'. Either include it or remove the dependency array          react-hooks/exhaustive-deps
+  Line 351:6:  React Hook useEffect has missing dependencies: 'connectToLiveKit' and 'isConnected'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 363:6:  React Hook useEffect has a missing dependency: 'disconnect'. Either include it or remove the dependency array                            react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 182:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/TestVoiceAssessment/VoiceInputLiveKit.tsx
+  Line 344:6:  React Hook useEffect has a missing dependency: 'startTranscriptionMonitoring'. Either include it or remove the dependency array          react-hooks/exhaustive-deps
+  Line 351:6:  React Hook useEffect has missing dependencies: 'connectToLiveKit' and 'isConnected'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 363:6:  React Hook useEffect has a missing dependency: 'disconnect'. Either include it or remove the dependency array                            react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 183:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/TestVoiceAssessment/VoiceInputLiveKit.tsx
+  Line 344:6:  React Hook useEffect has a missing dependency: 'startTranscriptionMonitoring'. Either include it or remove the dependency array          react-hooks/exhaustive-deps
+  Line 351:6:  React Hook useEffect has missing dependencies: 'connectToLiveKit' and 'isConnected'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 363:6:  React Hook useEffect has a missing dependency: 'disconnect'. Either include it or remove the dependency array                            react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 183:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/TestVoiceAssessment/VoiceInputLiveKit.tsx
+  Line 344:6:  React Hook useEffect has a missing dependency: 'startTranscriptionMonitoring'. Either include it or remove the dependency array          react-hooks/exhaustive-deps
+  Line 351:6:  React Hook useEffect has missing dependencies: 'connectToLiveKit' and 'isConnected'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 363:6:  React Hook useEffect has a missing dependency: 'disconnect'. Either include it or remove the dependency array                            react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 184:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/TestVoiceAssessment/VoiceInputLiveKit.tsx
+  Line 344:6:  React Hook useEffect has a missing dependency: 'startTranscriptionMonitoring'. Either include it or remove the dependency array          react-hooks/exhaustive-deps
+  Line 351:6:  React Hook useEffect has missing dependencies: 'connectToLiveKit' and 'isConnected'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 363:6:  React Hook useEffect has a missing dependency: 'disconnect'. Either include it or remove the dependency array                            react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 184:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/TestVoiceAssessment/VoiceInputLiveKit.tsx
+  Line 344:6:  React Hook useEffect has a missing dependency: 'startTranscriptionMonitoring'. Either include it or remove the dependency array          react-hooks/exhaustive-deps
+  Line 351:6:  React Hook useEffect has missing dependencies: 'connectToLiveKit' and 'isConnected'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 363:6:  React Hook useEffect has a missing dependency: 'disconnect'. Either include it or remove the dependency array                            react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 182:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/TestVoiceAssessment/VoiceInputLiveKit.tsx
+  Line 344:6:  React Hook useEffect has a missing dependency: 'startTranscriptionMonitoring'. Either include it or remove the dependency array          react-hooks/exhaustive-deps
+  Line 351:6:  React Hook useEffect has missing dependencies: 'connectToLiveKit' and 'isConnected'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 363:6:  React Hook useEffect has a missing dependency: 'disconnect'. Either include it or remove the dependency array                            react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/TestVoiceAssessment/SimpleVoiceTest.tsx
+  Line 37:10:  'transcript' is assigned a value but never used               @typescript-eslint/no-unused-vars
+  Line 39:10:  'lastTranscriptTime' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 182:9:  'extractNumberFromSpeech' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/TestVoiceAssessment/VoiceInputLiveKit.tsx
+  Line 344:6:  React Hook useEffect has a missing dependency: 'startTranscriptionMonitoring'. Either include it or remove the dependency array          react-hooks/exhaustive-deps
+  Line 351:6:  React Hook useEffect has missing dependencies: 'connectToLiveKit' and 'isConnected'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 363:6:  React Hook useEffect has a missing dependency: 'disconnect'. Either include it or remove the dependency array                            react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+No issues found.
